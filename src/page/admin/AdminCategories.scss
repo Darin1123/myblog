@@ -1,0 +1,131 @@
+.admin-categories {
+  width: 100%;
+  max-width: 800px;
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .category {
+      margin-right: 20px;
+      margin-bottom: 10px;
+
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        .svg-container {
+          svg {
+            color: #444;
+          }
+        }
+      }
+
+      .svg-container {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+
+        &:hover {
+          background-color: #eee;
+        }
+
+        svg {
+          cursor: pointer;
+          height: 14px;
+          color: transparent;
+        }
+      }
+
+
+    }
+
+    .new {
+      color: green;
+    }
+  }
+
+  .add-new-container {
+
+    input {
+      outline: none;
+      border: 1px solid #444;
+      padding: 5px;
+      margin-right: 10px;
+      font-size: 12px;
+      width: calc(100% - 12px);
+      margin-bottom: 10px;
+
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
+
+    .add-button {
+      cursor: pointer;
+      color: #fff;
+      background-color: #000;
+      width: calc(100%);
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .manage-button {
+      cursor: pointer;
+      border: 1px solid #000;
+      width: calc(calc(100% - 10px) / 2);
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .generate-button {
+      width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .result {
+    margin-top: 10px;
+    position: relative;
+
+    pre {
+      border: 1px solid #888;
+      padding: 5px;
+      overflow-x: auto;
+    }
+
+    .copy-button {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      .button {
+        cursor: pointer;
+        width: fit-content;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

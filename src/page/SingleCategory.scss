@@ -1,0 +1,24 @@
+.single-category {
+  width: 100%;
+  max-width: 800px;
+
+  .related-categories {
+    display: flex;
+    align-items: center;
+    color: #888;
+    margin-bottom: 20px;
+
+    a {
+      margin-left: 14px;
+      color: #888 !important;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #888 !important;
+
+      //&:hover {
+      //  color: #000;
+      //  border-bottom: 1px solid #000;
+      //}
+    }
+  }
+}

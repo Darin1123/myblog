@@ -1,0 +1,153 @@
+article {
+  width: 100%;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 24px;
+
+  .react_lightgallery_item {
+    display: flex;
+    justify-content: center;
+
+    .lazy-load-image-background {
+      width: 80% !important;
+
+      img {
+        width: 100%;
+        max-height: 360px;
+        object-fit: contain;
+        cursor: pointer;
+      }
+    }
+  }
+
+  table {
+    margin: auto;
+    border-spacing: 0;
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    td, th {
+      border-bottom: 1px solid #bbb;
+      border-right: 1px solid #bbb;
+      padding: 5px 10px;
+    }
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 18px;
+
+    li {
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+
+    li {
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  blockquote {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 15px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 3px;
+      width: 4px;
+      background-color: #ddd;
+    }
+
+    ol {
+      li {
+        color: #444;
+
+        * {
+          margin: 0;
+        }
+      }
+    }
+
+    a {
+      color: #444;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 20px;
+
+      * {
+        margin: 0;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: #444;
+    }
+  }
+
+  a {
+    color: #000;
+  }
+
+  .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .math {
+    overflow-x: auto;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+
+    &:hover {
+      background: #888;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  article {
+    font-size: 14px;
+  }
+}

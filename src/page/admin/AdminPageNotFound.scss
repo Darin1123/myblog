@@ -1,0 +1,16 @@
+.page-not-found {
+  width: 100%;
+  max-width: 800px;
+
+  .links {
+    a {
+      margin-right: 10px;
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

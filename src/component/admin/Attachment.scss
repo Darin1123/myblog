@@ -1,0 +1,40 @@
+.attachment {
+  position: absolute;
+  width: calc(80% - 40px);
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 20px;
+  padding-bottom: 10px;
+  left: 10%;
+  top: 40px;
+  z-index: 4;
+  max-height: 80%;
+  overflow-y: auto;
+
+  .attachment-top {
+    display: flex;
+    width: calc(100%);
+    padding: 20px;
+    transform: translateX(-20px) translateY(-20px);
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #FFF;
+    z-index: 6;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    transform: translateY(-20px);
+    z-index: 5;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .attachment {
+    width: calc(100% - 40px);
+    left: 0;
+  }
+}

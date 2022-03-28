@@ -1,0 +1,337 @@
+.add-moment {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+
+  .edit-moment-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+      padding: 2px;
+      border: none;
+    }
+
+    .date {
+      color: #888;
+      border: none;
+      text-align: right;
+      width: 60px;
+      font-size: 11px;
+    }
+  }
+
+  .tags {
+    margin-top: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 20px;
+
+    .tag {
+      font-style: italic;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      color: #888;
+    }
+
+    .add-tag {
+
+      .add-tag-main {
+        display: flex;
+        align-items: center;
+
+        input {
+          border: 1px solid #888;
+          padding: 2px;
+          outline: none;
+          margin-right: 5px;
+          width: 60px;
+          font-size: 11px;
+          font-style: italic;
+        }
+      }
+    }
+
+  }
+
+  .content {
+    margin-top: 10px;
+    width: calc(100% - 12px);
+    border: 1px solid #888;
+    height: 100px;
+    padding: 5px;
+    resize: none;
+  }
+
+  .add-image {
+    width: 198px;
+    height: 198px;
+    border: 1px dashed #444444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.14s;
+
+    &:hover {
+      border: 1px dashed #0087fc;
+
+      svg {
+        color: #0087fc;
+      }
+    }
+
+    svg {
+      color: #444;
+    }
+  }
+
+  .edit-moment-images {
+    margin-top: 10px;
+    display: flex;
+
+    .single-image {
+      position: relative;
+
+      .single-image-container {
+
+        &:hover {
+          .delete {
+            visibility: visible;
+          }
+        }
+
+        .delete {
+          visibility: hidden;
+          position: absolute;
+          z-index: 4;
+          right: 5px;
+          top: 5px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          svg {
+            height: 20px;
+          }
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .add-image {
+        margin-top: 10px;
+      }
+    }
+
+    .multiple-images {
+      display: flex;
+      flex-wrap: wrap;
+      width: 620px;
+
+      .image-wrapper {
+        background-color: #eee;
+        width: 200px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        aspect-ratio: 1 / 1;
+        position: relative;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        &:hover {
+          .delete {
+            visibility: visible;
+          }
+        }
+
+        .delete {
+          visibility: hidden;
+          position: absolute;
+          z-index: 4;
+          right: 5px;
+          top: 5px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          svg {
+            height: 20px;
+          }
+        }
+
+        .container {
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .react_lightgallery_item {
+          width: calc(calc(100% - 10px) / 3);
+          margin-bottom: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .moment-images {
+    background-color: #fff;
+    z-index: 10;
+    width: 80%;
+    top: 20px;
+    left: calc(10%);
+    //max-width: 600px;
+    position: absolute;
+    border: 1px solid #444;
+    height: 600px;
+    overflow: auto;
+
+    .moment-images-top {
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+      padding: 10px;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+    }
+
+
+    .images {
+      padding: 10px 10px 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% - 20px);
+
+      .select-image {
+        width: calc(calc(100% - 20px) / 3);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        .lazy-load-image-background {
+          width: 100%;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: 120px;
+          }
+        }
+
+
+
+        .order {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          color: #fff;
+          background-color: green;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          font-weight: bold;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #fff;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .generate-button {
+    margin-top: 20px;
+    padding: 10px 60px;
+    width: fit-content;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .result {
+    margin-top: 10px;
+    position: relative;
+
+    pre {
+      border: 1px solid #888;
+      padding: 5px;
+      overflow-x: auto;
+    }
+
+    .copy-button {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      .button {
+        cursor: pointer;
+        width: fit-content;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.svg-container {
+  margin-left: 2px;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  svg {
+    height: 12px;
+  }
+}

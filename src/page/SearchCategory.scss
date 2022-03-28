@@ -1,0 +1,19 @@
+.search-category {
+  width: 100%;
+  max-width: 800px;
+
+  a {
+    color: #000;
+  }
+
+  .category-item {
+    margin-top: 10px;
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

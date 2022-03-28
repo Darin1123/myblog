@@ -1,0 +1,153 @@
+.feeling-lucky {
+  width: 100%;
+  max-width: 900px;
+
+  * {
+    scroll-margin-top: 66px;
+  }
+
+  .outline {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    top: 90px;
+    line-height: 20px;
+    justify-content: center;
+
+    .outline-wrapper {
+
+      .outline-item {
+        display: block;
+        text-decoration: none;
+
+        &::before {
+          content: '· ';
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .level-2 {
+        &::before {
+          content: '· ';
+        }
+      }
+
+      .level-3 {
+        margin-left: 20px;
+      }
+
+      .level-4 {
+        margin-left: 40px;
+      }
+
+      .level-5 {
+        margin-left: 60px;
+      }
+
+    }
+  }
+
+  .actions {
+    position: fixed;
+    display: flex;
+    bottom: 60px;
+
+    .action {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.1s;
+
+      svg {
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+  @media screen and (max-width: 759px) {
+    .actions {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  @media screen and (min-width: 760px) and (max-width: 869px) {
+    article {
+      width: 500px;
+    }
+
+    .outline {
+      display: flex;
+      width: 200px;
+      transform: translateX(500px);
+    }
+
+    .actions {
+      display: flex;
+      transform: translateX(580px);
+    }
+  }
+
+  @media screen and (min-width: 870px) and (max-width: 949px) {
+    article {
+      width: 560px;
+    }
+
+    .outline {
+      display: flex;
+      width: 200px;
+      transform: translateX(600px);
+    }
+
+    .actions {
+      display: flex;
+      transform: translateX(680px);
+    }
+  }
+
+  @media screen and (min-width: 950px) and (max-width: 1079px) {
+    article {
+      width: 600px;
+    }
+
+    .outline {
+      display: flex;
+      width: 220px;
+      transform: translateX(620px);
+    }
+
+    .actions {
+      display: flex;
+      transform: translateX(780px);
+    }
+  }
+
+  @media screen and (min-width: 1080px) {
+    .outline {
+      display: flex;
+      width: 220px;
+      transform: translateX(740px);
+    }
+
+    .actions {
+      display: flex;
+      transform: translateX(900px);
+    }
+
+    article {
+      width: 700px;
+    }
+  }
+}

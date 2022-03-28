@@ -1,0 +1,238 @@
+.home {
+  width: 100%;
+  max-width: 920px;
+
+  /* width */
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(193, 193, 193);
+    border-radius: 4px;
+
+    &:hover {
+      background: #888;
+    }
+  }
+
+  .top-articles {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    height: 280px;
+    padding-bottom: 4px;
+
+    .top-article-item {
+      height: 100%;
+      //min-width: 300px;
+      //border: 1px solid red;
+      margin-right: 10px;
+      position: relative;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      img {
+        height: 100%;
+      }
+
+      .title {
+        position: absolute;
+        height: 14px;
+        width: fit-content;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .home-categories {
+    display: flex;
+    flex-wrap: wrap;
+
+    .category {
+      width: calc(calc(100% - 40px) / 3);
+      height: fit-content;
+      margin-bottom: 20px;
+      display: flex;
+      margin-right: 20px;
+
+      &:nth-last-child(3n) {
+        margin-right: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #666;
+        height: fit-content;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .category-logo {
+        background-color: #f4f4f4;
+        padding: 10px;
+        height: 100px;
+        width: 100px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 70px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .category {
+        width: calc(calc(100% - 20px) / 2);
+
+        &:nth-child(3n) {
+          margin-right: 20px;
+        }
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .category {
+        .category-logo {
+          height: 60px;
+          width: 60px;
+
+          img {
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .home-moments {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .home-moment {
+      border-bottom: none;
+      width: calc(calc(100% - 20px - 40px * 3) / 3);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 20px;
+      background-color: #f4f4f4;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      .home-moment-title {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .home-moment-content {
+        line-height: 14px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .home-feeling-lucky {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 240px;
+    }
+  }
+
+  .home-about {
+    .home-about-content {
+      line-height: 24px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .top-articles {
+      height: 220px;
+    }
+
+    .home-moments {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      .home-moment {
+        width: calc(calc(100% - 10px - 40px * 2) / 2);
+
+        &:nth-child(3n) {
+          margin-right: 10px;
+        }
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        .home-moment-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .home-moment-content {
+          line-height: 14px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    .home-feeling-lucky {
+
+      img {
+        height: 180px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .top-articles {
+      height: 160px;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

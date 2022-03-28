@@ -1,0 +1,19 @@
+.pagination {
+  font-size: 12px;
+  display: flex;
+
+  * {
+    margin-right: 20px;
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

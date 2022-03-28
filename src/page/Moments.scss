@@ -1,0 +1,47 @@
+.moments {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  //border: 1px solid blue;
+
+  .moments-main {
+    width: 600px;
+  }
+
+
+  .extra {
+    position: fixed;
+    top: 66px;
+    width: 280px;
+    //border: 1px solid red;
+    transform: translateX(620px);
+    color: #888;
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .links {
+      a {
+        color: #888;
+        text-decoration: none;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.moments-mobile {
+  width: 100%;
+  position: static;
+  display: block;
+
+  .moments-main {
+    width: 100%;
+  }
+}

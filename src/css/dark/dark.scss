@@ -1,0 +1,95 @@
+@import 'home';
+@import 'archived';
+@import 'singleCategory';
+@import 'moments';
+@import "../export";
+
+@mixin dark {
+  a {
+    color: $DARK-TEXT-COLOR;
+  }
+
+  article {
+
+    table {
+      margin: auto;
+      border-spacing: 0;
+      border-top: 1px solid #bbb;
+      border-left: 1px solid #bbb;
+
+      tr:hover {
+        background-color: #222;
+      }
+
+      td, th {
+        border-bottom: 1px solid #bbb;
+        border-right: 1px solid #bbb;
+        padding: 5px 10px;
+      }
+    }
+
+    blockquote {
+      position: relative;
+      margin: 0;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 2px;
+      padding-left: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 3px;
+        width: 4px;
+        background-color: #888;
+      }
+
+      ol {
+        li {
+          color: #888;
+
+          * {
+            margin: 0;
+          }
+        }
+      }
+
+      a {
+        color: #888;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 20px;
+
+        * {
+          margin: 0;
+        }
+      }
+
+      p {
+        margin: 0;
+        color: #888;
+      }
+    }
+  }
+
+  .home {
+    @include home;
+  }
+
+  .archived {
+    @include archived;
+  }
+
+  .single-category {
+    @include single-category;
+  }
+
+  .moments {
+    @include moments;
+  }
+}

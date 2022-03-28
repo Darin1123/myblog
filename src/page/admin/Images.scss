@@ -1,0 +1,107 @@
+.images {
+  width: 100%;
+  max-width: 800px;
+
+  .image-main {
+    .paths {
+      display: flex;
+      flex-direction: column;
+
+      .path {
+        margin-top: 10px;
+        width: fit-content;
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .images-main {
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+
+        .react_lightgallery_item {
+          width: calc(calc(100% - 20px) / 3);
+          margin: 10px 10px 0 0;
+          cursor: pointer;
+
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+
+          .lazy-load-image-background {
+            width: 100%;
+
+            img {
+              height: 160px;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+
+
+          @media screen and (max-width: 500px) {
+            img {
+              height: 100px;
+            }
+          }
+
+          @media screen and (max-width: 400px) {
+            img {
+              height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+  .images-verify-container {
+    margin: 160px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    input {
+      outline: none;
+      padding: 5px;
+      border: 1px solid #000;
+
+      &::placeholder {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      input {
+        font-size: 16px;
+      }
+    }
+
+    .edit-verify-button {
+      margin-top: 16px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000;
+      padding: 10px 40px;
+    }
+  }
+
+}

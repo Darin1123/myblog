@@ -1,0 +1,74 @@
+.study {
+  width: 100%;
+  max-width: 900px;
+
+  .term {
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      .course {
+        border: 1px solid #888;
+        width: calc(calc(100% - 30px - (20px + 1px) * 2 * 4) / 4);
+        padding: 20px;
+        cursor: pointer;
+        color: #000;
+        text-decoration: none;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        .course-code {
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        .course-name {
+          font-size: 12px;
+          margin-top: 5px;
+        }
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        .course {
+          width: calc(calc(100% - 20px - (20px + 1px) * 2 * 3) / 3);
+
+          &:nth-child(4n) {
+            margin-right: 10px;
+          }
+
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .course {
+          width: calc(calc(100% - 10px - (20px + 1px) * 2 * 2) / 2);
+
+          &:nth-child(4n) {
+            margin-right: 10px;
+          }
+
+          &:nth-child(3n) {
+            margin-right: 10px;
+          }
+
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

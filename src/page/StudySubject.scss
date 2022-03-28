@@ -1,0 +1,32 @@
+.study-subject {
+  width: 100%;
+  max-width: 900px;
+
+
+  .go-back {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .files {
+    margin-bottom: 20px;
+
+    .file {
+      display: block;
+      cursor: pointer;
+      //padding: 10px;
+      //border: 1px solid #888;
+      width: fit-content;
+      transition: 0.14s;
+      margin: 0 10px 10px 0;
+      color: #000;
+      text-decoration: none;
+
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+}

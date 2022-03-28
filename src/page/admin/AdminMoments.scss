@@ -1,0 +1,21 @@
+.admin-moments {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    padding: 40px 60px;
+    border: 1px solid #888;
+    color: #000;
+    text-decoration: none;
+    transition: 0.14s;
+
+    &:hover {
+      transform: translateY(-10px);
+      border: 1px solid #000;
+    }
+  }
+}

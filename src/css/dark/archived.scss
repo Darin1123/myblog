@@ -1,0 +1,43 @@
+@import '../export';
+
+@mixin archived {
+
+  .archived-item {
+
+    .item-content {
+      &::before {
+        background-color: $DARK-BG;
+      }
+
+      &:hover {
+
+        &::before {
+          //width: 32px;
+          //height: 32px;
+          //left: -46px;
+          //
+          //padding: 2px;
+          background-color: #fff !important;
+        }
+      }
+
+      .item-title-wrapper {
+
+        .dot {
+          background-color: $DARK-TEXT-COLOR;
+        }
+
+        .item-title {
+          cursor: pointer;
+          display: block;
+          font-size: 12px;
+          transition: 0.14s;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+.admin-nav {
+  background-color: #fff;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+
+
+  .menu-button {
+    display: none;
+    width: 28px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .back-up-title {
+      color: #000;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+        width: fit-content;
+
+        &:hover {
+          border-bottom: 1px solid #000000;
+        }
+      }
+
+      .back-up-search {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .nav-main-item {
+        font-size: 12px;
+        margin-right: 20px;
+        cursor: pointer;
+
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+      }
+
+      .active-nav-item {
+        border-bottom: 1px solid #000000;
+      }
+
+      .title {
+        margin-right: 20px;
+        font-size: 16px;
+      }
+
+      .nav-categories {
+        position: relative;
+
+        .btn {
+          cursor: pointer;
+        }
+
+        .categories-main {
+          position: absolute;
+          visibility: hidden;
+          padding: 5px;
+          box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
+          border-radius: 5px;
+
+          .category-item {
+            cursor: pointer;
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          .categories-main {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  .search {
+    //width: 16px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .admin-nav {
+    padding: 20px;
+
+    .menu-button {
+      display: block;
+    }
+
+    .container {
+      .nav-main {
+        position: absolute;
+        background-color: #fff;
+        border-bottom: 1px solid #888;
+        width: calc(100% - 40px);
+        height: fit-content;
+        padding: 10px 20px 20px 20px;
+        left: 0;
+        top: 100%;
+
+        .title {
+          display: none;
+        }
+
+        .nav-items {
+          display: flex;
+          width: 100%;
+          //border: 1px solid red;
+          flex-direction: column;
+
+          a {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,234 @@
+/* margin */
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.m-l-20 {
+  margin-left: 20px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.m-r-10 {
+  margin-right: 10px;
+}
+
+.m-r-20 {
+  margin-right: 20px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-t-5 {
+  margin-top: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+
+
+
+/* text */
+code {
+  font-family: "Courier New", serif;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.letter-spacing-4 {
+  letter-spacing: 4px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.large {
+  font-size: large;
+}
+
+.x-large {
+  font-size: x-large;
+}
+
+.xx-large {
+  font-size: xx-large;
+}
+
+.xxx-large {
+  font-size: xxx-large;
+}
+
+.small {
+  font-size: small;
+}
+
+.text-20 {
+  font-size: 20px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-12 {
+  font-size: 12px;
+}
+
+.text-10 {
+  font-size: 10px;
+}
+
+.text-8 {
+  font-size: 8px;
+}
+
+.gray-text {
+  color: #888;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gray-text {
+  color: #666;
+}
+
+.red-text {
+  color: red;
+}
+
+.underline-link {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #000;
+}
+
+.auto-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/* display */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.end {
+  align-items: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+
+
+
+/* padding */
+.padding-10 {
+  padding: 10px;
+}
+
+
+
+
+/* other */
+.fit-content {
+  width: fit-content;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.crumbs {
+  color: #888;
+  //margin: 20px 0 40px 0;
+
+  a {
+    color: #888 !important;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #888 !important;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

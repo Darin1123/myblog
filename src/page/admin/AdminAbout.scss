@@ -1,0 +1,175 @@
+.edit-about {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+
+  .edit-verify-container {
+    margin: 160px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    input {
+      outline: none;
+      padding: 5px;
+      border: 1px solid #000;
+
+      &::placeholder {
+        font-size: 11px;
+      }
+    }
+
+
+    @media screen and (max-width: 400px) {
+      input {
+        font-size: 16px;
+      }
+    }
+
+    .edit-verify-button {
+      margin-top: 16px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000;
+      padding: 10px 40px;
+    }
+  }
+
+  .edit-main {
+
+    .edit-main-images-icon {
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 5px 5px 5px 2px;
+
+      svg {
+        margin-right: 5px;
+        height: 16px;
+      }
+    }
+
+    .title-input {
+      width: calc(100% - 10px - 2px);
+      padding: 5px;
+      outline: none;
+      border: 1px solid #888;
+      border-radius: 0;
+      font-size: 12px;
+
+      &::placeholder {
+        font-size: 11px;
+      }
+    }
+
+    .workspace {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      textarea {
+        width: calc(50% - 10px - 5px - 2px);
+        height: calc(600px - 10px);
+        padding: 5px;
+        overflow: auto;
+        resize: none;
+        border-radius: 0;
+        outline: none;
+        border: 1px solid #888;
+      }
+
+      article {
+        width: calc(50% - 20px - 5px - 2px);
+        height: calc(600px - 20px);
+        border: 1px solid #888;
+        padding: 10px 10px;
+        overflow: auto;
+      }
+    }
+
+    .meta-data {
+      margin-top: 10px;
+
+      .item {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+
+        .label {
+          margin-right: 10px;
+          width: 28px
+        }
+
+        input {
+          padding: 5px;
+          outline: none;
+          width: 300px;
+          border: 1px solid #888;
+          border-radius: 0;
+          font-size: 12px;
+
+          &::placeholder {
+            font-size: 11px;
+          }
+        }
+
+        select {
+          font-size: 11px;
+          padding: 5px;
+          outline: none;
+          border: 1px solid #888;
+          border-radius: 0;
+          color: #000;
+        }
+      }
+    }
+
+    .action {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .button {
+        cursor: pointer;
+        color: #fff;
+        background-color: #000;
+        padding: 10px 60px;
+      }
+    }
+
+    .result {
+      margin-top: 10px;
+      position: relative;
+
+      pre {
+        border: 1px solid #888;
+        padding: 5px;
+        overflow-x: auto;
+      }
+
+      .copy-button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+          cursor: pointer;
+          width: fit-content;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
