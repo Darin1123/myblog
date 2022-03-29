@@ -1,3 +1,5 @@
+@import "../../css/export";
+
 .admin-nav {
   background-color: #fff;
   padding: 20px 40px;
@@ -10,11 +12,10 @@
 
   .menu-button {
     display: none;
-    width: 28px;
-    cursor: pointer;
 
-    &:hover {
-      text-decoration: underline;
+    svg {
+      cursor: pointer;
+      height: 16px;
     }
   }
 
@@ -106,12 +107,99 @@
     }
   }
 
+  .dark-mode {
+    cursor: pointer;
+    margin-right: 20px;
+
+    svg {
+      height: 16px;
+    }
+  }
+
   .search {
     //width: 16px;
     cursor: pointer;
 
-    &:hover {
-      text-decoration: underline;
+    svg {
+      height: 16px;
+    }
+  }
+}
+
+.dark-admin-navbar {
+  background-color: #222;
+
+  .container {
+
+    .back-up-title {
+      color: $DARK-TEXT-COLOR;
+    }
+
+    .nav-main {
+      a {
+        text-decoration: none;
+      }
+
+      .active-nav-item {
+        border-bottom: 1px solid $DARK-TEXT-COLOR;
+      }
+
+      .back-up-search {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      a {
+        font-size: 12px;
+        margin-right: 20px;
+        cursor: pointer;
+        padding-bottom: 2px;
+        width: fit-content;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid $DARK-TEXT-COLOR;
+        }
+
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+      }
+
+      .title {
+        margin-right: 20px;
+        font-size: 16px;
+      }
+
+      .nav-categories {
+        position: relative;
+
+        .btn {
+          cursor: pointer;
+        }
+
+        .categories-main {
+          position: absolute;
+          visibility: hidden;
+          padding: 5px;
+          box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
+          border-radius: 5px;
+
+          .category-item {
+            cursor: pointer;
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          .categories-main {
+            visibility: visible;
+          }
+        }
+      }
     }
   }
 }
@@ -121,7 +209,7 @@
     padding: 20px;
 
     .menu-button {
-      display: block;
+      display: flex;
     }
 
     .container {

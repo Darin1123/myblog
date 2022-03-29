@@ -113,7 +113,7 @@ function App() {
                     <Route path={`/admin`}>
                         {(adminVerified) && (
                             <React.Fragment>
-                                <AdminNavBar/>
+                                <AdminNavBar toggleDark={toggleDark} dark={dark}/>
                                 <main>
                                     <Switch>
                                         <Route path={`/admin/dashboard`}>

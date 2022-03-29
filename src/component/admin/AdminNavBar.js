@@ -3,9 +3,14 @@ import {useEffect, useState} from "react";
 import './AdminNavBar.scss';
 import $ from "jquery";
 import {AdminSearchBar} from "./AdminSearchBar";
+import IconMoon from "../../resources/icons/moon";
+import IconSun from "../../resources/icons/sun";
+import IconSearch from "../../resources/icons/search";
+import IconX from "../../resources/icons/x";
+import IconMenu2 from "../../resources/icons/menu-2";
 
 
-export default function AdminNavBar() {
+export default function AdminNavBar(props) {
 
     const RESPONSIVE_THRESHOLD = 600;
     let width = window.innerWidth;
@@ -41,7 +46,7 @@ export default function AdminNavBar() {
     }, []);
 
     return (
-        <div className={`admin-nav`}>
+        <div className={`admin-nav ` + (props.dark ? 'dark-admin-navbar' : '')}>
             <div className={'container'}>
                 {screenWidth <= RESPONSIVE_THRESHOLD &&
                     <Link to={'/admin/dashboard'} className={'back-up-title'}>
@@ -102,13 +107,34 @@ export default function AdminNavBar() {
                             )}
                         </div>
                     </div>}
-                {(screenWidth > RESPONSIVE_THRESHOLD) &&
-                    <div className={'search'}
-                         onClick={handleOpenSearchBar}>搜索</div>}
+                {(screenWidth > RESPONSIVE_THRESHOLD) && (
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <div onClick={props.toggleDark} className={`dark-mode`}>
+                                {props.dark ? (
+                                    <IconMoon/>
+                                ) : (
+                                    <IconSun/>
+                                )}
+                            </div>
+
+                            <div className={'search'}
+                                 onClick={handleOpenSearchBar}>
+                                <IconSearch/>
+                            </div>
+                        </div>
+                    )}
             </div>
 
-            <div className={'menu-button'}
-                 onClick={toggleNav}>{toggleMenu ? '关闭' : '菜单'}</div>
+            <div className={'menu-button'}>
+                <div onClick={props.toggleDark} className={`dark-mode`}>
+                    {props.dark ? (
+                        <IconMoon/>
+                    ) : (
+                        <IconSun/>
+                    )}
+                </div>
+                <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
+            </div>
 
             {(screenWidth > RESPONSIVE_THRESHOLD && showSearchBar) &&
                 <AdminSearchBar setToggleMenu={setToggleMenu} setShowSearchBar={setShowSearchBar} showCancel={showCancel}/>}
