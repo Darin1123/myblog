@@ -69,6 +69,8 @@ export function AddMoment() {
         setResult(data);
     }
 
+    let today = new Date();
+
     return (
         <div className={`edit-moment`}>
             {(showImages) && (
@@ -154,10 +156,7 @@ export function AddMoment() {
                            value={title}
                            placeholder={`添加标题`}
                            onChange={(e) => setTitle(e.target.value)}/>
-                    <input className={`date`}
-                           value={date}
-                           placeholder={`yyyy-mm-dd`}
-                           onChange={(e) => setDate(e.target.value)}/>
+                    <span className={`date`}>{`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`}</span>
                 </div>
                 <div className={`tags`}>
                     {tags.map((item, key) => (

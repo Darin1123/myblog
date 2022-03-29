@@ -1,0 +1,25 @@
+@mixin single-category {
+  .crumbs {
+    color: #888;
+    //margin: 20px 0 40px 0;
+
+    a {
+      color: #888 !important;
+      text-decoration: none;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #888 !important;
+
+      &:hover {
+        color: #fff !important;
+        border-bottom: 1px solid #fff !important;
+      }
+    }
+  }
+
+  .related-categories {
+    a:hover {
+      color: #fff !important;
+      border-bottom: 1px solid #fff !important;
+    }
+  }
+}

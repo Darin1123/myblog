@@ -126,7 +126,7 @@ export function string2date(str) {
 export function convertDateStr(str) {
     let parts = str.split('-');
     if (parts.length === 3) {
-        return `${parts[0]} 年 ${parts[1]} 月 ${parts[2]} 日`
+        return `${parseInt(parts[0])} 年 ${parseInt(parts[1])} 月 ${parseInt(parts[2])} 日`
     } else {
         return null;
     }

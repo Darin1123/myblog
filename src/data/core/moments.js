@@ -4,6 +4,15 @@ export const MOMENTS_TAGS = [
 
 export const MOMENTS = [
     {
+        "id": "4bca0d3f-744c-4c22-ba02-06e7dd9d0187",
+        "title": "怎么学数学",
+        "tags": [ "感悟" ],
+        "date": "2022-03-30",
+        "images": [],
+        "content": "学数学, 一定要先发中心思想搞明白. 换句话说就是能用语言描述整个运作的基本原理. 然后再仔细研究那些是复杂的数学公式."
+    },
+
+    {
         "id": "d231b0d0-2256-4c0b-8fe2-3ff8ad19bc95",
         "title": "下雨天的狮子山",
         "tags": [ "生活" ],
