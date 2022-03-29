@@ -17,7 +17,7 @@ export const TAB_TITLE = `${NAME}的博客`  // 网页标签标题, 博客主页
 export const EMAIL = 'darin1123@outlook.com'  // 联系方式 - 邮箱
 export const SEARCH_ARTICLE_TITLE_LENGTH = 32  // 搜索框
 export const MY_PASSWORD = `0f90abf282f635ba25c26a70b0ebc584629c676f5db5346706c164be4c526e57`; // 用于进入编辑页面等直接获取 markdown 代码的页面, 在后台管理的密码页面生成.
-export const NEW_ARTICLE_RANGE = 7;  // 判定为新文章的天数范围, 被判定为新的话, 会在标题处添加 New! 标记
+export const NEW_ARTICLE_RANGE = 10;  // 判定为新文章的天数范围, 被判定为新的话会在标题处添加 New! 标记
 export const THEME = '';  // TODO
 
 /* 其他信息 */
@@ -28,8 +28,8 @@ export const HOME_TOP_ARTICLES = false;
 export const HOME_RECENT_YEAR = false;
 
 /* Footer */
-export const HOST_NAME = 'Github Pages';
-export const HOST_LINK = 'https://pages.github.com/';
+export const HOST_NAME = 'Gitee Pages';
+export const HOST_LINK = 'https://gitee.com/help/articles/4136';
 
 /* 特殊的文章规则 */
 export const CUSTOM_MARKDOWN = {

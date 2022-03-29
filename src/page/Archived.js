@@ -9,45 +9,40 @@ import {compareDateObjects} from "../util/util";
 export function Archived() {
 
     let groupedArticles = [];
-    let date = null;
-    if (ARTICLES.length > 0) {
-        date = ARTICLES[0].date;
-    }
+    let date = ARTICLES[0].date;
 
     let dayItems = {
         date: date,
         items: []
     };
 
-    const PAGE = 16;
+    const PAGE = 10;
 
-    if (ARTICLES.length > 0) {
-        for (let i in ARTICLES) {
-            // console.log(ARTICLES[i].date);
-            if (compareDateObjects(date, ARTICLES[i].date) === 0) {
-                console.log(ARTICLES[i].date);
-                dayItems.items.push(
+    for (let i in ARTICLES) {
+        // console.log(ARTICLES[i].date);
+        if (compareDateObjects(date, ARTICLES[i].date) === 0) {
+            console.log(ARTICLES[i].date);
+            dayItems.items.push(
+                {
+                    id: ARTICLES[i].id,
+                    title: ARTICLES[i].title
+                }
+            );
+        } else {
+            groupedArticles.push(dayItems);
+            date = ARTICLES[i].date;
+            dayItems = {
+                date: date,
+                items: [
                     {
                         id: ARTICLES[i].id,
                         title: ARTICLES[i].title
                     }
-                );
-            } else {
-                groupedArticles.push(dayItems);
-                date = ARTICLES[i].date;
-                dayItems = {
-                    date: date,
-                    items: [
-                        {
-                            id: ARTICLES[i].id,
-                            title: ARTICLES[i].title
-                        }
-                    ]
-                };
-            }
+                ]
+            };
         }
-        groupedArticles.push(dayItems);
     }
+    groupedArticles.push(dayItems);
 
 
     const [hasMore, setHasMore] = useState(true);

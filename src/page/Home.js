@@ -7,10 +7,10 @@ import {HOME_CATEGORIES, TOP_ARTICLES} from "../data/page/home";
 import {ARTICLES} from "../data/core/articles";
 import {RecentYear} from "../component/RecentYear";
 import {MOMENTS} from "../data/core/moments";
-import feelingLuckyDark from '../resources/special/feeling-lucky-dark.svg';
+import feelingLucky from '../resources/special/feeling-lucky.svg';
 
 
-export function Home(props) {
+export function Home() {
 
     useEffect(() => {
         document.title = `主页 - ${TAB_TITLE}`;
@@ -50,8 +50,7 @@ export function Home(props) {
                     <div>暂时没有文章...</div>
                 )}
                 {ARTICLES.slice(0, RECENT_ARTICLE_SIZE).map((item, key) =>
-                    <ArticleItem item={item} key={key}
-                                 useElapsedTime={true}/>)}
+                    <ArticleItem item={item} key={key}/>)}
             </div>
 
             {(HOME_RECENT_YEAR) && (
@@ -122,7 +121,7 @@ export function Home(props) {
 
             <div className={'home-feeling-lucky'}>
                 <Link to={'/feeling-lucky'}>
-                    <img src={props.dark ? feelingLuckyDark : feelingLuckyDark} alt={'feeling-lucky'}/>
+                    <img src={feelingLucky} alt={'feeling-lucky'}/>
                 </Link>
             </div>
 

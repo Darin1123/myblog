@@ -75,7 +75,7 @@ function App() {
 
     function decideDefaultDark() {
         let now = new Date().getHours();
-        return now >= 19 || now <= 5;
+        return now > 19 || now < 5;
     }
 
     useEffect(() => {
@@ -187,7 +187,7 @@ function App() {
                             <main>
                                 <Switch>
                                     <Route path={'/'} exact={true}>
-                                        <Home dark={dark}/>
+                                        <Home/>
                                     </Route>
                                     <Route path={'/articles/:page'} exact={true}>
                                         <Articles dark={dark}/>

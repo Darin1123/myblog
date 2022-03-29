@@ -1,17 +1,4 @@
 @mixin home {
-
-  .home-articles {
-    .article-item {
-      background-color: #333;
-      padding: 20px;
-      margin-bottom: 10px;
-
-      .peek {
-        margin-top: 10px;
-      }
-    }
-  }
-
   .category-logo {
     background-color: #333 !important;
   }

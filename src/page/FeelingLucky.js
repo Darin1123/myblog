@@ -27,7 +27,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
 
-export function FeelingLucky() {
+export function FeelingLucky(props) {
 
     let idMap = {};
     let articleIdMap = {};
@@ -77,7 +77,6 @@ export function FeelingLucky() {
     async function load() {
         await setLoaded(false);
         let article = randomlyPick(ARTICLES);
-        console.log(article);
         await setArticle(article);
         setLoaded(true);
         setRefreshIcon(randomlyPick(refreshIcons));
@@ -156,110 +155,103 @@ export function FeelingLucky() {
                             <IconArrowUp/>
                         </div>
                     </div>
-                    {(article === undefined) && (
-                        <div>没有文章</div>
-                    )}
                     <article>
-                        {(article !== undefined) && (
-                            <h2>{article.title}</h2>
-                        )}
-                        {(article !== undefined) && (
-                            <ReactMarkdown
-                                components={{
-                                    p: ({node, children}) => {
-                                        // img tag
-                                        if (node.children[0].tagName === "img") {
-                                            const image = node.children[0];
-                                            return (
-                                                <div className="image">
-                                                    <LightgalleryProvider>
-                                                        <LightgalleryItem
-                                                            group={image.properties.alt}
-                                                            src={`${image.properties.src}`}>
-                                                            <LazyLoadImage
-                                                                effect={'blur'}
-                                                                alt={image.properties.alt}
-                                                                src={`${image.properties.src}`}/>
-                                                        </LightgalleryItem>
-                                                    </LightgalleryProvider>
-                                                </div>
-                                            );
-                                        }
-
-                                        // a tag
-                                        if (node.children[0].tagName === "a") {
-                                            const a = node.children[0];
-                                            return (
-                                                <a href={a.properties.href}
-                                                   rel="noreferrer"
-                                                   target={'_blank'}>
-                                                    {a.children[0].value}
-                                                </a>
-                                            );
-                                        }
-
-                                        // Return default child otherwise
-                                        return <p>{children}</p>;
-                                    },
-                                    a: ({node}) => {
+                        <h2>{article.title}</h2>
+                        <ReactMarkdown
+                            components={{
+                                p: ({node, children}) => {
+                                    // img tag
+                                    if (node.children[0].tagName === "img") {
+                                        const image = node.children[0];
                                         return (
-                                            <a href={node.properties.href}
-                                               rel={"noreferrer"}
+                                            <div className="image">
+                                                <LightgalleryProvider>
+                                                    <LightgalleryItem
+                                                        group={image.properties.alt}
+                                                        src={`${image.properties.src}`}>
+                                                        <LazyLoadImage
+                                                            effect={'blur'}
+                                                            alt={image.properties.alt}
+                                                            src={`${image.properties.src}`}/>
+                                                    </LightgalleryItem>
+                                                </LightgalleryProvider>
+                                            </div>
+                                        );
+                                    }
+
+                                    // a tag
+                                    if (node.children[0].tagName === "a") {
+                                        const a = node.children[0];
+                                        return (
+                                            <a href={a.properties.href}
+                                               rel="noreferrer"
                                                target={'_blank'}>
-                                                {node.children[0].value}
+                                                {a.children[0].value}
                                             </a>
                                         );
-                                    },
-                                    h2: ({children}) => {
-                                        return (
-                                            <h2 id={constructHeaderId(children)}>
-                                                {children}
-                                            </h2>
-                                        )
-                                    },
-                                    h3: ({children}) => {
-                                        return (
-                                            <h3 id={constructHeaderId(children)}>
-                                                {children}
-                                            </h3>
-                                        )
-                                    },
-                                    h4: ({children}) => {
-                                        return (
-                                            <h4 id={constructHeaderId(children)}>
-                                                {children}
-                                            </h4>
-                                        )
-                                    },
-                                    h5: ({children}) => {
-                                        return (
-                                            <h5 id={constructHeaderId(children)}>
-                                                {children}
-                                            </h5>
-                                        )
-                                    },
-                                    code({node, inline, className, children, ...props}) {
-                                        const match = /language-(\w+)/.exec(className || '')
-                                        return !inline && match ? (
-                                            <SyntaxHighlighter
-                                                children={String(children).replace(/\n$/, '')}
-                                                style={atomOneDark}
-                                                language={match[1]}
-                                                PreTag="div"
-                                                {...props}
-                                            />
-                                        ) : (
-                                            <code className={className} {...props}>
-                                                {children}
-                                            </code>
-                                        )
                                     }
-                                }}
-                                children={article.content}
-                                remarkPlugins={[remarkMath, remarkGfm]}
-                                rehypePlugins={[rehypeKatex, rehypeRaw]}
-                            />
-                        )}
+
+                                    // Return default child otherwise
+                                    return <p>{children}</p>;
+                                },
+                                a: ({node}) => {
+                                    return (
+                                        <a href={node.properties.href}
+                                           rel={"noreferrer"}
+                                           target={'_blank'}>
+                                            {node.children[0].value}
+                                        </a>
+                                    );
+                                },
+                                h2: ({children}) => {
+                                    return (
+                                        <h2 id={constructHeaderId(children)}>
+                                            {children}
+                                        </h2>
+                                    )
+                                },
+                                h3: ({children}) => {
+                                    return (
+                                        <h3 id={constructHeaderId(children)}>
+                                            {children}
+                                        </h3>
+                                    )
+                                },
+                                h4: ({children}) => {
+                                    return (
+                                        <h4 id={constructHeaderId(children)}>
+                                            {children}
+                                        </h4>
+                                    )
+                                },
+                                h5: ({children}) => {
+                                    return (
+                                        <h5 id={constructHeaderId(children)}>
+                                            {children}
+                                        </h5>
+                                    )
+                                },
+                                code({node, inline, className, children, ...props}) {
+                                    const match = /language-(\w+)/.exec(className || '')
+                                    return !inline && match ? (
+                                        <SyntaxHighlighter
+                                            children={String(children).replace(/\n$/, '')}
+                                            style={atomOneDark}
+                                            language={match[1]}
+                                            PreTag="div"
+                                            {...props}
+                                        />
+                                    ) : (
+                                        <code className={className} {...props}>
+                                            {children}
+                                        </code>
+                                    )
+                                }
+                            }}
+                            children={article.content}
+                            remarkPlugins={[remarkMath, remarkGfm]}
+                            rehypePlugins={[rehypeKatex, rehypeRaw]}
+                        />
                     </article>
                 </React.Fragment>
             )}

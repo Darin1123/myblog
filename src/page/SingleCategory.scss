@@ -10,15 +10,15 @@
 
     a {
       margin-left: 14px;
-      color: #888 !important;
+      color: #888;
       text-decoration: none;
       padding-bottom: 2px;
-      border-bottom: 1px solid #888 !important;
+      border-bottom: 1px solid #888;
 
-      //&:hover {
-      //  color: #000;
-      //  border-bottom: 1px solid #000;
-      //}
+      &:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
     }
   }
 }

@@ -222,10 +222,15 @@ code {
   //margin: 20px 0 40px 0;
 
   a {
-    color: #888 !important;
+    color: #888;
     text-decoration: none;
     padding-bottom: 1px;
-    border-bottom: 1px solid #888 !important;
+    border-bottom: 1px solid #888;
+
+    &:hover {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
   }
 }
 

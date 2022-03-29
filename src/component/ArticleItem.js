@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import './ArticleItem.scss';
-import {calculateElapsedTime, getArticleDate} from "../util/util";
+import {getArticleDate} from "../util/util";
 import {NEW_ARTICLE_RANGE} from "../config/config";
 
 export function ArticleItem(props) {
@@ -16,7 +16,7 @@ export function ArticleItem(props) {
         <div className={'article-item'}>
             <div className={'flex full-width space-between'}>
                 <div className={'flex center'}>
-                    <Link className={'m-r-20 text-14 bold'} to={`/article/${item.id}`}>
+                    <Link className={'m-r-20 text-14'} to={`/article/${item.id}`}>
                         {item.title}
                     </Link>
                     {(newArticle) && (
@@ -28,7 +28,7 @@ export function ArticleItem(props) {
                         </Link>}
                 </div>
                 <div className={'time'}>
-                    {(props.useElapsedTime !== undefined && props.useElapsedTime) ?  calculateElapsedTime(item.date) : `${item.date.year} 年 ${item.date.month} 月 ${item.date.day} 日 `}
+                    {`${item.date.year} 年 ${item.date.month} 月 ${item.date.day} 日 `}
                 </div>
             </div>
             <div className={'peek'}>

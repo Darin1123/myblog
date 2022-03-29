@@ -53,9 +53,7 @@ export function Dashboard() {
 
             <div className={`calendar dashboard-item`}>
                 <div>编写记录</div>
-                {(ARTICLES.length > 0) && (
-                    <RecentYear goto={'/admin/date/'}/>
-                )}
+                <RecentYear goto={'/admin/date/'}/>
             </div>
 
             <div className={'dashboard-item'}>

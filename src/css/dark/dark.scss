@@ -1,7 +1,5 @@
 @import 'home';
 @import 'archived';
-@import 'singleCategory';
-@import 'moments';
 @import "../export";
 
 @mixin dark {
@@ -83,13 +81,5 @@
 
   .archived {
     @include archived;
-  }
-
-  .single-category {
-    @include single-category;
-  }
-
-  .moments {
-    @include moments;
   }
 }
