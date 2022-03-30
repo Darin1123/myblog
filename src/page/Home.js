@@ -8,11 +8,10 @@ import {ARTICLES} from "../data/core/articles";
 import {RecentYear} from "../component/RecentYear";
 import {MOMENTS} from "../data/core/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
-import IconX from "../resources/icons/x";
 import {Announcement} from "../component/Announcement";
 
 
-export function Home() {
+export function Home(props) {
 
     useEffect(() => {
         document.title = `主页 - ${TAB_TITLE}`;
@@ -22,7 +21,8 @@ export function Home() {
     return (
         <div className={'home'}>
 
-            <Announcement content={'本博客会在每周末更新.'}/>
+            <Announcement content={'本博客会在每周末更新.'}
+                          dark={props.dark}/>
 
             {(HOME_TOP_ARTICLES) && (
                 <div className={'full-width flex center space-between'}>

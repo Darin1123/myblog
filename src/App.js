@@ -187,7 +187,7 @@ function App() {
                             <main>
                                 <Switch>
                                     <Route path={'/'} exact={true}>
-                                        <Home/>
+                                        <Home dark={dark}/>
                                     </Route>
                                     <Route path={'/articles/:page'} exact={true}>
                                         <Articles dark={dark}/>

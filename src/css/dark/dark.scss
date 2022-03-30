@@ -98,6 +98,10 @@
     @include moments;
   }
 
+  .moments-mobile {
+    @include moments-mobile;
+  }
+
   .single-category {
     @include single-category;
   }

@@ -1,7 +1,4 @@
 .announcement {
-  border: 1px solid rgb(34, 117, 33);
-  background-color: rgb(198, 239, 205);
-  color: rgb(34, 117, 33);
   padding: 10px;
   border-radius: 5px;
   display: flex;
@@ -10,11 +7,6 @@
   .content {
     width: calc(100% - 30px);
     line-height: 20px;
-
-    &::before {
-      content: '💡';
-      margin-right: 10px;
-    }
   }
 
   .svg-container {
@@ -27,15 +19,52 @@
     cursor: pointer;
     transition: 0.14s;
     margin-left: 10px;
-    background-color: rgb(198, 239, 205);
 
     svg {
       height: 16px;
     }
+  }
+}
 
+.default {
+  border: 1px solid rgb(34, 117, 33);
+  background-color: rgb(198, 239, 205);
+  color: rgb(34, 117, 33);
+
+  .content {
+    &::before {
+      content: '💡';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    background-color: rgb(198, 239, 205);
+
+    &:hover {
+      background-color: rgba(34, 117, 33, 0.6) !important;
+      color: rgb(198, 239, 205);
+    }
+  }
+}
+
+.default-dark {
+  border: 1px solid rgb(34, 117, 33);
+  background-color: rgb(34, 58, 33);
+  color: rgb(198, 239, 205);
+
+  .content {
+    &::before {
+      content: '💡';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
     &:hover {
       background-color: rgb(34, 117, 33) !important;
       color: rgb(198, 239, 205);
     }
   }
 }
+

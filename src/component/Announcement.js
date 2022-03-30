@@ -20,9 +20,16 @@ export function Announcement(props) {
         onSet: () => setShow(!show)
     });
 
+    let type = '';
+    if (props.type === undefined) {
+        type = 'default'
+    } else {
+        type = props.type;
+    }
+
     return transitions(
         (styles, item) => item && (
-            <animated.div className={`announcement`} style={styles}>
+            <animated.div className={`announcement ${type}` + (props.dark ? '-dark' : '')} style={styles}>
                 <div className={`content`}>
                     {props.content}
                 </div>
