@@ -1,4 +1,11 @@
-.main {
+.admin-articles {
   width: 100%;
   max-width: 800px;
+
+  .admin-article-item {
+    .title {
+      font-weight: bold;
+      color: #fff;
+    }
+  }
 }

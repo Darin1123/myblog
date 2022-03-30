@@ -25,7 +25,7 @@ export function AdminArticles() {
     }, [page]);
 
     return (
-        <div className={'main'}>
+        <div className={'admin-articles'}>
             {selectedArticles.map((item, key) =>
                 <AdminArticleItem key={key} item={item}/>)}
 

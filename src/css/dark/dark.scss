@@ -6,10 +6,16 @@
 @import "../export";
 @import "admin/moments";
 @import "admin/add-moment";
+@import "admin/images";
+@import "admin/articles";
 
 @mixin dark {
   a {
     color: $DARK-TEXT-COLOR;
+  }
+
+  input {
+    background-color: #222;
   }
 
   article {
@@ -106,5 +112,13 @@
 
   .add-moment {
     @include add-moment;
+  }
+
+  .images {
+    @include images;
+  }
+
+  .admin-articles {
+    @include admin-articles;
   }
 }

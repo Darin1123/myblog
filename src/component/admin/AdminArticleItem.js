@@ -7,7 +7,7 @@ export function AdminArticleItem(props) {
         <div className={'admin-article-item'}>
             <div className={'flex full-width space-between'}>
                 <div className={'flex center'}>
-                    <Link className={'m-r-20 text-14'} to={`/admin/edit/${item.id}`}>
+                    <Link className={'m-r-20 text-14 title'} to={`/admin/edit/${item.id}`}>
                         {item.title}
                     </Link>
                 </div>
