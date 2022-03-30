@@ -1,0 +1,79 @@
+@mixin dashboard {
+  .calendar-container {
+    .calendar-main {
+      .calendar-days {
+        .calendar-right {
+          .calendar-item {
+            border: 1px solid #000;
+          }
+
+          .level-0 {
+            border: 1px solid #333;
+            background-color: #444;
+          }
+
+          .level-1 {
+            border: 1px solid rgb(181, 210, 255);
+            background-color: rgb(181, 210, 255);
+          }
+
+          .level-2 {
+            border: 1px solid #5b9afc;
+            background-color: #5b9afc;
+          }
+
+          .level-3 {
+            border: 1px solid #2665c7;
+            background-color: #2665c7;
+          }
+        }
+      }
+    }
+
+    .calendar-legend {
+      color: #fff;
+      .legend-container {
+        .level-0 {
+          border: 1px solid #333;
+          background-color: #444;
+        }
+      }
+    }
+  }
+
+  .quick-links {
+
+    .quick-link {
+      color: #666;
+      border: 1px solid #666;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+      &:hover {
+        border: 1px solid #888;
+        color: #fff;
+
+        .quick-link-container {
+          svg {
+            color: #fff;
+          }
+          color: #fff;
+        }
+      }
+
+      .quick-link-container {
+        display: flex;
+        align-items: center;
+        transition: 0.14s;
+
+        svg {
+          margin-right: 5px;
+          color: #888;
+          transition: 0.14s;
+        }
+      }
+    }
+  }
+}

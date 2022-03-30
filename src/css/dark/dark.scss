@@ -2,6 +2,7 @@
 @import 'archived';
 @import "single-category";
 @import 'moments';
+@import 'admin/dashboard';
 @import "../export";
 
 @mixin dark {
@@ -91,5 +92,9 @@
 
   .single-category {
     @include single-category;
+  }
+
+  .dashboard {
+    @include dashboard;
   }
 }
