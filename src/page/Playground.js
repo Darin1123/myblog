@@ -1,6 +1,6 @@
 import 'katex/dist/katex.min.css';
 import beautify from "json-beautify";
-import {ARTICLES} from "../data/core/articles";
+import {ARTICLES} from "../data/articles";
 
 export function Playground() {
     return (

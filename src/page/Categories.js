@@ -1,8 +1,8 @@
 import './Categories.scss';
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
-import {TAB_TITLE} from "../config/config";
-import {CATEGORIES} from "../data/core/categories";
+import {TAB_TITLE} from "../config";
+import {CATEGORIES} from "../data/categories";
 
 export function Categories() {
     useEffect(() => {

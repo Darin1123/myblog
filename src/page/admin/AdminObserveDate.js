@@ -1,8 +1,8 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import {SIZE, TAB_TITLE} from "../../config/config";
+import {SIZE, TAB_TITLE} from "../../config";
 import './AdminObserveDate.scss';
-import {ARTICLES} from "../../data/core/articles";
+import {ARTICLES} from "../../data/articles";
 import {compareDates, getArticleDate, string2date} from "../../util/util";
 import {AdminArticleItem} from "../../component/admin/AdminArticleItem";
 import {Pagination} from "../../component/Pagination";

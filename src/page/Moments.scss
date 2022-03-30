@@ -26,7 +26,48 @@
       }
     }
 
+    .link-to-feeling-lucky {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 20px;
+      text-decoration: none;
+      font-weight: bold;
+
+      img {
+        height: 100px;
+        margin-bottom: 5px;
+        transition: 0.14s;
+      }
+
+      .text {
+        transition: 0.14s;
+        font-weight: bold;
+      }
+
+      &:hover {
+        img {
+          height: 125px;
+        }
+
+        .text {
+          background: -webkit-linear-gradient(left, red , blue);
+          background: -o-linear-gradient(right, red, blue);
+          background: -moz-linear-gradient(right, red, blue);
+          background: linear-gradient(to right, red , blue);
+          font-size: 20px;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
     .links {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
       a {
         color: #888;
         text-decoration: none;

@@ -2,7 +2,7 @@ import './EncryptPassword.scss';
 import {useEffect, useState} from "react";
 import IconEye from "../../resources/icons/eye";
 import IconEyeOff from "../../resources/icons/eye-off";
-import {TAB_TITLE} from "../../config/config";
+import {TAB_TITLE} from "../../config";
 import {sha256} from "js-sha256";
 import {sleep} from "../../util/util";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";

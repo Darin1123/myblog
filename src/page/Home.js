@@ -1,12 +1,12 @@
 import './Home.scss';
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
-import {EMAIL, HOME_RECENT_YEAR, HOME_TOP_ARTICLES, NAME, RECENT_ARTICLE_SIZE, TAB_TITLE} from "../config/config";
+import {EMAIL, HOME_RECENT_YEAR, HOME_TOP_ARTICLES, NAME, RECENT_ARTICLE_SIZE, TAB_TITLE} from "../config";
 import {ArticleItem} from "../component/ArticleItem";
 import {HOME_CATEGORIES, TOP_ARTICLES} from "../data/page/home";
-import {ARTICLES} from "../data/core/articles";
+import {ARTICLES} from "../data/articles";
 import {RecentYear} from "../component/RecentYear";
-import {MOMENTS} from "../data/core/moments";
+import {MOMENTS} from "../data/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
 import {Announcement} from "../component/Announcement";
 

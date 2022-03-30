@@ -1,10 +1,10 @@
 import {useParams} from "react-router";
 import './SearchResult.scss';
 import {useEffect, useState} from "react";
-import {SIZE, TAB_TITLE} from "../config/config";
+import {SIZE, TAB_TITLE} from "../config";
 import {Pagination} from "../component/Pagination";
 import {ArticleItem} from "../component/ArticleItem";
-import {ARTICLES} from "../data/core/articles";
+import {ARTICLES} from "../data/articles";
 
 export function SearchResult(props) {
 

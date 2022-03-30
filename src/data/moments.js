@@ -4,6 +4,15 @@ export const MOMENTS_TAGS = [
 
 export const MOMENTS = [
     {
+        "id": "86802ef4-4f3c-4ac7-9953-fcd992b90b69",
+        "title": "居然想去种稻子了",
+        "tags": [],
+        "date": "2022-3-30",
+        "images": [],
+        "content": "看了一个种稻子的视频, 好治愈!\n\n视频链接: https://youtu.be/Wqu2WeZlv2E\n\n(想去种田了怎么办?)"
+    },
+
+    {
         "id": "b6618c1b-cf34-4dbd-81e7-1fe5466023a3",
         "title": "为什么要读书",
         "tags": [ "感悟" ],

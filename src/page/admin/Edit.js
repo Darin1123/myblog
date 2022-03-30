@@ -1,13 +1,13 @@
 import './Edit.scss';
 import {useEffect, useState} from "react";
-import {TAB_TITLE} from "../../config/config";
+import {TAB_TITLE} from "../../config";
 import {useParams} from "react-router";
 import beautify from "json-beautify";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 import {sleep} from "../../util/util";
 import {ArticleMain} from "../../component/ArticleMain";
-import {ARTICLES} from "../../data/core/articles";
-import {CATEGORIES} from "../../data/core/categories";
+import {ARTICLES} from "../../data/articles";
+import {CATEGORIES} from "../../data/categories";
 import IconPhoto from "../../resources/icons/photo";
 import {Attachment} from "../../component/admin/Attachment";
 import React from "react";

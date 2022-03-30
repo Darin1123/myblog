@@ -4,7 +4,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
 import '../css/markdown.scss';
-import {CUSTOM_MARKDOWN} from "../config/config";
+import {CUSTOM_MARKDOWN} from "../config";
 
 export function ArticleMain(props) {
     return (

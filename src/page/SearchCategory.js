@@ -1,9 +1,9 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import {TAB_TITLE} from "../config/config";
+import {TAB_TITLE} from "../config";
 import './SearchCategory.scss'
 import {Link} from "react-router-dom";
-import {CATEGORIES} from "../data/core/categories";
+import {CATEGORIES} from "../data/categories";
 
 
 export function SearchCategory() {

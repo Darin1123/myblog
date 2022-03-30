@@ -1,6 +1,6 @@
 import './About.scss';
 import {useEffect} from "react";
-import {TAB_TITLE} from "../config/config";
+import {TAB_TITLE} from "../config";
 import {ArticleMain} from "../component/ArticleMain";
 import {ABOUT} from "../data/page/about";
 

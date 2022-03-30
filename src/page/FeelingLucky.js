@@ -1,8 +1,8 @@
 import './FeelingLucky.scss';
 import {useEffect, useState} from "react";
 import React from "react";
-import {NAME} from "../config/config";
-import {ARTICLES} from "../data/core/articles";
+import {NAME} from "../config";
+import {ARTICLES} from "../data/articles";
 import {NavHashLink} from "react-router-hash-link";
 import {extractOutline, randomlyPick, splitByLaTeX} from "../util/util";
 import {InlineMath} from "react-katex";

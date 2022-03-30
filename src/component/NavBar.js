@@ -1,12 +1,12 @@
 import {Link, NavLink} from "react-router-dom";
-import {TAB_TITLE} from "../config/config";
+import {TAB_TITLE} from "../config";
 import $ from "jquery";
 import {SearchBar} from "./SearchBar";
 import {useEffect, useState} from "react";
 import './NavBar.scss';
-import {ARTICLES} from "../data/core/articles";
-import {CATEGORIES} from "../data/core/categories";
-import {MOMENTS} from "../data/core/moments";
+import {ARTICLES} from "../data/articles";
+import {CATEGORIES} from "../data/categories";
+import {MOMENTS} from "../data/moments";
 import IconSearch from "../resources/icons/search";
 import IconX from "../resources/icons/x";
 import IconMenu2 from "../resources/icons/menu-2";

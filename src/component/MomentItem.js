@@ -63,7 +63,9 @@ export function MomentItem(props) {
             </div>
             <div className={`moment-tags`}>
                 {item.tags.map((item, key) => (
-                    <i key={key} onClick={() => props.filter(item)}>#{item}</i>
+                    <i key={key}
+                       // onClick={() => props.filter(item)}
+                    >#{item}</i>
                 ))}
             </div>
             {(item.images.length > 0) && (

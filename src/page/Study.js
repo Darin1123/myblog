@@ -1,5 +1,5 @@
 import './Study.scss';
-import {STUDY} from "../data/core/study";
+import {STUDY} from "../data/study";
 import {Link} from "react-router-dom";
 
 export function Study() {

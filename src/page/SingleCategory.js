@@ -2,10 +2,10 @@ import {useParams} from "react-router";
 import './SingleCategory.scss';
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import {NEW_ARTICLE_RANGE, SIZE, TAB_TITLE} from "../config/config";
+import {NEW_ARTICLE_RANGE, SIZE, TAB_TITLE} from "../config";
 import {Pagination} from "../component/Pagination";
-import {ARTICLES} from "../data/core/articles";
-import {CATEGORY_NETWORK} from "../data/core/categories";
+import {ARTICLES} from "../data/articles";
+import {CATEGORY_NETWORK} from "../data/categories";
 import {getArticleDate} from "../util/util";
 
 export function SingleCategory() {

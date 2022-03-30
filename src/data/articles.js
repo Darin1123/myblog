@@ -1,16 +1,16 @@
 export const ARTICLES = [
     {
         "id": "d78ddf4f-999e-480c-a8e5-822624a55dbb",
-        "title": "GNN II -  C & S ",
+        "title": "GNN - Message Passing II",
         "category": "机器学习",
         "date": { "year": 2022, "month": 3, "day": 30 },
         "peek": "本文主要介绍了 C & S 方法. C & S 的全称为 Correct and Smooth",
-        "content": "> 2022 年 3 月 30 日\n\n## 简介\n\n本文主要介绍了 C & S 方法. C & S 的全称为 Correct and Smooth. (以下简称 cs/CS) 是用于预测图中未标记结点标记的一种方法. 之前的文章中介绍了另外的两个方法: Relational Classification 和 Iterative Classification.\n\ncs 主要分为三步:\n\n1. 训练 base predictor\n2. 通过 base predictor 计算每个结点的软标签\n3. 通过图的结构, 对预测结果进行后续处理 (post-process), 最终得到对所有结点的合理预测\n\n## 第一步\n\n训练 base predictor. 这个模型可以是十分简单的模型.\n\n![gnn-ii-1](img/articles/gnn-ii-1.PNG)\n\n## 第二步\n\n通过 base predictor 计算每个结点的软标签\n\n![gnn-ii-2](img/articles/gnn-ii-2.PNG)\n\n## 第三步\n\n通过图的结构, 对预测结果进行后续处理 (post-process), 最终得到对所有结点的合理预测.\n\n其中后续处理包含两部分, 根据 cs 的这个名字, 分别为 Correct 和 Smooth. 意为纠正和平整.\n\n### Correct\n\n纠正步骤的主要思想就是: 预测错误会顺着图中的边散开. 在下面的图中, 可以观察到绿色圈中的预测结果较为合理, 而红色圈中的预测结果则不能令人满意.\n\n![gnn-ii-3](img/articles/gnn-ii-3.PNG)\n\n要纠正这种错误, 对所有已有标签的结点计算训练错误 training error. (真实情况减去软标签.)\n\n对于没有标签的结点, 直接设为 $0$.\n\n![gnn-ii-4](img/articles/gnn-ii-4.PNG)\n\n接下来, 顺着边将错误进行扩散\n$$\n\\mathbf{E}^{(t+1)} \\leftarrow (1 - \\alpha) \\cdot\\mathbf{E}^{(t)} + \\alpha\\cdot \\widetilde{\\mathbf{A}}\\cdot\\mathbf{E}^{(t)}\n$$\n其中 \n\n- $\\alpha$ 是一个超参数.\n\n- $\\widetilde{\\mathbf{A}}$ 为扩散矩阵 (diffusion matrix), $\\widetilde{\\mathbf{A}} = \\mathbf{D}^{-1/2}\\mathbf{A} \\mathbf{D}^{-1/2}$.\n\n- $\\mathbf{D} = \\text{Diag}(d_1, \\dots, d_n)$ 是一个度矩阵 (degree matrix)."
+        "content": "> 2022 年 3 月 30 日\n\n## 简介\n\n本文主要介绍了 C & S 方法. C & S 的全称为 Correct and Smooth. (以下简称 cs/CS) 是用于预测图中未标记结点标记的一种方法. 之前的文章中介绍了另外的两个方法: Relational Classification 和 Iterative Classification.\n\ncs 主要分为三步:\n\n1. 训练 base predictor\n2. 通过 base predictor 计算每个结点的软标签\n3. 通过图的结构, 对预测结果进行后续处理 (post-process), 最终得到对所有结点的合理预测\n\n## 第一步\n\n训练 base predictor. 这个模型可以是十分简单的模型.\n\n![gnn-ii-1](img/articles/gnn-ii-1.PNG)\n\n## 第二步\n\n通过 base predictor 计算每个结点的软标签\n\n![gnn-ii-2](img/articles/gnn-ii-2.PNG)\n\n## 第三步\n\n通过图的结构, 对预测结果进行后续处理 (post-process), 最终得到对所有结点的合理预测.\n\n其中后续处理包含两部分, 根据 cs 的这个名字, 分别为 Correct 和 Smooth. 意为纠正和平整.\n\n### Correct\n\n纠正步骤的主要思想就是: 预测错误会顺着图中的边散开. 在下面的图中, 可以观察到绿色圈中的预测结果较为合理, 而红色圈中的预测结果则不能令人满意.\n\n![gnn-ii-3](img/articles/gnn-ii-3.PNG)\n\n要纠正这种错误, 对所有已有标签的结点计算训练错误 training error. (真实情况减去软标签.)\n\n对于没有标签的结点, 直接设为 $0$.\n\n![gnn-ii-4](img/articles/gnn-ii-4.PNG)\n\n接下来, 沿着边将错误进行扩散\n$$\n\\mathbf{E}^{(t+1)} \\leftarrow (1 - \\alpha) \\cdot\\mathbf{E}^{(t)} + \\alpha\\cdot \\widetilde{\\mathbf{A}}\\cdot\\mathbf{E}^{(t)}\n$$\n其中 \n\n- $\\alpha$ 是一个超参数.\n- $\\widetilde{\\mathbf{A}}$ 为扩散矩阵 (diffusion matrix), $\\widetilde{\\mathbf{A}} = \\mathbf{D}^{-1/2}\\mathbf{A} \\mathbf{D}^{-1/2}$.\n- $\\mathbf{D} = \\text{Diag}(d_1, \\dots, d_n)$ 是一个度矩阵 (degree matrix).\n\n最后, 将扩散的 training error 加到原来(第二步)的软标签中.\n\n![gnn-ii-5](img/articles/gnn-ii-5.jpg)\n\n### Smooth\n\n在做完纠正之后, 就要对结果再进行平滑化. 这么做的原因是, 相邻的结点通常都有相同的标签.\n\n如下图所示, 图中的预测不是很平滑.\n\n![gnn-ii-6](img/articles/gnn-ii-6.jpg)\n\n首先, 对于已有标签的结点, 使用 ground truth 而不是软标签\n\n![gnn-ii-7](img/articles/gnn-ii-7.jpg)\n\n然后计算扩散标签 $\\mathbf{Z}$.\n$$\n\\mathbf{Z}^{(t+1)} \\leftarrow (1 - \\alpha)\\mathbf{Z}^{(t)} + \\alpha \\widetilde{\\mathbf{A}}\\mathbf{Z}^{(t)}\n$$\n经过几轮计算以后就能得到较为平滑的预测.\n\n> 注意\n>\n> 平滑后的软标签的和可能会大于 1. 如 (0.9, 0.15). \n>\n> 判断标签时, 选择数值较大的那一个.\n\n## 参考资料\n\nSDSC 8009 课件 GNN I"
     },
 
     {
         "id": "1630f78e-50c0-437e-8f8a-a62c66631527",
-        "title": "GNN I",
+        "title": "GNN - Message Passing I",
         "category": "机器学习",
         "date": { "year": 2022, "month": 3, "day": 30 },
         "peek": "本文主要介绍了 GNN 中的 Relational Classification 和 Iterative Classification",

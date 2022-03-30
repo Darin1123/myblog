@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {TAB_TITLE} from "../../config/config";
+import {TAB_TITLE} from "../../config";
 import './Images.scss';
-import {IMAGES} from "../../data/core/images";
+import {IMAGES} from "../../data/images";
 import {LightgalleryItem, LightgalleryProvider} from "react-lightgallery";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';

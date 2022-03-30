@@ -3,8 +3,8 @@ import {useState} from "react";
 import $ from "jquery";
 import React, {useRef, useEffect} from "react";
 import './AdminSearchBar.scss';
-import {SEARCH_ARTICLE_TITLE_LENGTH} from "../../config/config";
-import {ARTICLES} from "../../data/core/articles";
+import {SEARCH_ARTICLE_TITLE_LENGTH} from "../../config";
+import {ARTICLES} from "../../data/articles";
 
 
 export function AdminSearchBar(props) {

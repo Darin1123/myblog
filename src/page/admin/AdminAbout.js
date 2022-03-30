@@ -1,6 +1,6 @@
 import './AdminAbout.scss';
 import {useEffect, useState} from "react";
-import {TAB_TITLE} from "../../config/config";
+import {TAB_TITLE} from "../../config";
 import beautify from "json-beautify";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 import {sleep} from "../../util/util";

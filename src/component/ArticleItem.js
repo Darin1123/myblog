@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import './ArticleItem.scss';
 import {convertDate, elapsedTime, getArticleDate} from "../util/util";
-import {NEW_ARTICLE_RANGE} from "../config/config";
+import {NEW_ARTICLE_RANGE} from "../config";
 
 export function ArticleItem(props) {
     let item = props.item

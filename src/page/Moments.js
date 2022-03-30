@@ -1,11 +1,12 @@
 import './Moments.scss';
 import {useEffect, useState} from "react";
-import {NOTE_SIZE, TAB_TITLE} from "../config/config";
-import {MOMENTS, MOMENTS_TAGS} from "../data/core/moments";
+import {NOTE_SIZE, TAB_TITLE} from "../config";
+import {MOMENTS, MOMENTS_TAGS} from "../data/moments";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {MomentItem} from "../component/MomentItem";
 import {convertDay} from "../util/util";
 import {Link} from "react-router-dom";
+import feelingLucky from '../resources/special/feeling-lucky.svg';
 
 export function Moments() {
 
@@ -15,7 +16,7 @@ export function Moments() {
     const [screenWidth, setScreenWidth] = useState(windowWidth)
     const [selectedMoments, setSelectedMoments] = useState([]);
     const [hasMore, setHasMore] = useState(true);
-    const [selectedTag, setSelectedTag] = useState(null);
+    // const [selectedTag, setSelectedTag] = useState(null);
 
     const loader = (
         <div className={`m-t-20`}>
@@ -37,16 +38,16 @@ export function Moments() {
         }
     }
 
-    function filter(tag) {
-        if (selectedTag === tag) {
-            initMoments();
-            setSelectedTag(null);
-        } else {
-            let filtered = MOMENTS.filter(item => item.tags.includes(tag));
-            setSelectedMoments(filtered);
-            setSelectedTag(tag);
-        }
-    }
+    // function filter(tag) {
+    //     if (selectedTag === tag) {
+    //         initMoments();
+    //         setSelectedTag(null);
+    //     } else {
+    //         let filtered = MOMENTS.filter(item => item.tags.includes(tag));
+    //         setSelectedMoments(filtered);
+    //         setSelectedTag(tag);
+    //     }
+    // }
 
     function initMoments() {
         if (MOMENTS.length > 0) {
@@ -79,7 +80,9 @@ export function Moments() {
                     loader={loader}
                     dataLength={selectedMoments.length}>
                     {selectedMoments.map((item, key) => (
-                        <MomentItem item={item} key={key} filter={filter}/>
+                        <MomentItem item={item} key={key}
+                                    // filter={filter}
+                        />
                     ))}
                 </InfiniteScroll>
             </div>
@@ -96,25 +99,33 @@ export function Moments() {
                     <div>
 
                     </div>
-                    <div className={'tags m-b-10'}>
-                        {MOMENTS_TAGS.map((item, key) => (
-                            <span key={key} className={`m-r-5 ` + (selectedTag === item ? "bold" : '')} onClick={() => filter(item)}>
-                                #{item}
-                            </span>
-                        ))}
-                        <span onClick={() => {
-                            initMoments();
-                            setSelectedTag(null);
-                        }}>重置</span>
-                    </div>
+                    {/*<div className={'tags m-b-10'}>*/}
+                    {/*    {MOMENTS_TAGS.map((item, key) => (*/}
+                    {/*        <span key={key} className={`m-r-5 ` + (selectedTag === item ? "bold" : '')} onClick={() => filter(item)}>*/}
+                    {/*            #{item}*/}
+                    {/*        </span>*/}
+                    {/*    ))}*/}
+                    {/*    <span onClick={() => {*/}
+                    {/*        initMoments();*/}
+                    {/*        setSelectedTag(null);*/}
+                    {/*    }}>重置</span>*/}
+                    {/*</div>*/}
+
+                    <Link to={'/feeling-lucky'} className={`link-to-feeling-lucky`}>
+                        <img alt={'feeling-lucky'} src={feelingLucky}/>
+                        <div className={`text`}>I'm feeling lucky today!</div>
+
+                    </Link>
 
                     <div className={`links`}>
-                        <Link to={'/'}>主页</Link>&nbsp;·&nbsp;
-                        <Link to={'/articles/1'}>文章</Link>&nbsp;·&nbsp;
-                        <Link to={'/categories'}>分类</Link>&nbsp;·&nbsp;
-                        <Link to={'/about'}>关于</Link>&nbsp;·&nbsp;
-                        <a href={'https://github.com/Darin1123/RainbowCat'}
-                           target={'_blank'} rel="noreferrer">RainbowCat</a>
+                        <div className={'wrapper'}>
+                            <Link to={'/'}>主页</Link>&nbsp;·&nbsp;
+                            <Link to={'/articles/1'}>文章</Link>&nbsp;·&nbsp;
+                            <Link to={'/categories'}>分类</Link>&nbsp;·&nbsp;
+                            <Link to={'/about'}>关于</Link>&nbsp;·&nbsp;
+                            <a href={'https://github.com/Darin1123/RainbowCat'}
+                               target={'_blank'} rel="noreferrer">🌈 RainbowCat 🐱</a>
+                        </div>
                     </div>
                 </div>
             )}

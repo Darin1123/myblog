@@ -14,7 +14,7 @@ import {Home} from "./page/Home";
 import NavBar from "./component/NavBar";
 import {SearchCategory} from "./page/SearchCategory";
 import {Images} from "./page/admin/Images";
-import {HOST_LINK, HOST_NAME, MY_PASSWORD, NAME_IN_ENGLISH, THEME} from "./config/config";
+import {HOST_LINK, HOST_NAME, MY_PASSWORD, NAME_IN_ENGLISH, THEME} from "./config";
 import {EncryptPassword} from "./page/admin/EncryptPassword";
 import React, {useEffect, useState} from "react";
 import AdminNavBar from "./component/admin/AdminNavBar";

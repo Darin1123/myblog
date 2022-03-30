@@ -1,7 +1,7 @@
 import './AddMoment.scss';
 import {useHistory} from "react-router";
 import React, {useEffect, useRef, useState} from "react";
-import {IMAGES} from "../../data/core/images";
+import {IMAGES} from "../../data/images";
 import {v4} from "uuid";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import IconX from "../../resources/icons/x";
@@ -17,7 +17,6 @@ export function AddMoment() {
     const [content, setContent] = useState('');
     const [images, setImages] = useState([]);
     const [tags, setTags] = useState([]);
-    const [date, setDate] = useState('');
     const [momentImages, setMomentImages] = useState([]);
     const [showImages, setShowImages] = useState(false);
     const [order, setOrder] = useState(1);
@@ -58,11 +57,12 @@ export function AddMoment() {
     }
 
     function generateResult() {
+        let today = new Date();
         let data = {
             id: v4(),
             title: title,
             tags: tags,
-            date: date,
+            date: `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
             images: images.map(item => item.name),
             content: content
         };

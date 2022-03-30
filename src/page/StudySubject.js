@@ -2,7 +2,7 @@ import "./StudySubject.scss";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {FILE_PATH, STUDY} from "../data/core/study";
+import {FILE_PATH, STUDY} from "../data/study";
 import React from "react";
 
 export function StudySubject() {

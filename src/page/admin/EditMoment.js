@@ -1,12 +1,12 @@
 import './EditMoment.scss';
 import {useHistory, useParams} from "react-router";
 import React, {useEffect, useRef, useState} from "react";
-import {TAB_TITLE} from "../../config/config";
-import {MOMENTS} from "../../data/core/moments";
+import {TAB_TITLE} from "../../config";
+import {MOMENTS} from "../../data/moments";
 import IconX from "../../resources/icons/x";
 import IconCheck from "../../resources/icons/check";
 import IconPlus from "../../resources/icons/plus";
-import {IMAGES} from "../../data/core/images";
+import {IMAGES} from "../../data/images";
 import beautify from "json-beautify";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 import {sleep} from "../../util/util";

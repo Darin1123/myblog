@@ -1,9 +1,9 @@
 import {useParams} from "react-router";
 import './AdminSearchResult.scss';
 import {useEffect, useState} from "react";
-import {SIZE, TAB_TITLE} from "../../config/config";
+import {SIZE, TAB_TITLE} from "../../config";
 import {Pagination} from "../../component/Pagination";
-import {ARTICLES} from "../../data/core/articles";
+import {ARTICLES} from "../../data/articles";
 import {AdminArticleItem} from "../../component/admin/AdminArticleItem";
 
 export function AdminSearchResult(props) {

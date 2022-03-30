@@ -1,7 +1,7 @@
 import './PageNotFound.scss';
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
-import {TAB_TITLE} from "../config/config";
+import {TAB_TITLE} from "../config";
 
 export function PageNotFound() {
 

@@ -1,5 +1,5 @@
 import './Attachment.scss';
-import {IMAGES} from "../../data/core/images";
+import {IMAGES} from "../../data/images";
 import {LightgalleryProvider} from "react-lightgallery";
 import {AttachmentItem} from "./AttachmentItem";
 

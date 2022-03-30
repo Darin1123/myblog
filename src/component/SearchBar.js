@@ -3,9 +3,9 @@ import {useState} from "react";
 import $ from "jquery";
 import React, {useRef, useEffect} from "react";
 import './SearchBar.scss';
-import {SEARCH_ARTICLE_TITLE_LENGTH} from "../config/config";
-import {CATEGORIES} from "../data/core/categories";
-import {ARTICLES} from "../data/core/articles";
+import {SEARCH_ARTICLE_TITLE_LENGTH} from "../config";
+import {CATEGORIES} from "../data/categories";
+import {ARTICLES} from "../data/articles";
 
 
 export function SearchBar(props) {

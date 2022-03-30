@@ -1,8 +1,8 @@
 import './Archived.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useEffect, useState} from "react";
-import {TAB_TITLE} from "../config/config";
-import {ARTICLES} from "../data/core/articles";
+import {TAB_TITLE} from "../config";
+import {ARTICLES} from "../data/articles";
 import {Link} from "react-router-dom";
 import {compareDateObjects} from "../util/util";
 

@@ -1,7 +1,7 @@
 import './Dashboard.scss';
-import {ARTICLES} from "../../data/core/articles";
-import {CATEGORIES} from "../../data/core/categories";
-import {LAUNCH_DATE, TAB_TITLE} from "../../config/config";
+import {ARTICLES} from "../../data/articles";
+import {CATEGORIES} from "../../data/categories";
+import {LAUNCH_DATE, TAB_TITLE} from "../../config";
 import {useEffect, useState} from "react";
 import {RecentYear} from "../../component/RecentYear";
 import {Link} from "react-router-dom";
