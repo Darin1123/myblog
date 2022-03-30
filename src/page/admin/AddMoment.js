@@ -72,7 +72,7 @@ export function AddMoment() {
     let today = new Date();
 
     return (
-        <div className={`edit-moment`}>
+        <div className={`add-moment`}>
             {(showImages) && (
                 <div className={`moment-images`}>
                     <div className={`moment-images-top`}>
@@ -151,7 +151,7 @@ export function AddMoment() {
                      onClick={() => history.goBack()}>
                     ← 返回
                 </div>
-                <div className={`edit-moment-top m-t-20`}>
+                <div className={`add-moment-top m-t-20`}>
                     <input className={'title'}
                            value={title}
                            placeholder={`添加标题`}
@@ -183,7 +183,7 @@ export function AddMoment() {
                 )}
 
                 {(images.length > 0) && (
-                    <div className={`edit-moment-images`}>
+                    <div className={`add-moment-images`}>
                         {(images.length === 1) && (
                             <div className={`single-image`}>
                                 <div className={`single-image-container`}>

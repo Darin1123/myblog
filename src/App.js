@@ -75,7 +75,7 @@ function App() {
 
     function decideDefaultDark() {
         let now = new Date().getHours();
-        return now > 19 || now < 5;
+        return now >= 19 || now <= 5;
     }
 
     useEffect(() => {

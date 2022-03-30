@@ -1,0 +1,13 @@
+@mixin admin-moments {
+  a {
+    border: 1px solid #888;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.14s;
+
+    &:hover {
+      transform: translateY(-10px);
+      border: 1px solid #fff;
+    }
+  }
+}

@@ -4,6 +4,8 @@
 @import 'moments';
 @import 'admin/dashboard';
 @import "../export";
+@import "admin/moments";
+@import "admin/add-moment";
 
 @mixin dark {
   a {
@@ -96,5 +98,13 @@
 
   .dashboard {
     @include dashboard;
+  }
+
+  .admin-moments {
+    @include admin-moments;
+  }
+
+  .add-moment {
+    @include add-moment;
   }
 }

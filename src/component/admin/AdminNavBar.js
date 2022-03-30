@@ -86,7 +86,7 @@ export default function AdminNavBar(props) {
                             </NavLink>
                             <NavLink activeClassName={`active-nav-item`}  className={'nav-main-item'}
                                      onClick={() => setToggleMenu(false)}
-                                     to={'/admin/moments/1'}>
+                                     to={'/admin/moments'}>
                                 时刻
                             </NavLink>
                             <NavLink activeClassName={`active-nav-item`}  className={'nav-main-item'}
