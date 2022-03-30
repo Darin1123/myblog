@@ -1,0 +1,41 @@
+.announcement {
+  border: 1px solid rgb(34, 117, 33);
+  background-color: rgb(198, 239, 205);
+  color: rgb(34, 117, 33);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+
+  .content {
+    width: calc(100% - 30px);
+    line-height: 20px;
+
+    &::before {
+      content: '💡';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.14s;
+    margin-left: 10px;
+    background-color: rgb(198, 239, 205);
+
+    svg {
+      height: 16px;
+    }
+
+    &:hover {
+      background-color: rgb(34, 117, 33) !important;
+      color: rgb(198, 239, 205);
+    }
+  }
+}

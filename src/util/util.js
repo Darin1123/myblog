@@ -225,3 +225,23 @@ export function compareDateObjects(d1, d2) {
 export function randomlyPick(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
+
+export function elapsedTime(date) {
+    let today = new Date();
+    let thatDay = new Date(date.year, date.month - 1, date.day);
+    let diff = today.getTime() - thatDay.getTime();
+    let days = Math.ceil(diff / (1000 * 3600 * 24));
+    if (days < 7) {
+        return `${days} 天前`;
+    }
+
+    if (days < 30) {
+        return `${Math.floor(days / 7)} 周前`;
+    }
+
+    if (days < 365) {
+        return `${Math.floor(days / 30.5)} 个月前`;
+    }
+
+    return `${date.year} 年 ${date.month} 月 ${date.day} 日`
+}

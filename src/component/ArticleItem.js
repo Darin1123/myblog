@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import './ArticleItem.scss';
-import {getArticleDate} from "../util/util";
+import {convertDate, elapsedTime, getArticleDate} from "../util/util";
 import {NEW_ARTICLE_RANGE} from "../config/config";
 
 export function ArticleItem(props) {
@@ -28,7 +28,7 @@ export function ArticleItem(props) {
                         </Link>}
                 </div>
                 <div className={'time'}>
-                    {`${item.date.year} 年 ${item.date.month} 月 ${item.date.day} 日 `}
+                    {props.elapsedTime !== undefined && props.elapsedTime ? elapsedTime(item.date) : `${item.date.year} 年 ${item.date.month} 月 ${item.date.day} 日`}
                 </div>
             </div>
             <div className={'peek'}>

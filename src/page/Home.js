@@ -8,6 +8,8 @@ import {ARTICLES} from "../data/core/articles";
 import {RecentYear} from "../component/RecentYear";
 import {MOMENTS} from "../data/core/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
+import IconX from "../resources/icons/x";
+import {Announcement} from "../component/Announcement";
 
 
 export function Home() {
@@ -19,6 +21,9 @@ export function Home() {
 
     return (
         <div className={'home'}>
+
+            <Announcement content={'本博客会在每周末更新.'}/>
+
             {(HOME_TOP_ARTICLES) && (
                 <div className={'full-width flex center space-between'}>
                     <h2>置顶文章</h2>
@@ -50,7 +55,7 @@ export function Home() {
                     <div>暂时没有文章...</div>
                 )}
                 {ARTICLES.slice(0, RECENT_ARTICLE_SIZE).map((item, key) =>
-                    <ArticleItem item={item} key={key}/>)}
+                    <ArticleItem elapsedTime={true} item={item} key={key}/>)}
             </div>
 
             {(HOME_RECENT_YEAR) && (
