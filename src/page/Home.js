@@ -56,7 +56,7 @@ export function Home(props) {
                     <div>暂时没有文章...</div>
                 )}
                 {ARTICLES.slice(0, RECENT_ARTICLE_SIZE).map((item, key) =>
-                    <ArticleItem elapsedTime={true} item={item} key={key}/>)}
+                    <ArticleItem dark={props.dark} elapsedTime={true} item={item} key={key}/>)}
             </div>
 
             {(HOME_RECENT_YEAR) && (

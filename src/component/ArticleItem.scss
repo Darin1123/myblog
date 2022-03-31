@@ -1,6 +1,13 @@
 .article-item {
-  padding: 10px 0;
-  margin-bottom: 20px;
+  //padding: 10px 0;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  transition: 0.14s;
+
+  &:hover {
+    background-color: #eee;
+  }
 
   a {
     text-decoration: none;
@@ -36,5 +43,13 @@
 
   &:nth-last-child(1) {
     margin-bottom: 0;
+  }
+}
+
+.article-item-dark {
+  background-color: #333;
+
+  &:hover {
+    background-color: #2b2b2b;
   }
 }

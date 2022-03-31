@@ -7,7 +7,7 @@ import {ArticleItem} from "../component/ArticleItem";
 import {ARTICLES} from "../data/articles";
 
 
-export function Articles() {
+export function Articles(props) {
 
     const [selectedArticles, setSelectedArticles] = useState([]);
     let {page} = useParams();
@@ -27,14 +27,14 @@ export function Articles() {
     return (
         <div className={'main'}>
             {selectedArticles.map((item, key) =>
-                <ArticleItem key={key} item={item}/>)}
+                <ArticleItem key={key} item={item} dark={props.dark}/>)}
 
             {ARTICLES.length === 0 && (
                 <div>什么也没有...</div>
             )}
 
             {ARTICLES.length > 0 && (
-            <div className={'full-width flex-column center'}>
+            <div className={'full-width flex-column center m-t-20'}>
                 <Pagination page={page}
                             path={'/articles'}
                             totalPageNumber={totalPageNumber}/>
