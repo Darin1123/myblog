@@ -1,5 +1,14 @@
 export const ARTICLES = [
     {
+        "id": "3041a27b-a54e-4641-90a3-f469bb3899d5",
+        "title": "Gaussian Mixture Model",
+        "category": "机器学习",
+        "date": { "year": 2022, "month": 3, "day": 31 },
+        "peek": "GMM 是一个无监督的学习算法. 顾名思义, Mixture, 它是基于模型 \"混合\" 的一种算法",
+        "content": "> 2022 年 3 月 31 日\n\n## 简介\n\nGMM 是一个无监督的学习算法. 顾名思义, Mixture, 它是基于模型 \"混合\" 的一种算法.\n\n假设数据中有 $k$ 个簇族, 每个簇族用一个高斯模型表示, 那么整个数据就是 $k$ 个高斯模型的组合.\n\n## 数学描述\n\n假设有 cluster variable $C\\in \\{1, \\dots, K\\}$, 且有如下假设:\n\n- 如果 $C= k$, 那么 $X$ 的条件分布是**正态**的: $X\\,|\\,C = k \\sim\\phi(X;\\mu_k, \\Sigma_k)$\n- $C$ 满足**多项式分布**, $\\mathbb{P}(C = k) = \\alpha_k,\\quad \\sum_ka_k = 1$\n\n那么有如下模型\n$$\n\\mathbb{P}(C = k \\,|\\,X) = \\dfrac {\\mathbb{P}(X, C = k)}{\\mathbb{P}(X)} = \\dfrac{\\alpha_k\\phi(X;\\mu_k, \\Sigma_k)}{\\textcolor{red}{\\sum_{i=1}^K \\alpha_k\\phi(X; \\mu_i, \\Sigma_i)}}\n$$\n\n> 注意标红的部分就是一系列的高斯模型组合在一起.\n\n见下图$^1$中的例子, 由3个簇族变量构成的混合高斯模型.\n\n![gmm](img/articles/gmm.jpg)\n\n有了基本的模型后就要对其进行训练.\n\n我们的目标是以 $\\theta$ 为参数, 最大化似然函数 $L(\\theta; X) = f(X; \\theta)$.\n\n其中 $f(X; \\theta)$ 是 $X$ 的边缘密度函数, 定义如下:\n$$\nf(X; \\theta) = \\sum_{k=1} ^K \\alpha_k \\phi(X; \\mu_k, \\Sigma_k)\n$$\n这里的位置参数有 $\\theta = (\\mu_1,\\dots,\\mu_K, \\Sigma_1, \\dots, \\Sigma_K, \\alpha_1,\\dots, \\alpha_K)$.\n\n> 这是一个很难处理的情况, 但是可以使用**最大期望算法** (Expectation-Maximization algorithm, 简称 EM 算法) 来解决这个问题.\n\n## 参考资料\n\n1. [浅显易懂的GMM模型及其训练过程](https://blog.csdn.net/sun___shy/article/details/82850751)\n\n2. SDSC 6001 课件"
+    },
+
+    {
         "id": "d78ddf4f-999e-480c-a8e5-822624a55dbb",
         "title": "GNN - Message Passing II",
         "category": "机器学习",

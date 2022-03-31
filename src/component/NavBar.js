@@ -13,6 +13,7 @@ import IconMenu2 from "../resources/icons/menu-2";
 import variables from '../css/export.scss';
 import IconSun from "../resources/icons/sun";
 import IconMoon from "../resources/icons/moon";
+import Tilt from "react-tilt/dist/tilt";
 
 
 export default function NavBar(props) {
@@ -121,37 +122,45 @@ export default function NavBar(props) {
                     </div>}
                 {(screenWidth > THRESHOLD) && (
                     <div style={{display: 'flex', alignItems: 'center'}}>
-                        <div onClick={props.toggleDark} className={`dark-mode`}>
-                            {props.dark ? (
-                                <IconMoon/>
-                            ) : (
-                                <IconSun/>
-                            )}
-                        </div>
+                        <Tilt options={{scale: 1.2, max: 62}}>
+                            <div onClick={props.toggleDark} className={`dark-mode`}>
+                                {props.dark ? (
+                                    <IconMoon/>
+                                ) : (
+                                    <IconSun/>
+                                )}
+                            </div>
+                        </Tilt>
 
+                        <Tilt options={{scale: 1.2, max: 62}}>
+                            <div className={'search'}
+                                 onClick={handleOpenSearchBar}>
+                                <IconSearch/>
+                            </div>
+                        </Tilt>
 
-                        <div className={'search'}
-                             onClick={handleOpenSearchBar}>
-                            <IconSearch/>
-                        </div>
                     </div>
                 )}
             </div>
 
             <div className={'menu-button'}>
-                <div onClick={props.toggleDark} className={`dark-mode`}>
-                    {props.dark ? (
-                        <IconMoon/>
-                    ) : (
-                        <IconSun/>
-                    )}
-                </div>
-                <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
+                <Tilt options={{scale: 1.2, max: 62}}>
+                    <div onClick={props.toggleDark} className={`dark-mode`}>
+                        {props.dark ? (
+                            <IconMoon/>
+                        ) : (
+                            <IconSun/>
+                        )}
+                    </div>
+                </Tilt>
+                <Tilt options={{scale: 1.2, max: 62}}>
+                    <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
+                </Tilt>
             </div>
 
 
             {(screenWidth > THRESHOLD && showSearchBar) &&
-                <SearchBar  dark={props.dark}  setToggleMenu={setToggleMenu} setShowSearchBar={setShowSearchBar} showCancel={showCancel}/>}
+                <SearchBar dark={props.dark} setToggleMenu={setToggleMenu} setShowSearchBar={setShowSearchBar} showCancel={showCancel}/>}
         </nav>
     );
 }

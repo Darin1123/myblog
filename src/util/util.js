@@ -230,7 +230,10 @@ export function elapsedTime(date) {
     let today = new Date();
     let thatDay = new Date(date.year, date.month - 1, date.day);
     let diff = today.getTime() - thatDay.getTime();
-    let days = Math.ceil(diff / (1000 * 3600 * 24));
+    let days = Math.floor(diff / (1000 * 3600 * 24));
+    if (days === 0) {
+        return "今天";
+    }
     if (days < 7) {
         return `${days} 天前`;
     }

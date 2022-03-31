@@ -21,9 +21,10 @@ export function Home(props) {
 
     return (
         <div className={'home'}>
-
-            <Announcement content={'本博客会在每周末更新.'}
-                          dark={props.dark}/>
+            <div className={`announcements`}>
+                <Announcement content={'本博客会在每周末更新.'}
+                              dark={props.dark}/>
+            </div>
 
             {(HOME_TOP_ARTICLES) && (
                 <div className={'full-width flex center space-between'}>

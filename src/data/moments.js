@@ -4,11 +4,20 @@ export const MOMENTS_TAGS = [
 
 export const MOMENTS = [
     {
+        "id": "c26935ae-ed69-4bba-b64c-f6623963a904",
+        "title": "数学太难",
+        "tags": [],
+        "date": "2022-3-31",
+        "images": ['math-is-easy.jpeg'],
+        "content": "啥也不说了. 脑子不够用别选重数学的学科."
+    },
+
+    {
         "id": "86802ef4-4f3c-4ac7-9953-fcd992b90b69",
         "title": "居然想去种稻子了",
         "tags": [],
         "date": "2022-3-30",
-        "images": [],
+        "images": ['种田.jpeg'],
         "content": "看了一个种稻子的视频, 好治愈!\n\n视频链接: https://youtu.be/Wqu2WeZlv2E\n\n(想去种田了怎么办?)"
     },
 

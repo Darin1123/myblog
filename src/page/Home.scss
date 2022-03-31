@@ -23,6 +23,16 @@
     }
   }
 
+  .announcements {
+    .announcement {
+      margin-bottom: 10px;
+    }
+
+    .announcement:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
   .top-articles {
     display: flex;
     width: 100%;

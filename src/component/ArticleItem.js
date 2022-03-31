@@ -16,7 +16,7 @@ export function ArticleItem(props) {
         <div className={'article-item ' + (props.dark? 'article-item-dark' : '')}>
             <div className={'flex full-width space-between'}>
                 <div className={'flex center'}>
-                    <Link className={'m-r-20 text-14'} to={`/article/${item.id}`}>
+                    <Link className={'m-r-20 text-14 bold'} to={`/article/${item.id}`}>
                         {item.title}
                     </Link>
                     {(newArticle) && (
