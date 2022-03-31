@@ -40,6 +40,25 @@
       color: #888;
     }
 
+    .svg-container {
+      margin-left: 2px;
+      height: 14px;
+      width: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      svg {
+        height: 12px;
+      }
+    }
+
     .add-tag {
 
       .add-tag-main {
@@ -314,24 +333,5 @@
         }
       }
     }
-  }
-}
-
-.svg-container {
-  margin-left: 2px;
-  height: 14px;
-  width: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-
-  &:hover {
-    background-color: #ddd;
-  }
-
-  svg {
-    height: 12px;
   }
 }

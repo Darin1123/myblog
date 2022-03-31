@@ -8,6 +8,7 @@
 @import "admin/add-moment";
 @import "admin/images";
 @import "admin/articles";
+@import "admin/all-moments";
 
 @mixin dark {
   a {
@@ -129,5 +130,9 @@
 
   .admin-articles {
     @include admin-articles;
+  }
+
+  .admin-all-moments {
+    @include all-moments;
   }
 }

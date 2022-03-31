@@ -13,6 +13,12 @@
           border: 1px solid #888;
         }
       }
+
+      .svg-container {
+        &:hover {
+          background-color: #333 !important;
+        }
+      }
     }
   }
 
@@ -174,11 +180,5 @@
         }
       }
     }
-  }
-}
-
-.svg-container {
-  &:hover {
-    background-color: #333 !important;
   }
 }

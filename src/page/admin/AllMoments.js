@@ -24,7 +24,7 @@ export function AllMoments() {
       <div className={`admin-all-moments`}>
 
           <Link to={'/admin/moments'}
-                style={{color: '#000', textDecoration: 'none'}}>
+                style={{textDecoration: 'none'}}>
               ← 返回
           </Link>
 

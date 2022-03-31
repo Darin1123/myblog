@@ -1,0 +1,15 @@
+@mixin all-moments {
+    width: 100%;
+    max-width: 800px;
+
+    .moment-item {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: #fff;
+      }
+    }
+}
