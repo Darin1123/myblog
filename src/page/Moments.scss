@@ -38,24 +38,30 @@
       img {
         height: 100px;
         margin-bottom: 5px;
-        transition: 0.14s;
+        transition: 0.38s;
       }
 
       .text {
-        transition: 0.14s;
+        transition: 0.38s;
+        //background: -webkit-linear-gradient(left, blue , green);
+        //background: -o-linear-gradient(right, blue , green);
+        //background: -moz-linear-gradient(right, blue , green);
+        //background: linear-gradient(to right, blue , green);
+        //-webkit-background-clip: text;
+        //-webkit-text-fill-color: transparent;
         font-weight: bold;
       }
 
       &:hover {
         img {
-          height: 125px;
+          height: 140px;
         }
 
         .text {
-          background: -webkit-linear-gradient(left, red , blue);
-          background: -o-linear-gradient(right, red, blue);
-          background: -moz-linear-gradient(right, red, blue);
-          background: linear-gradient(to right, red , blue);
+          background: -webkit-linear-gradient(left, red , yellow);
+          background: -o-linear-gradient(right, red, yellow);
+          background: -moz-linear-gradient(right, red, yellow);
+          background: linear-gradient(to right, red , yellow);
           font-size: 20px;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

@@ -9,6 +9,7 @@ import {RecentYear} from "../component/RecentYear";
 import {MOMENTS} from "../data/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
 import {Announcement} from "../component/Announcement";
+import Tilt from "react-tilt/dist/tilt";
 
 
 export function Home(props) {
@@ -73,8 +74,6 @@ export function Home(props) {
             )}
 
 
-
-
             <div className={'full-width flex center space-between'}>
                 <h2>分类</h2>
                 <Link to={'/categories'} className={'link'}>所有分类 →</Link>
@@ -83,9 +82,11 @@ export function Home(props) {
                 <div className={'home-categories'}>
                     {HOME_CATEGORIES.map((item, key) => (
                         <div className={'category'} key={key}>
-                            <Link className={'category-logo'} to={`/category/${item.name}/page/1`}>
-                                <img alt={item.name} src={`${item.img}`}/>
-                            </Link>
+                            <Tilt options={{max: 62}}>
+                                <Link className={'category-logo'} to={`/category/${item.name}/page/1`}>
+                                    <img alt={item.name} src={`${item.img}`}/>
+                                </Link>
+                            </Tilt>
                             <Link to={`/category/${item.name}/page/1`}>{item.name}</Link>
                         </div>
                     ))}
@@ -112,10 +113,10 @@ export function Home(props) {
             {(MOMENTS.length > 0) && (
                 <div className={'home-moments'}>
                     {MOMENTS.slice(0, 6).map((item, key) => (
-                        <div key={key} className={`home-moment`}>
+                        <Tilt options={{max: 38, scale: 1}} key={key} className={`home-moment`}>
                             <div className={`home-moment-title`}>{item.title}</div>
                             <div className={`home-moment-content`}>{item.content.length > 40 ? (item.content.slice(0, 60) + '...') : item.content}</div>
-                        </div>
+                        </Tilt>
                     ))}
                 </div>
             )}
@@ -125,9 +126,9 @@ export function Home(props) {
             </div>
 
             <div className={'home-feeling-lucky'}>
-                <Link to={'/feeling-lucky'}>
+                <Tilt options={{max: 38, scale: 1.1}} to={'/feeling-lucky'}>
                     <img src={feelingLucky} alt={'feeling-lucky'}/>
-                </Link>
+                </Tilt>
             </div>
 
             <div className={'full-width flex center space-between home-about'}>
