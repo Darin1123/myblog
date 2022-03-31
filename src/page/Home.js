@@ -10,6 +10,7 @@ import {MOMENTS} from "../data/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
 import {Announcement} from "../component/Announcement";
 import Tilt from "react-tilt/dist/tilt";
+import {ANNOUNCEMENTS} from "../data/announcements";
 
 
 export function Home(props) {
@@ -22,8 +23,12 @@ export function Home(props) {
     return (
         <div className={'home'}>
             <div className={`announcements`}>
-                <Announcement content={'本博客会在每周末更新.'}
-                              dark={props.dark}/>
+                {ANNOUNCEMENTS.map((item, key) => (
+                    <Announcement content={item.content}
+                                  key={key}
+                                  type={item.type}
+                                  dark={props.dark}/>
+                ))}
             </div>
 
             {(HOME_TOP_ARTICLES) && (

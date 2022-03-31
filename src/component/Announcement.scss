@@ -27,7 +27,7 @@
 }
 
 .default {
-  border: 1px solid rgb(34, 117, 33);
+  border: 1px solid rgb(134, 217, 133);
   background-color: rgb(198, 239, 205);
   color: rgb(34, 117, 33);
 
@@ -64,6 +64,90 @@
     &:hover {
       background-color: rgb(34, 117, 33) !important;
       color: rgb(198, 239, 205);
+    }
+  }
+}
+
+.warn {
+  border: 1px solid rgb(255, 189, 102);
+  background-color: rgb(255, 235, 156);
+  color: rgb(158, 89, 2);
+
+  .content {
+    &::before {
+      content: '⚠️';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    background-color: inherit;
+
+    &:hover {
+      background-color: rgba(158, 89, 2, 0.6) !important;
+      color: rgb(255, 235, 156);
+    }
+  }
+}
+
+.warn-dark {
+  border: 1px solid rgb(158, 129, 2);
+  background-color: rgb(105, 85, 26);
+  color: rgb(255, 235, 156);
+
+  .content {
+    &::before {
+      content: '⚠️';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    &:hover {
+      background-color: rgb(158, 129, 2) !important;
+      color: rgb(255, 235, 156);
+    }
+  }
+}
+
+.alert {
+  border: 1px solid rgb(255, 134, 137);
+  background-color: rgb(254, 199, 206);
+  color: rgb(170, 34, 37);
+
+  .content {
+    &::before {
+      content: '🔔';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    background-color: inherit;
+
+    &:hover {
+      background-color: rgba(170, 34, 37, 0.6) !important;
+      color: rgb(254, 199, 206);
+    }
+  }
+}
+
+.alert-dark {
+  border: 1px solid rgb(160, 34, 37);
+  background-color: rgb(100, 34, 37);
+  color: rgb(254, 199, 206);
+
+  .content {
+    &::before {
+      content: '🔔️';
+      margin-right: 10px;
+    }
+  }
+
+  .svg-container {
+    &:hover {
+      background-color: rgb(144, 89, 96) !important;
+      color: rgb(254, 199, 206);
     }
   }
 }
