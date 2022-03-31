@@ -1,6 +1,6 @@
 .home {
   width: 100%;
-  max-width: 920px;
+  //max-width: 1200px;
 
   /* width */
   ::-webkit-scrollbar {
@@ -82,6 +82,7 @@
       margin-bottom: 20px;
       display: flex;
       margin-right: 20px;
+      transition: 0.14s;
 
       &:nth-last-child(3n) {
         margin-right: 0;
@@ -107,6 +108,10 @@
         justify-content: center;
         align-items: center;
         transition: 0.14s;
+
+        &:hover {
+          background-color: #eee;
+        }
 
         img {
           height: 70px;
@@ -243,6 +248,46 @@
       /* Hide scrollbar for Chrome, Safari and Opera */
       &::-webkit-scrollbar {
         display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .announcements {
+    display: flex;
+    flex-wrap: wrap;
+
+    .announcement {
+      margin-bottom: 10px;
+      width: calc(calc(100% - 10px - 11px * 4) / 2);
+      margin-right: 10px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    .announcement:nth-last-child(2) {
+      margin-bottom: 10px !important;
+    }
+
+    .announcement:nth-last-child(1) {
+      margin-bottom: 10px !important;
+    }
+  }
+
+  .home-articles {
+    display: flex;
+    flex-wrap: wrap;
+
+    .article-item {
+      margin-bottom: 10px;
+      width: calc(calc(100% - 10px - 20px * 4) / 2);
+      margin-right: 10px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
       }
     }
   }

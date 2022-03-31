@@ -1,6 +1,10 @@
 @mixin home {
   .category-logo {
     background-color: #333 !important;
+
+    &:hover{
+      background-color: #383838 !important;
+    }
   }
 
   .home-moments {

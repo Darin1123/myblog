@@ -26,6 +26,7 @@ export function Home(props) {
                 {ANNOUNCEMENTS.map((item, key) => (
                     <Announcement content={item.content}
                                   key={key}
+                                  consistent={item.consistent}
                                   type={item.type}
                                   dark={props.dark}/>
                 ))}
@@ -121,7 +122,7 @@ export function Home(props) {
                     {MOMENTS.slice(0, 6).map((item, key) => (
                         <Tilt options={{max: 38, scale: 1}} key={key} className={`home-moment`}>
                             <div className={`home-moment-title`}>{item.title}</div>
-                            <div className={`home-moment-content`}>{item.content.length > 40 ? (item.content.slice(0, 60) + '...') : item.content}</div>
+                            <div className={`home-moment-content auto-wrap`}>{item.content.length > 40 ? (item.content.slice(0, 60) + '...') : item.content}</div>
                         </Tilt>
                     ))}
                 </div>

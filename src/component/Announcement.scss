@@ -3,15 +3,17 @@
   //border-radius: 5px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
 
   .content {
-    width: calc(100% - 24px);
-    //line-height: 20px;
+    //width: calc(100% - 24px);
+    line-height: 20px;
   }
 
   .svg-container {
     width: 14px;
     height: 14px;
+    margin: 3px 0;
     border-radius: 50%;
     display: flex;
     align-items: center;
