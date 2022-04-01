@@ -16,7 +16,7 @@ export function ArticleItem(props) {
         <div className={'article-item ' + (props.dark? 'article-item-dark' : '')}>
             <div className={'flex full-width space-between'}>
                 <div className={'flex center'}>
-                    <Link className={'m-r-20 text-14 bold'} to={`/article/${item.id}`}>
+                    <Link className={'m-r-20 text-14 bold title'} to={`/article/${item.id}`}>
                         {item.title}
                     </Link>
                     {(newArticle) && (
@@ -31,7 +31,7 @@ export function ArticleItem(props) {
                     {props.elapsedTime !== undefined && props.elapsedTime ? elapsedTime(item.date) : `${item.date.year} 年 ${item.date.month} 月 ${item.date.day} 日`}
                 </div>
             </div>
-            <div className={'peek'}>
+            <div className={'peek m-t-20'}>
                 {item.peek !== null ? item.peek : '如题所示'}...
             </div>
         </div>

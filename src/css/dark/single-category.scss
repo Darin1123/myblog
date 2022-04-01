@@ -16,6 +16,14 @@
     }
   }
 
+  .article-item {
+    background-color: #333;
+
+    &:hover {
+      background-color: #383838;
+    }
+  }
+
   .related-categories {
     a:hover {
       color: #fff !important;

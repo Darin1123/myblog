@@ -52,7 +52,7 @@ export function SingleCategory() {
                         <div key={key} className={'article-item'}>
                             <div className={'flex full-width space-between'}>
                                 <div className={'flex center'}>
-                                    <Link className={'m-r-10 text-14'} to={`/article/${item.id}`}>
+                                    <Link className={'m-r-10 text-16 bold'} to={`/article/${item.id}`}>
                                         {item.title}
                                     </Link>
                                     {((new Date().getTime() - getArticleDate(item).getTime()) / (1000 * 3600 * 24) < NEW_ARTICLE_RANGE) && (
