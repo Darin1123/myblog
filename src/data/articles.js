@@ -1,5 +1,14 @@
 export const ARTICLES = [
     {
+        "id": "4a272b16-78ff-4233-ad9a-20571b0ad068",
+        "title": "sklearn 模型的 score 方法",
+        "category": "机器学习",
+        "date": { "year": 2022, "month": 4, "day": 1 },
+        "peek": "本文介绍了 sklearn 库中模型的 score 方法. 主要目的是想了解一下他是如何计算得分的",
+        "content": "> 2022 年 4 月 1 日\n\n## 简介\n\n本文介绍了 sklearn 库中模型的 score 方法. 主要目的是想了解一下他是如何计算得分的.\n\n## 官方文档\n\nAPI\n\n```python\nscore(X, y, sample_weight=None)[source]\n```\n\nReturn the coefficient of determination of the prediction.\n\nThe coefficient of determination $R^2$ is defined as $(1−\\dfrac uv)$, where $u$ is the residual sum of squares `((y_true - y_pred)** 2).sum()` and $v$ is the total sum of squares `((y_true - y_true.mean()) ** 2).sum()`. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse). A constant model that always predicts the expected value of `y`, disregarding the input features, would get a $R^2$ score of 0.0.\n\n## 解析\n\n从官方文档中可以了解到, 该方法的计算方式为计算 $R^2 = 1 - \\dfrac uv$. \n\n其中 $u$ 为残差的平方和, 即 $\\sum_i (y_i - \\hat{y}_i)^2$.  其中 $y$ 为真实的值, $\\hat{y}$ 是预测的值.\n\n$v = \\sum_i (y_i - \\bar y )^2$.\n\n所以\n$$\nR^2 = 1 - \\dfrac uv = 1 - \\dfrac {\\sum_i (y_i - \\hat{y}_i)^2}{\\sum_i (y_i - \\bar y)^2}.\n$$\n\n## 结论\n\nscore 方法的计算公式如下:\n$$\nR^2 = 1 - \\dfrac uv = 1 - \\dfrac {\\sum_i (y_i - \\hat{y}_i)^2}{\\sum_i (y_i - \\bar y)^2}.\n$$\n其中 $\\hat{y}_i$ 为预测值, $y_i$ 为真实值, $\\bar{y}$ 为真实值的均值.\n\n分数越接近1, 则表示模型性能越优秀.\n\n## 参考资料\n\n[sklearn - LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)\n\n"
+    },
+
+    {
         "id": "3041a27b-a54e-4641-90a3-f469bb3899d5",
         "title": "Gaussian Mixture Model",
         "category": "机器学习",

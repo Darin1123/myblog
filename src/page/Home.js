@@ -1,6 +1,6 @@
 import './Home.scss';
 import {Link} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {EMAIL, HOME_RECENT_YEAR, HOME_TOP_ARTICLES, NAME, RECENT_ARTICLE_SIZE, TAB_TITLE} from "../config";
 import {ArticleItem} from "../component/ArticleItem";
 import {HOME_CATEGORIES, TOP_ARTICLES} from "../data/page/home";
@@ -10,20 +10,23 @@ import {MOMENTS} from "../data/moments";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
 import {Announcement} from "../component/Announcement";
 import Tilt from "react-tilt/dist/tilt";
-import {ANNOUNCEMENTS} from "../data/announcements";
+import {getOnAnnouncements} from "../mockService/announcementService";
 
 
 export function Home(props) {
 
+    const [announcements, setAnnouncements] = useState([]);
+
     useEffect(() => {
         document.title = `主页 - ${TAB_TITLE}`;
+        setAnnouncements(getOnAnnouncements());
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <div className={'home'}>
             <div className={`announcements`}>
-                {ANNOUNCEMENTS.map((item, key) => (
+                {announcements.map((item, key) => (
                     <Announcement content={item.content}
                                   key={key}
                                   consistent={item.consistent}
