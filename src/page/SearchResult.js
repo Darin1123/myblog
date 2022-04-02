@@ -54,7 +54,7 @@ export function SearchResult(props) {
                 什么也没有搜到, 试试别的.
             </div>}
             {total > 0 &&
-                <div>
+                <div className={'m-b-10'}>
                     共找到 {total} 篇文章, 第 {(page - 1) * SIZE + 1} - {page * SIZE > total ? total : page * SIZE} 篇
                 </div>}
             <div>

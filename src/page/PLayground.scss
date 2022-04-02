@@ -1,0 +1,19 @@
+.my-logo {
+  height: 100px;
+  width: 100px;
+  background-color: #222;
+  position: relative;
+
+  .d {
+    color: #fff;
+    //border: 1px solid red;
+    font-weight: bold;
+    font-size: 112px;
+    position: absolute;
+    right: 4px;
+    top: -16px;
+    line-height: 120px;
+    font-family: 'Montserrat', sans-serif;
+    //font-family: "Times New Roman";
+  }
+}

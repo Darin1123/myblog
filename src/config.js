@@ -28,8 +28,8 @@ export const HOME_TOP_ARTICLES = false;
 export const HOME_RECENT_YEAR = false;
 
 /* Footer */
-export const HOST_NAME = 'Gitee Pages';
-export const HOST_LINK = 'https://gitee.com/help/articles/4136';
+export const HOST_NAME = 'Github Pages';
+export const HOST_LINK = 'https://pages.github.com/';
 
 /* 特殊的文章规则 */
 export const CUSTOM_MARKDOWN = {

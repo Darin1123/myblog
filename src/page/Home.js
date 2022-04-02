@@ -1,9 +1,9 @@
 import './Home.scss';
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {EMAIL, HOME_RECENT_YEAR, HOME_TOP_ARTICLES, NAME, RECENT_ARTICLE_SIZE, TAB_TITLE} from "../config";
+import {EMAIL, HOME_RECENT_YEAR, HOME_TOP_ARTICLES, NAME, TAB_TITLE} from "../config";
 import {ArticleItem} from "../component/ArticleItem";
-import {HOME_CATEGORIES, TOP_ARTICLES} from "../data/page/home";
+import {TOP_ARTICLES} from "../data/page/home";
 import {ARTICLES} from "../data/articles";
 import {RecentYear} from "../component/RecentYear";
 import {MOMENTS} from "../data/moments";
@@ -11,15 +11,21 @@ import feelingLucky from '../resources/special/feeling-lucky.svg';
 import {Announcement} from "../component/Announcement";
 import Tilt from "react-tilt/dist/tilt";
 import {getOnAnnouncements} from "../mockService/announcementService";
+import {getTopArticles} from "../mockService/articleService";
+import {getHomeCategories} from "../mockService/categoryService";
 
 
 export function Home(props) {
 
     const [announcements, setAnnouncements] = useState([]);
+    const [articles, setArticles] = useState([]);
+    const [homeCategories, setHomeCategories] = useState([]);
 
     useEffect(() => {
         document.title = `主页 - ${TAB_TITLE}`;
         setAnnouncements(getOnAnnouncements());
+        setArticles(getTopArticles());
+        setHomeCategories(getHomeCategories());
         window.scrollTo(0, 0);
     }, []);
 
@@ -62,10 +68,10 @@ export function Home(props) {
                 <Link to={'/articles/1'} className={'link'}>所有文章 →</Link>
             </div>
             <div className={`home-articles`}>
-                {ARTICLES.length === 0 && (
+                {articles.length === 0 && (
                     <div>暂时没有文章...</div>
                 )}
-                {ARTICLES.slice(0, RECENT_ARTICLE_SIZE).map((item, key) =>
+                {articles.map((item, key) =>
                     <ArticleItem dark={props.dark} elapsedTime={true} item={item} key={key}/>)}
             </div>
 
@@ -88,9 +94,9 @@ export function Home(props) {
                 <h2>分类</h2>
                 <Link to={'/categories'} className={'link'}>所有分类 →</Link>
             </div>
-            {(HOME_CATEGORIES.length > 0) && (
+            {(homeCategories.length > 0) && (
                 <div className={'home-categories'}>
-                    {HOME_CATEGORIES.map((item, key) => (
+                    {homeCategories.map((item, key) => (
                         <div className={'category'} key={key}>
                             <Tilt options={{max: 62}}>
                                 <Link className={'category-logo'} to={`/category/${item.name}/page/1`}>
@@ -103,7 +109,7 @@ export function Home(props) {
                 </div>
             )}
 
-            {(HOME_CATEGORIES.length === 0) && (
+            {(homeCategories.length === 0) && (
                 <div className={'home-categories'}>
                     没有分类...
                 </div>
@@ -136,8 +142,10 @@ export function Home(props) {
             </div>
 
             <div className={'home-feeling-lucky'}>
-                <Tilt options={{max: 38, scale: 1.1}} to={'/feeling-lucky'}>
-                    <img src={feelingLucky} alt={'feeling-lucky'}/>
+                <Tilt options={{max: 38, scale: 1.1}}>
+                    <Link to={'/feeling-lucky'}>
+                        <img src={feelingLucky} alt={'feeling-lucky'}/>
+                    </Link>
                 </Tilt>
             </div>
 

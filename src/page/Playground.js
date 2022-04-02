@@ -1,11 +1,12 @@
-import 'katex/dist/katex.min.css';
-import beautify from "json-beautify";
-import {ARTICLES} from "../data/articles";
+import './PLayground.scss';
 
 export function Playground() {
     return (
-        <pre>
-            {beautify(ARTICLES,null, 2, 100)}
-        </pre>
+        <div className={'my-logo'}>
+
+            <div className={'d'}>
+                d
+            </div>
+        </div>
     );
 }

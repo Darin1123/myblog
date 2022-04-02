@@ -1,13 +1,13 @@
 .article-item {
-  //padding: 10px 0;
-  margin-bottom: 10px;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  //padding: 20px;
+  //background-color: #f4f4f4;
   transition: 0.14s;
 
-  &:hover {
-    background-color: #eee;
-  }
+  //&:hover {
+  //  background-color: #eee;
+  //}
 
   a {
     text-decoration: none;
@@ -51,9 +51,9 @@
 }
 
 .article-item-dark {
-  background-color: #333;
-
-  &:hover {
-    background-color: #383838;
-  }
+  //background-color: #333;
+  //
+  //&:hover {
+  //  background-color: #383838;
+  //}
 }

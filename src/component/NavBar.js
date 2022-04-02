@@ -122,7 +122,7 @@ export default function NavBar(props) {
                     </div>}
                 {(screenWidth > THRESHOLD) && (
                     <div style={{display: 'flex', alignItems: 'center'}}>
-                        <Tilt options={{scale: 1.5, max: 38}}>
+                        <Tilt options={{scale: 1.2, max: 38}}>
                             <div onClick={props.toggleDark} className={`dark-mode`}>
                                 {props.dark ? (
                                     <IconMoon/>
@@ -132,7 +132,7 @@ export default function NavBar(props) {
                             </div>
                         </Tilt>
 
-                        <Tilt options={{scale: 1.5, max: 38}}>
+                        <Tilt options={{scale: 1.2, max: 38}}>
                             <div className={'search'}
                                  onClick={handleOpenSearchBar}>
                                 <IconSearch/>
@@ -144,7 +144,7 @@ export default function NavBar(props) {
             </div>
 
             <div className={'menu-button'}>
-                <Tilt options={{scale: 1.5, max: 38}}>
+                <Tilt options={{scale: 1.2, max: 38}}>
                     <div onClick={props.toggleDark} className={`dark-mode`}>
                         {props.dark ? (
                             <IconMoon/>
@@ -153,7 +153,7 @@ export default function NavBar(props) {
                         )}
                     </div>
                 </Tilt>
-                <Tilt options={{scale: 1.5, max: 38}}>
+                <Tilt options={{scale: 1.2, max: 38}}>
                     <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
                 </Tilt>
             </div>

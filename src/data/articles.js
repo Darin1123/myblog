@@ -176,7 +176,7 @@ export const ARTICLES = [
         "category": "统计",
         "date": { "year": 2022, "month": 3, "day": 9 },
         "peek": "是一个非常常见的连续概率分布",
-        "content": "> 2022 年 3 月 9 日\n\n## 是什么?\n\n是一个非常常见的连续概率分布.\n\n## 概率密度函数\n\n$$\nf(x)= \\dfrac 1{\\sigma\\sqrt{2\\pi}}e^{-\\tfrac{(x - \\mu)^2}{2\\sigma^2}}\n$$\n\n可以从该概率密度函数中得到两个参数: \n\n- 位置参数 $\\mu$, 决定了分布的位置\n- 尺度参数 $\\sigma^2$, 决定了分布的幅度\n\n若一个随机变量 $X$ 服从位置参数为$\\mu$, 尺度参数为$\\sigma$的正态分布, 记为:\n$$\nX \\sim N(\\mu, \\sigma^2)\n$$\n下面给到该函数的图形\n\n![正态分布pdf.svg](img/articles/正态分布pdf.svg)\n\n## 参考资料\n\n[正态分布 - 维基百科](https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83)\n\n"
+        "content": "> 2022 年 3 月 9 日\n\n## 是什么?\n\n是一个非常常见的连续概率分布.\n\n## 概率密度函数\n\n$$\nf(x)= \\dfrac 1{\\sigma\\sqrt{2\\pi}}e^{-\\tfrac{(x - \\mu)^2}{2\\sigma^2}}\n$$\n\n可以从该概率密度函数中得到两个参数: \n\n- 位置参数 $\\mu$, 决定了分布的位置\n- 尺度参数 $\\sigma^2$, 决定了分布的幅度\n\n若一个随机变量 $X$ 服从位置参数为$\\mu$, 尺度参数为$\\sigma$的正态分布, 记为:\n$$\nX \\sim N(\\mu, \\sigma^2)\n$$\n下面给到该函数的图形\n\n![正态分布pdf.svg](img/articles/正态分布pdf.svg)\n\n## 一些性质\n\n### 期望\n\n$\\mu$\n\n### 方差\n\n$\\sigma^2$\n\n## 参考资料\n\n[正态分布 - 维基百科](https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83)\n\n"
     },
 
     {

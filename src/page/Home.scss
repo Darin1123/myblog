@@ -266,8 +266,8 @@
 
     .article-item {
       margin-bottom: 10px;
-      width: calc(calc(100% - 10px - 20px * 4) / 2);
-      margin-right: 10px;
+      width: calc(calc(calc(100% - 10px) / 2) - 10px);
+      margin-right: 20px;
 
       &:nth-child(2n) {
         margin-right: 0;
