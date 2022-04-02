@@ -1,7 +1,7 @@
 import './Moments.scss';
 import {useEffect, useState} from "react";
 import {NOTE_SIZE, TAB_TITLE} from "../config";
-import {MOMENTS, MOMENTS_TAGS} from "../data/moments";
+import {MOMENTS} from "../data/moments";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {MomentItem} from "../component/MomentItem";
 import {convertDay} from "../util/util";

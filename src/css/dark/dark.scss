@@ -9,6 +9,7 @@
 @import "admin/images";
 @import "admin/articles";
 @import "admin/all-moments";
+@import "admin/edit";
 
 @mixin dark {
   a {
@@ -134,5 +135,10 @@
 
   .admin-all-moments {
     @include all-moments;
+  }
+
+  // admin edit article
+  .edit {
+    @include edit;
   }
 }
