@@ -1,8 +1,16 @@
+.playground {
+  background-color: red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .my-logo {
   height: 100px;
   width: 100px;
   background-color: #222;
   position: relative;
+  margin: 10px;
 
   .d {
     color: #fff;

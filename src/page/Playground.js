@@ -1,11 +1,12 @@
-import './PLayground.scss';
+import './Playground.scss';
 
 export function Playground() {
     return (
-        <div className={'my-logo'}>
-
-            <div className={'d'}>
-                d
+        <div className={`playground`}>
+            <div className={'my-logo'}>
+                <div className={'d'}>
+                    d
+                </div>
             </div>
         </div>
     );
