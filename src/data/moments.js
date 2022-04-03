@@ -4,6 +4,15 @@ export const MOMENTS_TAGS = [
 
 export const MOMENTS = [
     {
+        "id": "bd59be6d-7431-4d56-b0a2-2e2224f79e93",
+        "title": "爽!",
+        "tags": [ "炉石" ],
+        "date": "2022-4-3",
+        "images": [ "奥秘哥吃鸡.png" ],
+        "content": "看起来似乎没什么, 但是其实在冰箱被破之后依然坚持了六个回合, 最终吃鸡! (三家鱼, 有一家金小黄, 鱼平均100+血.)"
+    },
+
+    {
         "id": "c26935ae-ed69-4bba-b64c-f6623963a904",
         "title": "数学太难",
         "tags": [],
