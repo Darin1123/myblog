@@ -47,6 +47,7 @@ function App() {
     const [adminGoTo, setAdminGoTo] = useState('/admin/dashboard');
     const [authenticationErrorMessage, setAuthenticationErrorMessage] = useState(null);
 
+    // const [dark, setDark] = useState(false);
     const [dark, setDark] = useState(decideDefaultDark());
 
     function authenticate() {
