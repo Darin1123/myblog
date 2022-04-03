@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg  xmlns="http://www.w3.org/2000/svg"   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="850px"
+   height="740px" >
+   <style type="text/css">
+<![CDATA[
+   text { 
+	fill:black; stroke:none; font-family:Microsoft Sans Serif; font-style:normal; font-weight:normal; font-size:14pt; text-anchor:end; 
+  }
+   
+   path {
+       fill:none; stroke:black;stroke-opacity:1;stroke-width:0.5pt;stroke-linejoin:miter;stroke-linecap:butt;
+   }
+   .curve { fill:none; stroke: red; stroke-width: 1pt;}
+   text.curve { stroke:none;fill:red;font-family:Microsoft Sans Serif;font-size:14pt;}
+   g.H text { text-anchor: middle;}
+]]>
+   </style>
+<defs>
+<path id="V" d="M0 50l0 10M0 650l0 -10"/>
+<path id="H" d="M0 0L10 0M800 0l-10 0"/>
+</defs>
+<g transform="matrix(1,0,0,-1,40,660)">
+<use xlink:href="#H" y="100"/>
+<use xlink:href="#H" y="200"/>
+<use xlink:href="#H" y="300"/>
+<use xlink:href="#H" y="400"/>
+<use xlink:href="#H" y="500"/>
+<use xlink:href="#H" y="600"/>
+<use xlink:href="#V" x="100"/>
+<use xlink:href="#V" x="200"/>
+<use xlink:href="#V" x="300"/>
+<use xlink:href="#V" x="400"/>
+<use xlink:href="#V" x="500"/>
+<use xlink:href="#V" x="600"/>
+<use xlink:href="#V" x="700"/>
+<path class="curve" d="M0 100.17C 33.33 100.28 66.67 100.41 100 101.24 S 166.67 103.11 200 108.99 266.67 124.6 300 159.6 366.67 266.67 400 350 466.67 505.4 500 540.4 566.67 585.12 600 591.01 666.67 597.94 700 597.76 766.67 599.72 800 599.83"/>
+<path d="M0 50L800 50 800 650 0 650z"/>
+</g>
+<text class="curve" x="700" y="130">1/(1+exp(-t))</text>
+<g class="H" transform="matrix(1,0,0,1,40,640)">
+<text x="0">-8</text>
+<text x="100">-6</text>
+<text x="200">-4</text>
+<text x="300">-2</text>
+<text x="400">0</text>
+<text x="500">2</text>
+<text x="600">4</text>
+<text x="700">6</text>
+<text x="800">8</text>
+</g>
+<g transform="matrix(1,0,0,1,33,-33)">
+<text y="100">1</text>
+<text y="200">0.8</text>
+<text y="300">0.6</text>
+<text y="400">0.4</text>
+<text y="500">0.2</text>
+<text y="600">0</text>
+</g>
+</svg>
