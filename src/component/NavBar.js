@@ -161,7 +161,7 @@ export default function NavBar(props) {
                         <IconAtom onClick={() => setShowPortals(true)}/>
                     </Tilt>
                     {(showPortals) && (
-                        <Portals dark={props.dark} close={() => setShowPortals(false)}/>
+                        <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
                     )}
                 </div>
                 <Tilt options={{scale: 1.2, max: 0}}>

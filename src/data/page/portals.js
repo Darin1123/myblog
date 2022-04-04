@@ -36,4 +36,10 @@ export const PORTALS = [
         href: "https://canvas.cityu.edu.hk/",
         name: "Canvas"
     },
+
+    {
+        img: "instagram.png",
+        href: "https://www.instagram.com/",
+        name: "Instagram"
+    },
 ]

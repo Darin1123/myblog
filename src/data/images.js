@@ -13,7 +13,7 @@ export const IMAGES = [
     },
     {
         path: 'img/portals/',
-        items: ['bilibili.svg', 'github.svg', 'canvas.webp', 'youtube.svg', 'google.svg', 'baidu.svg']
+        items: ['instagram.png', 'bilibili.svg', 'github.svg', 'canvas.webp', 'youtube.svg', 'google.svg', 'baidu.svg']
     },
     {
         path: `img/moments/`,
