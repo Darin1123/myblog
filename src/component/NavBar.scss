@@ -25,6 +25,41 @@ nav {
     align-items: center;
     justify-content: space-between;
 
+    //.portals {
+    //  position: relative;
+    //  margin-right: 20px;
+    //
+    //  svg {
+    //    cursor: pointer;
+    //    height: 16px;
+    //  }
+    //
+    //  .portals-main {
+    //    position: absolute;
+    //    display: flex;
+    //    flex-direction: column;
+    //    width: 60px;
+    //    align-items: center;
+    //    background-color: #fff;
+    //    padding: 10px;
+    //    left: calc(-30px);
+    //    top: calc(100% + 10px);
+    //    border: 1px solid #888;
+    //
+    //    a {
+    //      margin-bottom: 5px;
+    //
+    //      &:nth-last-child(1) {
+    //        margin-bottom: 0;
+    //      }
+    //    }
+    //  }
+    //
+    //  .dark-portals-main {
+    //    background-color: #222;
+    //  }
+    //}
+
     .back-up-title {
       color: #000;
       font-size: 16px;
@@ -108,6 +143,41 @@ nav {
           }
         }
       }
+    }
+  }
+
+  .portals {
+    position: relative;
+    margin-right: 20px;
+
+    svg {
+      cursor: pointer;
+      height: 16px;
+    }
+
+    .portals-main {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 60px;
+      align-items: center;
+      background-color: #fff;
+      padding: 16px 10px;
+      left: calc(-30px);
+      top: calc(100% + 10px);
+      border: 1px solid #888;
+
+      a {
+        margin-bottom: 8px;
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .dark-portals-main {
+      background-color: #222;
     }
   }
 

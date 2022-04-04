@@ -2,7 +2,7 @@ import {Link, NavLink} from "react-router-dom";
 import {TAB_TITLE} from "../config";
 import $ from "jquery";
 import {SearchBar} from "./SearchBar";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import './NavBar.scss';
 import {ARTICLES} from "../data/articles";
 import {CATEGORIES} from "../data/categories";
@@ -14,6 +14,7 @@ import variables from '../css/export.scss';
 import IconSun from "../resources/icons/sun";
 import IconMoon from "../resources/icons/moon";
 import Tilt from "react-tilt/dist/tilt";
+import IconAtom from "../resources/icons/atom";
 
 
 export default function NavBar(props) {
@@ -26,6 +27,7 @@ export default function NavBar(props) {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(width)
     const [showCancel, setShowCancel] = useState(width > THRESHOLD);
+    const [showPortals, setShowPortals] = useState(false);
 
 
     function toggleNav() {
@@ -122,6 +124,15 @@ export default function NavBar(props) {
                     </div>}
                 {(screenWidth > THRESHOLD) && (
                     <div style={{display: 'flex', alignItems: 'center'}}>
+                        <div className={`portals`}>
+                            <Tilt options={{scale: 1.2, max: 0}} >
+                                <IconAtom onClick={() => setShowPortals(true)}/>
+                            </Tilt>
+                            {(showPortals) && (
+                                <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
+                            )}
+                        </div>
+
                         <Tilt options={{scale: 1.2, max: 0}}>
                             <div onClick={props.toggleDark} className={`dark-mode`}>
                                 {props.dark ? (
@@ -144,6 +155,14 @@ export default function NavBar(props) {
             </div>
 
             <div className={'menu-button'}>
+                <div className={`portals`}>
+                    <Tilt options={{scale: 1.2, max: 0}} >
+                        <IconAtom onClick={() => setShowPortals(true)}/>
+                    </Tilt>
+                    {(showPortals) && (
+                        <Portals dark={props.dark} close={() => setShowPortals(false)}/>
+                    )}
+                </div>
                 <Tilt options={{scale: 1.2, max: 0}}>
                     <div onClick={props.toggleDark} className={`dark-mode`}>
                         {props.dark ? (
@@ -162,5 +181,41 @@ export default function NavBar(props) {
             {(screenWidth > THRESHOLD && showSearchBar) &&
                 <SearchBar dark={props.dark} setToggleMenu={setToggleMenu} setShowSearchBar={setShowSearchBar} showCancel={showCancel}/>}
         </nav>
+    );
+}
+
+function useOutsideAlerter(ref, func) {
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                func();
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
+}
+
+function Portals(props) {
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef, props.closePortals);
+
+    return (
+        <div className={`portals-main ` + (props.dark? 'dark-portals-main' : '')} ref={wrapperRef}>
+            <a href={'https://www.baidu.com'} target={'_blank'} rel="noreferrer">百度</a>
+            <a href={'https://www.google.com'} target={'_blank'} rel="noreferrer">Google</a>
+            <a href={'https://www.bilibili.com'} target={'_blank'} rel="noreferrer">Bilibili</a>
+            <a href={'https://www.youtube.com'} target={'_blank'} rel="noreferrer">YouTube</a>
+            <a href={'https://www.github.com'} target={'_blank'} rel="noreferrer">Github</a>
+            <a href={'https://canvas.cityu.edu.hk/'} target={'_blank'} rel="noreferrer">Canvas</a>
+        </div>
     );
 }
