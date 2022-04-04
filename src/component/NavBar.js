@@ -15,6 +15,7 @@ import IconSun from "../resources/icons/sun";
 import IconMoon from "../resources/icons/moon";
 import Tilt from "react-tilt/dist/tilt";
 import IconAtom from "../resources/icons/atom";
+import {getTopPortals} from "../mockService/portalService";
 
 
 export default function NavBar(props) {
@@ -124,7 +125,7 @@ export default function NavBar(props) {
                     </div>}
                 {(screenWidth > THRESHOLD) && (
                     <div style={{display: 'flex', alignItems: 'center'}}>
-                        <div className={`portals`}>
+                        <div className={`nav-portals`}>
                             <Tilt options={{scale: 1.2, max: 0}} >
                                 <IconAtom onClick={() => setShowPortals(true)}/>
                             </Tilt>
@@ -155,7 +156,7 @@ export default function NavBar(props) {
             </div>
 
             <div className={'menu-button'}>
-                <div className={`portals`}>
+                <div className={`nav-portals`}>
                     <Tilt options={{scale: 1.2, max: 0}} >
                         <IconAtom onClick={() => setShowPortals(true)}/>
                     </Tilt>
@@ -210,12 +211,11 @@ function Portals(props) {
 
     return (
         <div className={`portals-main ` + (props.dark? 'dark-portals-main' : '')} ref={wrapperRef}>
-            <a href={'https://www.baidu.com'} target={'_blank'} rel="noreferrer">百度</a>
-            <a href={'https://www.google.com'} target={'_blank'} rel="noreferrer">Google</a>
-            <a href={'https://www.bilibili.com'} target={'_blank'} rel="noreferrer">Bilibili</a>
-            <a href={'https://www.youtube.com'} target={'_blank'} rel="noreferrer">YouTube</a>
-            <a href={'https://www.github.com'} target={'_blank'} rel="noreferrer">Github</a>
-            <a href={'https://canvas.cityu.edu.hk/'} target={'_blank'} rel="noreferrer">Canvas</a>
+            {getTopPortals().map((item, key) => (
+                <a key={key} href={item.href} target={'_blank'} rel="noreferrer">{item.name}</a>
+            ))}
+
+            <Link to={'/portals'} onClick={props.closePortals}>传送门 →</Link>
         </div>
     );
 }

@@ -39,6 +39,7 @@ import './css/THEME.scss';
 import {FeelingLucky} from "./page/FeelingLucky";
 import $ from 'jquery';
 import variables from "./css/export.scss";
+import {Portals} from "./page/Portals";
 
 function App() {
 
@@ -234,6 +235,9 @@ function App() {
                                     {/*</Route>*/}
                                     <Route path={'/playground'}>
                                         <Playground/>
+                                    </Route>
+                                    <Route path={'/portals'}>
+                                        <Portals/>
                                     </Route>
                                     <Route>
                                         <PageNotFound/>

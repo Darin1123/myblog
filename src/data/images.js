@@ -12,6 +12,10 @@ export const IMAGES = [
         items: [`jvm.jpeg`, `spiderverse.jpeg`, `大学.png`]
     },
     {
+        path: 'img/portals/',
+        items: ['bilibili.svg', 'github.svg', 'canvas.webp', 'youtube.svg', 'google.svg', 'baidu.svg']
+    },
+    {
         path: `img/moments/`,
         items: ['奥秘哥吃鸡.png', 'math-is-easy.jpeg', '种田.jpeg', 'rg沙扎比骨架1.jpeg', 'rg沙扎比骨架2.jpeg', 'rg沙扎比骨架3.jpeg', '雨天狮子山.jpeg', '麻中麻中麻.jpeg', '麻中麻.jpeg', '麻了.jpeg', 'sad_cat.jpeg', '煎饺1.jpeg', '煎饺2.jpeg', '煎饺3.jpeg', '零式飞翼(支架).jpeg', '零式飞翼局部(支架).jpeg', "飞翼高达.jpeg", "changzhou1.jpeg", "changzhou2.jpeg", "changzhou3.jpeg", "changzhou4.jpeg", "changzhou5.jpeg", "changzhou6.jpeg", "changzhou7.jpeg", "changzhou8.jpeg", "changzhou9.jpeg", `pizza-20220209.jpeg`, `野兽吃鸡20220209.jpeg`, ]
     }

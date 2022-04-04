@@ -10,7 +10,7 @@ export function AdminPageNotFound() {
     }, []);
 
     return (
-        <div className={'page-not-found'}>
+        <div className={'admin-page-not-found'}>
             <h2>404</h2>
             <p>
                 糟糕, 这个页面丢失了...
