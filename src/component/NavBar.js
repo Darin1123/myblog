@@ -155,29 +155,30 @@ export default function NavBar(props) {
                 )}
             </div>
 
-            <div className={'menu-button'}>
-                <div className={`nav-portals`}>
-                    <Tilt options={{scale: 1.2, max: 0}} >
-                        <IconAtom onClick={() => setShowPortals(true)}/>
-                    </Tilt>
-                    {(showPortals) && (
-                        <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
-                    )}
-                </div>
-                <Tilt options={{scale: 1.2, max: 0}}>
-                    <div onClick={props.toggleDark} className={`dark-mode`}>
-                        {props.dark ? (
-                            <IconMoon/>
-                        ) : (
-                            <IconSun/>
+            {(screenWidth <= THRESHOLD) && (
+                <div className={'menu-button'}>
+                    <div className={`nav-portals`}>
+                        <Tilt options={{scale: 1.2, max: 0}} >
+                            <IconAtom onClick={() => setShowPortals(true)}/>
+                        </Tilt>
+                        {(showPortals) && (
+                            <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
                         )}
                     </div>
-                </Tilt>
-                <Tilt options={{scale: 1.2, max: 0}}>
-                    <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
-                </Tilt>
-            </div>
-
+                    <Tilt options={{scale: 1.2, max: 0}}>
+                        <div onClick={props.toggleDark} className={`dark-mode`}>
+                            {props.dark ? (
+                                <IconMoon/>
+                            ) : (
+                                <IconSun/>
+                            )}
+                        </div>
+                    </Tilt>
+                    <Tilt options={{scale: 1.2, max: 0}}>
+                        <div onClick={toggleNav}>{toggleMenu ? (<IconX/>) : (<IconMenu2/>)}</div>
+                    </Tilt>
+                </div>
+            )}
 
             {(screenWidth > THRESHOLD && showSearchBar) &&
                 <SearchBar dark={props.dark} setToggleMenu={setToggleMenu} setShowSearchBar={setShowSearchBar} showCancel={showCancel}/>}
@@ -210,12 +211,12 @@ function Portals(props) {
     useOutsideAlerter(wrapperRef, props.closePortals);
 
     return (
-        <div className={`portals-main ` + (props.dark? 'dark-portals-main' : '')} ref={wrapperRef}>
+        <div ref={wrapperRef} className={`portals-main ` + (props.dark? 'dark-portals-main' : '')}>
             {getTopPortals().map((item, key) => (
                 <a key={key} href={item.href} target={'_blank'} rel="noreferrer">{item.name}</a>
             ))}
 
-            <Link to={'/portals'} onClick={props.closePortals}>传送门 →</Link>
+            <Link to={'/portals'}>传送门 →</Link>
         </div>
     );
 }
