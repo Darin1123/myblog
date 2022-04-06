@@ -1,4 +1,14 @@
 export const ARTICLES = [
+
+    {
+        "id": "9f016fd4-86aa-447e-a6e1-a8bc99e6c84f",
+        "title": "R - factor",
+        "category": "R",
+        "date": { "year": 2022, "month": 4, "day": 7 },
+        "peek": "因子用于存储不同类别的数据类型.",
+        "content": "> 2022 年 4 月 6 日\n\n## 用途\n\n因子用于存储不同类别的数据类型. (人按性别分有男女, 按年龄分有成年人和未成年人)\n\n## 语法格式$^1$\n\n```r\nfactor(x = character(), levels, labels = levels, \n       exclude = NA, ordered = is.ordered(x), nmax = NA)\n```\n\n参数说明\n\n`x` : 向量\n\n`levels` : 指定各水平值, 不指定时由 `x` 的不同值来求得. \n\n`labels` : 水平的标签. 不指定时用各水平值对应的字符串.\n\n`exclude` : 排除的字符.\n\n`ordered` : 逻辑值, 用于指定水平是否有序.\n\n`nmax` : 水平的上限数量.\n\n## 使用示例$^1$\n\n简单使用\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm')\nsex <- factor(x)\nprint(sex)\n\n# output\n# [1] f m f f m\n# Levels: f m\n```\n\n添加因子水平\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm', levels=c('m', 'f'))\nsex <- factor(x)\nprint(sex)\n\n# output\n#                                         levels1 levels2\n#       f       m       f       f       m       m       f\n# Levels: f m\n```\n\n## 总结 \n\n当在处理类别数据的时候, 可以使用因子.\n\n##  参考资料\n\n1. [R 因子](https://www.runoob.com/r/r-factor.html)\n2. [如何理解R中因子的概念]("
+    },
+
     {
         "id": "d4ab294f-95fa-465d-aa81-1a91118d860f",
         "title": "如何读论文?",

@@ -26,6 +26,19 @@ article {
     }
   }
 
+  h2 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 8px;
+    position: relative;
+
+    //&::after {
+    //  content: "🔗";
+    //  position: absolute;
+    //  right: 0;
+    //  font-size: 14px;
+    //}
+  }
+
   table {
     margin: auto;
     border-spacing: 0;

@@ -81,7 +81,6 @@ function App() {
     }
 
     useEffect(() => {
-        decideDefaultDark();
         let hash = document.location.hash.replace('#', '');
         let html = $("html");
 

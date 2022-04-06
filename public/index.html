@@ -6,6 +6,7 @@
     <meta name="apple-mobile-web-app-title" content="Darren的博客">
     <link href="logo.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
     <link href="img/favicon-96x96.png" rel="shortcut icon"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
 
 <!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
 <!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
@@ -65,6 +66,18 @@
                 element.remove();
             }, 1000);
         }
+    });
+</script>
+<script>
+    // disable img right click
+    let imgs = $("img");
+    $(document).ready(function () {
+        imgs.on("contextmenu", function () {
+            return false;
+        });
+        imgs.on("dragstart", function () {
+            return false;
+        })
     });
 </script>
 <div id="root"></div>
