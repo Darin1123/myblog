@@ -6,7 +6,7 @@ import {NEW_ARTICLE_RANGE, SIZE, TAB_TITLE} from "../config";
 import {Pagination} from "../component/Pagination";
 import {ARTICLES} from "../data/articles";
 import {CATEGORY_NETWORK} from "../data/categories";
-import {getArticleDate} from "../util/util";
+import {getArticleDate} from "../util/date";
 
 export function SingleCategory() {
 

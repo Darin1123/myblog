@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {SIZE, TAB_TITLE} from "../config";
 import './ObserveDate.scss';
 import {ARTICLES} from "../data/articles";
-import {compareDates, getArticleDate, string2date} from "../util/util";
+import {compareDates, getArticleDate, string2date} from "../util/date";
 import {Pagination} from "../component/Pagination";
 import {ArticleItem} from "../component/ArticleItem";
 

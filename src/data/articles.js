@@ -1,4 +1,12 @@
 export const ARTICLES = [
+    {
+        "id": "b43c55c2-a102-4aa9-9d73-43b63f612e01",
+        "title": "Git - 如何 '忘记' 已经 add 的文件",
+        "category": "Git",
+        "date": { "year": 2022, "month": 4, "day": 9 },
+        "peek": "有时候我们会错误的将一些不重要的文件通过 `git add` 命令添加到版本控制的历史中, 但是现在想要将他们忘记",
+        "content": "> 2022 年 4 月 9 日\n\n## 问题描述\n\n有时候我们会错误的将一些不重要的文件通过 `git add` 命令添加到版本控制的历史中, 但是现在想要将他们 '忘记'. 也就是不删除他们, 仅仅是在历史中将他们删除.\n\n## 解决方法\n\n使用如下命令\n\n```bash\ngit rm --cached <file>\n```\n\n如果想要移除整个文件夹, 那么使用\n\n```bash\ngit rm -r --cached <folder>\n```\n\n## 参考资料\n\n[How can I make Git \"forget\" about a file that was tracked, but is now in .gitignore?](https://stackoverflow.com/questions/1274057/how-can-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitign)\n\n"
+    },
 
     {
         "id": "9f016fd4-86aa-447e-a6e1-a8bc99e6c84f",

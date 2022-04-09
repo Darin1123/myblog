@@ -1,7 +1,7 @@
 import {LightgalleryItem, LightgalleryProvider} from "react-lightgallery";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {okaidia} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {string2date} from "./util/util";
+import {string2date} from "./util/date";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import React from "react";
 import 'react-lazy-load-image-component/src/effects/blur.css';

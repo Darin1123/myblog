@@ -4,7 +4,7 @@ import {Pagination} from "../../component/Pagination";
 import {useParams} from "react-router";
 import {SIZE, TAB_TITLE} from "../../config";
 import {useEffect, useState} from "react";
-import {convertDateStr} from "../../util/util";
+import {convertDateStr} from "../../util/date";
 import {Link} from "react-router-dom";
 
 

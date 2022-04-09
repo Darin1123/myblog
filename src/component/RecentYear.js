@@ -1,8 +1,9 @@
-import {compareDates, convertDate, convertMonth, dayOfWeek, getArticleDate, getDays, getLevel} from "../util/util";
+import {getLevel} from "../util/util";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {ARTICLES} from "../data/articles";
 import './RecentYear.scss';
+import {compareDates, convertDate, convertMonth, dayOfWeek, getArticleDate, getDays} from "../util/date";
 
 export function RecentYear(props) {
 

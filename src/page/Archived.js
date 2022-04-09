@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {TAB_TITLE} from "../config";
 import {ARTICLES} from "../data/articles";
 import {Link} from "react-router-dom";
-import {compareDateObjects} from "../util/util";
+import {compareDateObjects} from "../util/date";
 
 export function Archived() {
 

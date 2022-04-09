@@ -1,5 +1,5 @@
 import './MomentItem.scss';
-import {convertDateStr} from "../util/util";
+import {convertDateStr} from "../util/date";
 import {LightgalleryItem, LightgalleryProvider} from "react-lightgallery";
 import React, {useEffect, useState} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";

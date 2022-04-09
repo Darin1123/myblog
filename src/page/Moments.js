@@ -4,7 +4,7 @@ import {NOTE_SIZE, TAB_TITLE} from "../config";
 import {MOMENTS} from "../data/moments";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {MomentItem} from "../component/MomentItem";
-import {convertDay} from "../util/util";
+import {convertDay} from "../util/date";
 import {Link} from "react-router-dom";
 import feelingLucky from '../resources/special/feeling-lucky.svg';
 
