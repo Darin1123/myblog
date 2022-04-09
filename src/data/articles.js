@@ -1,5 +1,14 @@
 export const ARTICLES = [
     {
+        "id": "8965436c-7c24-4a05-ace9-094d6fd35811",
+        "title": "卷积神经网络",
+        "category": "机器学习",
+        "date": { "year": 2022, "month": 4, "day": 10 },
+        "peek": "卷积神经网络适合对图数据进行相关计算.",
+        "content": "> 2022 年 4 月 10 日\n\n## 简介\n\nCNN (Convolutional Neural Network), 即卷积神经网络, 适合对图数据进行相关计算.  图的数据往往以 3D tensor 的形式表示. \n\n## Tensor\n\nTensor 就是 multi-way array 数据的一般叫法. \n\n一维的 tensor 即是向量, 二维的 tensor 就是一个矩阵, 三维的向量的就是一个立方体...\n\n如图所示:\n\n![tensors](img/articles/tensors.png)\n\n## 图片数据\n\n很容易可以想到, 一张图片是二维的, 但是同时需要注意的一点是, 图片的每个像素往往是通过多个值构成的, 如 RGB. 所以, 对于一张图片而言, 他的数据表示即是 $n$ 个 matrix, 也就是 $n$ 个二维 tensor. 其中这里的 $n$ 指的是通道 (channel) 的数量, 如果每个像素点是有 RGB 三个数值组成的, 那么此时 $n$ 就为 $3$. 如下图所示:\n\n\n\n![image-data-representation](img/articles/image-data-representation.png)\n\n## 卷积神经网络 Convolutional Neural Network\n\ncnn 主要有三个部分组成, 卷积层 (Convolutional layer), 池化层 (Pooling layer), 以及全连接层 (fully-connected layer). 如图所示:\n\n![cnn](img/articles/cnn.png)\n\n\n\n### 卷积层\n\n在卷积层中, 主要做的事情就是对输入的图片进行**局部信息抽取**. 具体地说, 就是用一个过滤器扫描整个图片, 然后汇总过滤器得到的信息. 如下图所示:\n\n![convolution-layer](img/articles/convolution-layer.png)\n\n举一个具体的例子:\n$$\n\\begin{bmatrix}\n1 & 2 & 3 & 1\\\\\n4 & 5 & 6 & 1\\\\\n7 & 8 & 9 & 1\n\\end{bmatrix}\n\\ast \n\\begin{bmatrix}\n1 & 1 \\\\ 1 & 1\n\\end{bmatrix}\n = \n\\begin{bmatrix}\n12 & 16 & 11\\\\\n24 & 28 & 17\n\\end{bmatrix}\n$$\n其中左侧的举证代表图片, 中间的矩阵是过滤器, 得到局部信息(最右侧的矩阵.) 其中具体的计算如下图所示:\n\n![filter-example](img/articles/filter-example-1.png)\n\n再看另外一个具体的例子, 如下图所示\n\n![filter-example-2](img/articles/filter-example-2.png)\n\n这里我们使用的是 sobel filter, \n$$\nK= \n\\begin{pmatrix}\n1 & 0 & -1\\\\\n2 & 0 & -2\\\\\n1 & 0 & -1\n\\end{pmatrix}.\n$$\n\n> 因为这是一个有色彩的图片 (RGB), 所以过滤器其实是  $3\\times3\\times3$ 的, 我们让每一个通道的 $K$ 都为上面所示的过滤器. \n>\n> 这样的 $K$ 可以使得横向的特征非常明显, 见图 (b).\n>\n> 其中 (c) 的过滤器为 $K^\\top$, 他可以使纵向的特征更加突出.\n\n这样得到的结果会传入一个非线性的激活函数\n$$\n\\widetilde{\\mathbf{X}}_{ijk} = \\sigma([O^k]_{ij}), \\quad\\forall\\,i\\in [d_1 - w +1], j\\in[d_2 - w + 1], k \\in [d_3].\n$$\n\n### 池化层\n\n池化层做的事情是把相近的特征聚合成一个值. 比方说一个 $2\\times2$ 的 max-pooling 过滤器的效果如下:\n\n![pooling-example](img/articles/pooling-example.png)\n\n这么做的主要目的在于可以为后续的 layer 减小特征的数量并减少计算量.\n\n### 全连接层\n\n全连接层将输入的 tensor 作为一个向量, 记为 $\\text{vec}(\\mathbf{X})$. 然后计算\n$$\n\\widetilde{\\mathbf{X}} = \\sigma(\\mathbf{W}\\text{vec}(\\mathbf{X})).\n$$\n全连接层主要位于 CNN 的最后几个 layer 中.\n\n### Put All Of Them Together\n\n一个经典的 CNN 如下图所示:\n\n![LeNET-CNN](img/articles/LeNET-CNN.png) \n\n## 参考资料\n\nSDSC 6001 课件 - CNN & RNN\n\n"
+    },
+
+    {
         "id": "b43c55c2-a102-4aa9-9d73-43b63f612e01",
         "title": "Git - 如何 '忘记' 已经 add 的文件",
         "category": "Git",
