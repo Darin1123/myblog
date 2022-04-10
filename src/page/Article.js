@@ -91,6 +91,8 @@ export function Article(props) {
     }
 
     function constructId(name, idMap) {
+        name = name.replace('*', '');
+        name = name.replace('?', '');
         let id = '#';
         let parts = splitByLaTeX(name);
         for (let i in parts) {
@@ -138,6 +140,8 @@ export function Article(props) {
             }
         }
         id = id.replace(/\s+/g, '-');
+        id = id.replace('*', '');
+        id = id.replace('?', '');
 
         if (articleIdMap[id] === undefined) {
             articleIdMap[id] = 1;

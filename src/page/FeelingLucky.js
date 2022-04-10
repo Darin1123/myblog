@@ -45,6 +45,8 @@ export function FeelingLucky(props) {
     const [refreshIcon, setRefreshIcon] = useState(randomlyPick(refreshIcons));
 
     function constructId(name, idMap) {
+        name = name.replace('*', '');
+        name = name.replace('?', '');
         let id = '#';
         let parts = splitByLaTeX(name);
         for (let i in parts) {
@@ -54,23 +56,23 @@ export function FeelingLucky(props) {
         }
         id = id.replace(/`/g, '').replace(/\s+/g, '-');
         // Under dev, due to react component life cycle, here adding 2 for each iteration
-        // if (idMap[id] === undefined) {
-        //     idMap[id] = 1;
-        //     return id+'-1';
-        // } else {
-        //     idMap[id] = idMap[id] + 2;
-        //     return `${id}-${idMap[id]}`;
-        // }
-
-        // Production
         if (idMap[id] === undefined) {
             idMap[id] = 1;
-            return id;
+            return id+'-1';
         } else {
-            let old = idMap[id];
-            idMap[id] = idMap[id] + 1;
-            return `${id}-${old}`;
+            idMap[id] = idMap[id] + 2;
+            return `${id}-${idMap[id]}`;
         }
+
+        // Production
+        // if (idMap[id] === undefined) {
+        //     idMap[id] = 1;
+        //     return id;
+        // } else {
+        //     let old = idMap[id];
+        //     idMap[id] = idMap[id] + 1;
+        //     return `${id}-${old}`;
+        // }
     }
 
     async function load() {
@@ -115,6 +117,9 @@ export function FeelingLucky(props) {
             }
         }
         id = id.replace(/\s+/g, '-');
+        id = id.replace('*', '');
+        id = id.replace('?', '');
+
 
         if (articleIdMap[id] === undefined) {
             articleIdMap[id] = 1;
