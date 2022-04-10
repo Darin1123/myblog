@@ -29,7 +29,6 @@ import ReactMarkdown from "react-markdown";
 
 export function FeelingLucky(props) {
 
-    let idMap = {};
     let articleIdMap = {};
     let refreshIcons = [
         <IconBallBasketball/>,
@@ -45,7 +44,7 @@ export function FeelingLucky(props) {
     const [outline, setOutline] = useState([]);
     const [refreshIcon, setRefreshIcon] = useState(randomlyPick(refreshIcons));
 
-    function constructId(name) {
+    function constructId(name, idMap) {
         let id = '#';
         let parts = splitByLaTeX(name);
         for (let i in parts) {
@@ -80,7 +79,21 @@ export function FeelingLucky(props) {
         await setArticle(article);
         setLoaded(true);
         setRefreshIcon(randomlyPick(refreshIcons));
-        setOutline(extractOutline(article.content));
+        let rawOutline = extractOutline(article.content);
+
+        let idMap = {};
+        let processedOutline = [];
+        for (let i in rawOutline) {
+            let name = rawOutline[i].name;
+            let id = constructId(name, idMap);
+            processedOutline.push({
+                level: rawOutline[i].level,
+                name: rawOutline[i].name,
+                id: id
+            });
+        }
+
+        setOutline(processedOutline);
     }
 
     function constructHeaderId(children) {
@@ -130,14 +143,16 @@ export function FeelingLucky(props) {
                     <div className={`outline`}>
                         <div className={'outline-wrapper'}>
                             {outline.map((item, key) => (
-                                <NavHashLink className={'outline-item ' + `level-${item.level}`}
-                                             to={constructId(item.name)}
-                                             key={key}>
+                                <div className={'outline-item ' + `level-${item.level}`}
+                                     onClick={() => {
+                                         $('html, body').animate({scrollTop: $(item.id).offset().top - 66}, 200)
+                                     }}
+                                     key={key}>
                                     {splitByLaTeX(item.name).map(((item, key) => (
                                         item.isLaTeX ? <InlineMath key={key} math={item.content}/> :
                                             <span key={key}>{item.content}</span>
                                     )))}
-                                </NavHashLink>
+                                </div>
                             ))}
                         </div>
                     </div>
