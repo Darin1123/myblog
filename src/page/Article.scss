@@ -43,6 +43,8 @@
       .outline-item {
         display: block;
         text-decoration: none;
+        cursor: pointer;
+
         &::before {
           content: '· ';
         }

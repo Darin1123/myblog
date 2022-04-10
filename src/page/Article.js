@@ -151,14 +151,19 @@ export function Article(props) {
             <div className={`outline`}>
                 <div className={'outline-wrapper'}>
                     {outline.map((item, key) => (
-                        <NavHashLink className={'outline-item ' + `level-${item.level}`}
+                        <div className={'outline-item ' + `level-${item.level}`}
                                      to={constructId(item.name)}
+                             onClick={() => {
+                                 console.log(constructId(item.name));
+                                 console.log($(`${constructId(item.name)}`));
+                                 $('html, body').animate({scrollTop: $(constructId(item.name)).offset().top - 66}, 200)
+                             }}
                                      key={key}>
                             {splitByLaTeX(item.name).map(((item, key) => (
                                 item.isLaTeX ? <InlineMath key={key} math={item.content}/> :
                                     <span key={key}>{item.content}</span>
                             )))}
-                        </NavHashLink>
+                        </div>
                     ))}
                 </div>
             </div>
