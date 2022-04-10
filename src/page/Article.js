@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 import {Link} from "react-router-dom";
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm';
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "lightgallery.js/dist/css/lightgallery.css";
 import {LightgalleryItem, LightgalleryProvider} from "react-lightgallery";
 import {TAB_TITLE} from "../config";
@@ -32,15 +32,12 @@ export function Article(props) {
     let article = null;
     let prevArticle = null;
     let nextArticle = null;
-    let outline = [];
-    let idMap = {};
+    let [outline, setOutline] = useState([]);
     let articleIdMap = {};
 
     ARTICLES.forEach(function (item, index) {
         if (item.id === id) {
             article = item;
-
-            outline = extractOutline(article.content);
 
             if (index > 0) {
                 prevArticle = {
@@ -62,6 +59,25 @@ export function Article(props) {
         if (article !== null) {
             document.title = `正在阅读: ${article.title} - ${TAB_TITLE}`;
             window.scrollTo(0, 0);
+
+
+            // process outline
+            let rawOutline = extractOutline(article.content);
+
+            let idMap = {};
+            let processedOutline = [];
+            for (let i in rawOutline) {
+                let name = rawOutline[i].name;
+                let id = constructId(name, idMap);
+                processedOutline.push({
+                    level: rawOutline[i].level,
+                    name: rawOutline[i].name,
+                    id: id
+                });
+            }
+
+            setOutline(processedOutline);
+
         }
     }, [article]);
 
@@ -74,7 +90,7 @@ export function Article(props) {
         );
     }
 
-    function constructId(name) {
+    function constructId(name, idMap) {
         let id = '#';
         let parts = splitByLaTeX(name);
         for (let i in parts) {
@@ -152,11 +168,8 @@ export function Article(props) {
                 <div className={'outline-wrapper'}>
                     {outline.map((item, key) => (
                         <div className={'outline-item ' + `level-${item.level}`}
-                                     to={constructId(item.name)}
                              onClick={() => {
-                                 console.log(constructId(item.name));
-                                 console.log($(`${constructId(item.name)}`));
-                                 $('html, body').animate({scrollTop: $(constructId(item.name)).offset().top - 66}, 200)
+                                 $('html, body').animate({scrollTop: $(item.id).offset().top - 66}, 200)
                              }}
                                      key={key}>
                             {splitByLaTeX(item.name).map(((item, key) => (
