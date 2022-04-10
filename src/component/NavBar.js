@@ -134,8 +134,8 @@ export default function NavBar(props) {
                             )}
                         </div>
 
-                        <Tilt options={{scale: 1.2, max: 0}}>
-                            <div onClick={props.toggleDark} className={`dark-mode`}>
+                        <Tilt options={{scale: 1.2, max: 0}} className={`dark-mode`}>
+                            <div onClick={props.toggleDark}>
                                 {props.dark ? (
                                     <IconMoon/>
                                 ) : (
@@ -165,8 +165,8 @@ export default function NavBar(props) {
                             <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
                         )}
                     </div>
-                    <Tilt options={{scale: 1.2, max: 0}}>
-                        <div onClick={props.toggleDark} className={`dark-mode`}>
+                    <Tilt options={{scale: 1.2, max: 0}} className={`dark-mode`}>
+                        <div onClick={props.toggleDark}>
                             {props.dark ? (
                                 <IconMoon/>
                             ) : (
@@ -213,7 +213,10 @@ function Portals(props) {
     return (
         <div ref={wrapperRef} className={`portals-main ` + (props.dark? 'dark-portals-main' : '')}>
             {getTopPortals().map((item, key) => (
-                <a key={key} href={item.href} target={'_blank'} rel="noreferrer">{item.name}</a>
+                <div className={'link'} key={key} onClick={() => {
+                    window.open(item.href, "_blank");
+                    props.closePortals();
+                }}>{item.name}</div>
             ))}
 
             <Link to={'/portals'}>传送门 →</Link>

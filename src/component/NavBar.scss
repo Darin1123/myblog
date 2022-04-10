@@ -167,7 +167,8 @@ nav {
       top: calc(100% + 10px);
       border: 1px solid #888;
 
-      a {
+      .link, a {
+        cursor: pointer;
         margin-bottom: 8px;
         text-decoration: none;
 
