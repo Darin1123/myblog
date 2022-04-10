@@ -3,8 +3,8 @@ import {useEffect, useState} from "react";
 import React from "react";
 import {NAME} from "../config";
 import {ARTICLES} from "../data/articles";
-import {NavHashLink} from "react-router-hash-link";
-import {extractOutline, randomlyPick, splitByLaTeX} from "../util/util";
+import {randomlyPick} from "../util/util";
+import {constructHeaderId, constructId, extractOutline, splitByLaTeX} from "../util/outline";
 import {InlineMath} from "react-katex";
 import $ from "jquery";
 import IconArrowUp from "../resources/icons/arrow-up";
@@ -44,37 +44,6 @@ export function FeelingLucky(props) {
     const [outline, setOutline] = useState([]);
     const [refreshIcon, setRefreshIcon] = useState(randomlyPick(refreshIcons));
 
-    function constructId(name, idMap) {
-        name = name.replace('*', '');
-        name = name.replace('?', '');
-        let id = '#';
-        let parts = splitByLaTeX(name);
-        for (let i in parts) {
-            if (!parts[i].isLaTeX) {
-                id += parts[i].content;
-            }
-        }
-        id = id.replace(/`/g, '').replace(/\s+/g, '-');
-        // Under dev, due to react component life cycle, here adding 2 for each iteration
-        if (idMap[id] === undefined) {
-            idMap[id] = 1;
-            return id+'-1';
-        } else {
-            idMap[id] = idMap[id] + 2;
-            return `${id}-${idMap[id]}`;
-        }
-
-        // Production
-        // if (idMap[id] === undefined) {
-        //     idMap[id] = 1;
-        //     return id;
-        // } else {
-        //     let old = idMap[id];
-        //     idMap[id] = idMap[id] + 1;
-        //     return `${id}-${old}`;
-        // }
-    }
-
     async function load() {
         await setLoaded(false);
         let article = randomlyPick(ARTICLES);
@@ -96,39 +65,6 @@ export function FeelingLucky(props) {
         }
 
         setOutline(processedOutline);
-    }
-
-    function constructHeaderId(children) {
-        let id = '';
-        for (let i in children) {
-            let child = children[i];
-            if (typeof child === 'string') {
-                id += child;
-            } else {
-                let className = child.props.className;
-                if (!(className !== undefined && className !== null && className.includes('math'))) {
-                    if (child.props.node !== undefined) {
-                        let tagName = child.props.node.tagName;
-                        if (tagName !== undefined) {  // inline code `code`
-                            id += child.props.children[0];
-                        }
-                    }
-                }
-            }
-        }
-        id = id.replace(/\s+/g, '-');
-        id = id.replace('*', '');
-        id = id.replace('?', '');
-
-
-        if (articleIdMap[id] === undefined) {
-            articleIdMap[id] = 1;
-            return id;
-        } else {
-            let oldValue = articleIdMap[id];
-            articleIdMap[id] = articleIdMap[id] + 1;
-            return `${id}-${oldValue}`;
-        }
     }
 
     useEffect(() => {
@@ -225,28 +161,28 @@ export function FeelingLucky(props) {
                                 },
                                 h2: ({children}) => {
                                     return (
-                                        <h2 id={constructHeaderId(children)}>
+                                        <h2 id={constructHeaderId(children, articleIdMap)}>
                                             {children}
                                         </h2>
                                     )
                                 },
                                 h3: ({children}) => {
                                     return (
-                                        <h3 id={constructHeaderId(children)}>
+                                        <h3 id={constructHeaderId(children, articleIdMap)}>
                                             {children}
                                         </h3>
                                     )
                                 },
                                 h4: ({children}) => {
                                     return (
-                                        <h4 id={constructHeaderId(children)}>
+                                        <h4 id={constructHeaderId(children, articleIdMap)}>
                                             {children}
                                         </h4>
                                     )
                                 },
                                 h5: ({children}) => {
                                     return (
-                                        <h5 id={constructHeaderId(children)}>
+                                        <h5 id={constructHeaderId(children, articleIdMap)}>
                                             {children}
                                         </h5>
                                     )
