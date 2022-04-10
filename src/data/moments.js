@@ -4,6 +4,15 @@ export const MOMENTS_TAGS = [
 
 export const MOMENTS = [
     {
+        "id": "e6dae635-bd60-4807-8a35-59808ecc4aa0",
+        "title": "累!",
+        "tags": [ "生活" ],
+        "date": "2022-4-10",
+        "images": [ "timetable.png", "reaper.jpeg" ],
+        "content": "死神说得好, 没能杀死你的东西，只会让你更强大."
+    },
+
+    {
         "id": "bd59be6d-7431-4d56-b0a2-2e2224f79e93",
         "title": "爽!",
         "tags": [ "炉石" ],

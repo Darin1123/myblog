@@ -16,6 +16,7 @@ import IconMoon from "../resources/icons/moon";
 import Tilt from "react-tilt/dist/tilt";
 import IconAtom from "../resources/icons/atom";
 import {getTopPortals} from "../mockService/portalService";
+import IconAffiliate from "../resources/icons/affiliate";
 
 
 export default function NavBar(props) {
@@ -127,7 +128,7 @@ export default function NavBar(props) {
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <div className={`nav-portals`}>
                             <Tilt options={{scale: 1.2, max: 0}} >
-                                <IconAtom onClick={() => setShowPortals(true)}/>
+                                <IconAffiliate onClick={() => setShowPortals(true)}/>
                             </Tilt>
                             {(showPortals) && (
                                 <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>
@@ -159,7 +160,7 @@ export default function NavBar(props) {
                 <div className={'menu-button'}>
                     <div className={`nav-portals`}>
                         <Tilt options={{scale: 1.2, max: 0}} >
-                            <IconAtom onClick={() => setShowPortals(true)}/>
+                            <IconAffiliate onClick={() => setShowPortals(true)}/>
                         </Tilt>
                         {(showPortals) && (
                             <Portals dark={props.dark} closePortals={() => setShowPortals(false)}/>

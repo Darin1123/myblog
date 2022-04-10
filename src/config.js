@@ -9,7 +9,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 /* 基本配置 */
 export const SIZE = 10  // 单页文章数量
-export const NOTE_SIZE = 15  // 单次时刻数量
+export const NOTE_SIZE = 5  // 单次时刻数量
 export const RECENT_ARTICLE_SIZE = 5  // 最近发布文章数量
 export const NAME = `Darren`  // 名字
 export const NAME_IN_ENGLISH = `Darren Wang`  // 英文名
