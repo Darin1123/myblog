@@ -128,7 +128,7 @@ nav {
           position: absolute;
           visibility: hidden;
           padding: 5px;
-          box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
 
           .category-item {
@@ -207,81 +207,116 @@ nav {
 }
 
 .dark-navbar {
-    background-color: #222;
+  background-color: #222;
 
-    .container {
+  .container {
 
-      .back-up-title {
-        color: $DARK-TEXT-COLOR;
+    .back-up-title {
+      color: $DARK-TEXT-COLOR;
+    }
+
+    .nav-main {
+      a {
+        text-decoration: none;
       }
 
-      .nav-main {
-        a {
-          text-decoration: none;
-        }
+      .active-nav-item {
+        border-bottom: 1px solid $DARK-TEXT-COLOR;
+      }
 
-        .active-nav-item {
+      .back-up-search {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      a {
+        font-size: 12px;
+        margin-right: 20px;
+        cursor: pointer;
+        padding-bottom: 2px;
+        width: fit-content;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
           border-bottom: 1px solid $DARK-TEXT-COLOR;
         }
 
-        .back-up-search {
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+      }
+
+      .title {
+        margin-right: 20px;
+        font-size: 16px;
+      }
+
+      .nav-categories {
+        position: relative;
+
+        .btn {
           cursor: pointer;
-
-          &:hover {
-            text-decoration: underline;
-          }
         }
 
-        a {
-          font-size: 12px;
-          margin-right: 20px;
-          cursor: pointer;
-          padding-bottom: 2px;
-          width: fit-content;
-          border-bottom: 1px solid transparent;
+        .categories-main {
+          position: absolute;
+          visibility: hidden;
+          padding: 5px;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
 
-          &:hover {
-            border-bottom: 1px solid $DARK-TEXT-COLOR;
-          }
-
-          &:nth-last-child(1) {
-            margin-right: 0;
-          }
-        }
-
-        .title {
-          margin-right: 20px;
-          font-size: 16px;
-        }
-
-        .nav-categories {
-          position: relative;
-
-          .btn {
+          .category-item {
             cursor: pointer;
+            width: 100%;
           }
+        }
 
+        &:hover {
           .categories-main {
-            position: absolute;
-            visibility: hidden;
-            padding: 5px;
-            box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
-            border-radius: 5px;
-
-            .category-item {
-              cursor: pointer;
-              width: 100%;
-            }
-          }
-
-          &:hover {
-            .categories-main {
-              visibility: visible;
-            }
+            visibility: visible;
           }
         }
       }
     }
+  }
+
+  .nav-portals {
+
+    .portals-main {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 60px;
+      align-items: center;
+      background-color: #fff;
+      padding: 16px 10px;
+      left: calc(-30px);
+      top: calc(100% + 10px);
+      border: 1px solid #888;
+
+      .link, a {
+        cursor: pointer;
+        margin-bottom: 8px;
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .dark-portals-main {
+      background-color: #222;
+    }
+  }
 }
 
 @media screen and (max-width: $THRESHOLD-CSS) {
