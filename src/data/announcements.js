@@ -16,5 +16,11 @@ export const ANNOUNCEMENTS = [
         content: '如有问题, 请通过电子邮件联系我.',
         consistent: false,
         status: 'off'
+    },
+    {
+        type: 'default',
+        content: '更新: 阅读文章, 点击大纲变为滚动效果',
+        consistent: false,
+        status: 'on'
     }
 ]

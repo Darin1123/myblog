@@ -1,4 +1,6 @@
-const SPECIAL_CHARS = /[*?.():!@<>/\[\]+",&]+/g
+import {DEV_MODE} from "../config";
+
+const SPECIAL_CHARS = /[*?.():!@<>/\[\]+",&]+/g;
 
 export function extractOutline(article) {
     let lines = article.split('\n');
@@ -115,22 +117,22 @@ export function constructId(name, idMap) {
         }
     }
     id = id.replace(/`/g, '').replace(/\s+/g, '-');
-    // Under dev, due to react component life cycle, here adding 2 for each iteration
-    // if (idMap[id] === undefined) {
-    //     idMap[id] = 1;
-    //     id =  id+'-1';
-    // } else {
-    //     idMap[id] = idMap[id] + 2;
-    //     id = `${id}-${idMap[id]}`;
-    // }
-
-    // Production
-    if (idMap[id] === undefined) {
-        idMap[id] = 1;
-    } else {
-        let old = idMap[id];
-        idMap[id] = idMap[id] + 1;
-        id = `${id}-${old}`;
+    if (DEV_MODE) {  // Development
+        if (idMap[id] === undefined) {
+            idMap[id] = 1;
+            id =  id+'-1';
+        } else {
+            idMap[id] = idMap[id] + 2;   // Under dev, due to react component life cycle, here adding 2 for each iteration
+            id = `${id}-${idMap[id]}`;
+        }
+    } else {  // Production
+        if (idMap[id] === undefined) {
+            idMap[id] = 1;
+        } else {
+            let old = idMap[id];
+            idMap[id] = idMap[id] + 1;
+            id = `${id}-${old}`;
+        }
     }
 
     return id.replace(SPECIAL_CHARS, '');

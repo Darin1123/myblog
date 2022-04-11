@@ -108,6 +108,11 @@ export function getArticleDate(article) {
     return new Date(dt.year, dt.month - 1, dt.day);
 }
 
+/**
+ * convert str to Date
+ * @param str must be YYYY-MM-DD
+ * @returns {null|Date} Date object
+ */
 export function string2date(str) {
     let parts = str.split('-');
     if (parts.length === 3) {
