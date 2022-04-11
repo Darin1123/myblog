@@ -18,7 +18,7 @@ export function Portals() {
             <div className={`portal-items`}>
                 {getAllPortals().map((item, key) => (
                     <Tilt key={key} options={{max: 38, scale: 1.1}} className={`portal-item`}>
-                        <a target={'_blank'} rel="noreferrer" href={item.href} >
+                        <a target={'_blank'} rel="noreferrer" href={item.href}>
                             <div className={`img-container`}>
                                 <LazyLoadImage
                                     effect={'blur'}
@@ -30,6 +30,17 @@ export function Portals() {
                         </a>
                     </Tilt>
                 ))}
+            </div>
+            <h2>最近上头</h2>
+            <div className={'high'}>
+                <iframe
+                    src="//player.bilibili.com/player.html?aid=766813855&bvid=BV1jr4y1z7qG&cid=517143262&page=1"
+                    scrolling="no"
+                    border="0"
+                    frameBorder="no"
+                    framespacing="0"
+                    allowFullScreen="true"/>
+                {/*<iframe src="https://www.youtube.com/embed/yw88g5QW6nw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />*/}
             </div>
         </div>
     )

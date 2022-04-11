@@ -47,4 +47,20 @@
       }
     }
   }
+
+  .high {
+    display: flex;
+    flex-wrap: wrap;
+
+    iframe {
+      width: calc(calc(100% - 20px) / 2);
+      height: 400px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
 }

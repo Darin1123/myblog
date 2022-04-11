@@ -24,6 +24,8 @@ import $ from 'jquery';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 // import atomOneLight from "react-syntax-highlighter/src/styles/hljs/atom-one-light";
 import {atomOneDark} from "react-syntax-highlighter/src/styles/hljs";
+import IconThumbUp from "../resources/icons/thumb-up";
+import IconShare from "../resources/icons/share";
 
 export function Article(props) {
     const {id} = useParams();
@@ -33,6 +35,7 @@ export function Article(props) {
     let nextArticle = null;
     let [outline, setOutline] = useState([]);
     let articleIdMap = {};
+    let [fontSize, setFontSize] = useState(14);
 
     ARTICLES.forEach(function (item, index) {
         if (item.id === id) {
@@ -104,22 +107,55 @@ export function Article(props) {
                     </span>
                 </div>
             </div>
-            <div className={`outline`}>
-                <div className={'outline-wrapper'}>
-                    {outline.map((item, key) => (
-                        <div className={'outline-item ' + `level-${item.level}`}
-                             onClick={() => {
-                                 $('html, body').animate({scrollTop: $(item.id).offset().top - 66}, 200)
-                             }}
-                                     key={key}>
-                            {splitByLaTeX(item.name).map(((item, key) => (
-                                item.isLaTeX ? <InlineMath key={key} math={item.content}/> :
-                                    <span key={key}>{item.content}</span>
-                            )))}
-                        </div>
-                    ))}
+
+            <div className={`sidebar`}>
+                <div className={`outline`}>
+                    <div className={'outline-wrapper'}>
+                        {outline.map((item, key) => (
+                            <div className={'outline-item ' + `level-${item.level}`}
+                                 onClick={() => {
+                                     $('html, body').animate({scrollTop: $(item.id).offset().top - 66}, 200)
+                                 }}
+                                 key={key}>
+                                {splitByLaTeX(item.name).map(((item, key) => (
+                                    item.isLaTeX ? <InlineMath key={key} math={item.content}/> :
+                                        <span key={key}>{item.content}</span>
+                                )))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
+                <div className={`menu`}>
+                    <div className={`left`}>
+                        <IconThumbUp/>
+                        <IconShare/>
+                    </div>
+                    <div className={`font-size`}>
+                    <span onClick={() => {
+                        let biggerSize = fontSize + 2;
+                        setFontSize(biggerSize);
+                        $('article').css({
+                            fontSize: `${biggerSize}px`
+                        });
+                    }} style={{fontSize: '16px'}}>A</span>
+                        <span onClick={async () => {
+                            let smallerSize = fontSize - 2;
+                            setFontSize(smallerSize);
+                            $('article').css({
+                                fontSize: `${smallerSize}px`
+                            });
+                        }} style={{fontSize: '12px'}}>A</span>
+                        <span onClick={async () => {
+                            setFontSize(14);
+                            $('article').css({
+                                fontSize: `${14}px`
+                            });
+                        }} style={{fontSize: '12px'}}>重置</span>
+                    </div>
+                </div>
+
             </div>
+
 
             <div className={`go-to-top`} onClick={() => {
                 $('html,body').animate({scrollTop: $("html").offset().top}, 200)

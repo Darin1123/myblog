@@ -1,5 +1,11 @@
 export const ANNOUNCEMENTS = [
     {
+        type: 'default',
+        content: '更新: 阅读文章, 点击大纲变为滚动效果',
+        consistent: false,
+        status: 'on'
+    },
+    {
         type: "default",
         content: "本博客每周末更新.",
         consistent: false,
@@ -17,10 +23,4 @@ export const ANNOUNCEMENTS = [
         consistent: false,
         status: 'off'
     },
-    {
-        type: 'default',
-        content: '更新: 阅读文章, 点击大纲变为滚动效果',
-        consistent: false,
-        status: 'on'
-    }
 ]

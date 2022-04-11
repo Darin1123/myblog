@@ -30,7 +30,7 @@
     }
   }
 
-  .outline {
+  .sidebar {
     display: none;
     position: fixed;
     padding: 10px;
@@ -38,42 +38,81 @@
     line-height: 20px;
     justify-content: center;
 
-    .outline-wrapper {
+    .menu {
+      color: #888;
+      border-top: 1px solid #bbb;
+      padding: 10px 0 5px 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
 
-      .outline-item {
-        display: block;
-        text-decoration: none;
-        cursor: pointer;
-
-        &::before {
-          content: '· ';
-        }
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      .level-2 {
-        &::before {
-          content: '· ';
+      .left {
+        svg {
+          height: 16px;
+          cursor: pointer;
+          margin-right: 5px;
         }
       }
 
-      .level-3 {
-        margin-left: 20px;
-      }
+      .font-size {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-      .level-4 {
-        margin-left: 40px;
-      }
 
-      .level-5 {
-        margin-left: 60px;
+        span {
+          cursor: pointer;
+          margin-left: 5px;
+        }
       }
+    }
 
+
+
+    .outline {
+      border-top: 1px solid #bbb;
+      padding: 5px 0;
+
+      .outline-wrapper {
+
+        .outline-item {
+          display: block;
+          text-decoration: none;
+          cursor: pointer;
+
+          &::before {
+            content: '· ';
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .level-2 {
+          &::before {
+            content: '· ';
+          }
+        }
+
+        .level-3 {
+          margin-left: 20px;
+        }
+
+        .level-4 {
+          margin-left: 40px;
+        }
+
+        .level-5 {
+          margin-left: 60px;
+        }
+
+      }
     }
   }
+
+
 
   .go-to-top {
     display: none;
@@ -102,8 +141,8 @@
       width: 500px;
     }
 
-    .outline {
-      display: flex;
+    .sidebar {
+      display: block;
       width: 200px;
       transform: translateX(500px);
     }
@@ -119,8 +158,8 @@
       width: 560px;
     }
 
-    .outline {
-      display: flex;
+    .sidebar {
+      display: block;
       width: 200px;
       transform: translateX(600px);
     }
@@ -136,8 +175,8 @@
       width: 600px;
     }
 
-    .outline {
-      display: flex;
+    .sidebar {
+      display: block;
       width: 220px;
       transform: translateX(620px);
     }
@@ -149,8 +188,8 @@
   }
 
   @media screen and (min-width: 1080px) {
-    .outline {
-      display: flex;
+    .sidebar {
+      display: block;
       width: 220px;
       transform: translateX(740px);
     }
