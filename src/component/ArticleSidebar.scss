@@ -36,7 +36,26 @@
     }
   }
 
+  .action-message {
+    color: #888;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    //justify-content: space-between;
 
+    &:hover {
+      svg {
+        display: block;
+      }
+    }
+
+    svg {
+      display: none;
+      cursor: pointer;
+
+      height: 12px;
+    }
+  }
 
   .outline {
     border-top: 1px solid #bbb;

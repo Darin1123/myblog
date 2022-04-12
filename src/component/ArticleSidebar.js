@@ -3,8 +3,11 @@ import {splitByLaTeX} from "../util/outline";
 import {InlineMath} from "react-katex";
 import IconThumbUp from "../resources/icons/thumb-up";
 import IconShare from "../resources/icons/share";
-import React from "react";
+import React, {useState} from "react";
 import './ArticleSidebar.scss';
+import {NAME_IN_ENGLISH} from "../config";
+import IconX from "../resources/icons/x";
+import {CopyToClipboard} from "react-copy-to-clipboard/src";
 
 
 export function ArticleSidebar(props) {
@@ -12,6 +15,7 @@ export function ArticleSidebar(props) {
     let outline = props.outline;
     let fontSize = props.fontSize;
     let setFontSize = props.setFontSize;
+    let [message, setMessage] = useState(null);
 
     function biggerFont() {
         if (fontSize === 18) {
@@ -33,6 +37,14 @@ export function ArticleSidebar(props) {
         $('article').css({
             fontSize: `${smallerSize}px`
         });
+    }
+
+    function like() {
+        setMessage('谢谢! ;-)');
+    }
+
+    function share() {
+        setMessage('文章链接已复制! ;-)');
     }
 
     return (
@@ -61,8 +73,10 @@ export function ArticleSidebar(props) {
             </div>
             <div className={`menu`}>
                 <div className={`left`}>
-                    <IconThumbUp/>
-                    <IconShare/>
+                    <IconThumbUp onClick={like}/>
+                    <CopyToClipboard text={window.location.href}>
+                        <IconShare onClick={share}/>
+                    </CopyToClipboard>
                 </div>
                 <div className={`font-size`}>
                     <span onClick={biggerFont}
@@ -77,6 +91,14 @@ export function ArticleSidebar(props) {
                     }} style={{fontSize: '12px'}}>重置</span>
                 </div>
             </div>
+            {(message !== null) && (
+                <div className={'action-message'}>
+                    <div>
+                        {NAME_IN_ENGLISH}: {message}
+                    </div>
+                    <IconX onClick={() => setMessage(null)}/>
+                </div>
+            )}
 
         </div>
     );
