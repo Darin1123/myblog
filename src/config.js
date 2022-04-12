@@ -21,7 +21,7 @@ export const MY_PASSWORD = `0f90abf282f635ba25c26a70b0ebc584629c676f5db5346706c1
 export const NEW_ARTICLE_RANGE = 7;  // 判定为新文章的天数范围, 被判定为新的话会在标题处出现 [New!] 标记
 export const THEME = '';  // TODO
 // export const DEV_MODE = true;  // 是否为开发模式, 部署请改为 false.
-export const DEV_MODE = true;  // 是否为开发模式, 部署请改为 false.
+export const DEV_MODE = false;  // 是否为开发模式, 部署请改为 false.
 
 /* 其他信息 */
 export const LAUNCH_DATE = string2date(`2021-01-03`); // 创办日期. 格式: YYYY-MM-DD

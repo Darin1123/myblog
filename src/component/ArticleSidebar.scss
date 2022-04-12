@@ -1,0 +1,81 @@
+.sidebar {
+  display: none;
+  position: fixed;
+  padding: 10px;
+  top: 90px;
+  line-height: 20px;
+  justify-content: center;
+
+  .menu {
+    color: #888;
+    border-top: 1px solid #bbb;
+    padding: 10px 0 5px 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      svg {
+        height: 16px;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+    }
+
+    .font-size {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+
+      span {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+  }
+
+
+
+  .outline {
+    border-top: 1px solid #bbb;
+    padding: 5px 0;
+
+    .outline-wrapper {
+
+      .outline-item {
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+
+        &::before {
+          content: '· ';
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .level-2 {
+        &::before {
+          content: '· ';
+        }
+      }
+
+      .level-3 {
+        margin-left: 20px;
+      }
+
+      .level-4 {
+        margin-left: 40px;
+      }
+
+      .level-5 {
+        margin-left: 60px;
+      }
+
+    }
+  }
+}
