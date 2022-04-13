@@ -82,7 +82,11 @@ export function FeelingLucky(props) {
             )}
             {(loaded) && (
                 <React.Fragment>
-                    <ArticleSidebar outline={outline} fontSize={fontSize} setFontSize={setFontSize}/>
+                    <ArticleSidebar
+                        outline={outline}
+                        showMenu={false}
+                        fontSize={fontSize}
+                        setFontSize={setFontSize}/>
                     <div className={`actions`}>
                         <div className={`action m-r-10`} onClick={async () => {
                             await load();

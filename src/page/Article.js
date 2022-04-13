@@ -18,12 +18,13 @@ import {constructHeaderId, constructId, extractOutline} from "../util/outline";
 import 'katex/dist/katex.min.css';
 import IconArrowUp from "../resources/icons/arrow-up";
 import $ from 'jquery';
-// import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism'
-// import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter/';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-// import atomOneLight from "react-syntax-highlighter/src/styles/hljs/atom-one-light";
 import {atomOneDark} from "react-syntax-highlighter/src/styles/hljs";
 import {ArticleSidebar} from "../component/ArticleSidebar";
+// import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism'
+// import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter/';
+// import atomOneLight from "react-syntax-highlighter/src/styles/hljs/atom-one-light";
+
 
 export function Article(props) {
     const {id} = useParams();
@@ -108,7 +109,11 @@ export function Article(props) {
                 </div>
             </div>
 
-            <ArticleSidebar outline={outline} fontSize={fontSize} setFontSize={setFontSize}/>
+            <ArticleSidebar
+                outline={outline}
+                showMenu={true}
+                fontSize={fontSize}
+                setFontSize={setFontSize}/>
 
 
             <div className={`go-to-top`} onClick={() => {

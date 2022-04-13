@@ -3,7 +3,7 @@ import {splitByLaTeX} from "../util/outline";
 import {InlineMath} from "react-katex";
 import IconThumbUp from "../resources/icons/thumb-up";
 import IconShare from "../resources/icons/share";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './ArticleSidebar.scss';
 import {NAME_IN_ENGLISH} from "../config";
 import IconX from "../resources/icons/x";
@@ -16,6 +16,10 @@ export function ArticleSidebar(props) {
     let fontSize = props.fontSize;
     let setFontSize = props.setFontSize;
     let [message, setMessage] = useState(null);
+
+    useEffect(() => {
+        setMessage(null);
+    }, [outline])
 
     function biggerFont() {
         if (fontSize === 18) {
@@ -72,12 +76,15 @@ export function ArticleSidebar(props) {
                 <b>菜单</b>
             </div>
             <div className={`menu`}>
-                <div className={`left`}>
-                    <IconThumbUp onClick={like}/>
-                    <CopyToClipboard text={window.location.href}>
-                        <IconShare onClick={share}/>
-                    </CopyToClipboard>
-                </div>
+                {(props.showMenu) && (
+                    <div className={`left`}>
+                        <IconThumbUp onClick={like}/>
+                        <CopyToClipboard text={window.location.href}>
+                            <IconShare onClick={share}/>
+                        </CopyToClipboard>
+                    </div>
+                )}
+
                 <div className={`font-size`}>
                     <span onClick={biggerFont}
                           style={{fontSize: '16px'}}>A</span>

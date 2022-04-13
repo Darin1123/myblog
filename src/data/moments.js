@@ -1,11 +1,11 @@
 export const MOMENTS_TAGS = [
-    "吃饭", "模玩", "炉石", "旅行", "生活"
+    "吃饭", "模玩", "炉石", "旅行", "生活", "感悟", "数学"
 ];
 
 export const MOMENTS = [
     {
         "id": "e6dae635-bd60-4807-8a35-59808ecc4aa0",
-        "title": "累!",
+        "title": "这个学期真的累!",
         "tags": [ "生活" ],
         "date": "2022-4-10",
         "images": [ "timetable.png", "reaper.jpeg" ],
@@ -14,17 +14,17 @@ export const MOMENTS = [
 
     {
         "id": "bd59be6d-7431-4d56-b0a2-2e2224f79e93",
-        "title": "爽!",
+        "title": "吃鸡! 爽!",
         "tags": [ "炉石" ],
         "date": "2022-4-3",
         "images": [ "奥秘哥吃鸡.png" ],
-        "content": "看起来似乎没什么, 但是其实在冰箱被破之后依然坚持了六个回合, 最终吃鸡! (三家鱼, 有一家金小黄, 鱼平均100+血.)"
+        "content": "虽然看起来似乎没什么, 但是其实在冰箱被破之后依然坚持了六个回合, 最终吃鸡! (三家鱼, 有一家金小黄, 鱼平均100+血.)"
     },
 
     {
         "id": "c26935ae-ed69-4bba-b64c-f6623963a904",
         "title": "数学太难",
-        "tags": [],
+        "tags": ["数学"],
         "date": "2022-3-31",
         "images": ['math-is-easy.jpeg'],
         "content": "啥也不说了. 脑子不够用别选重数学的学科."

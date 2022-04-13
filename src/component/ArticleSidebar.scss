@@ -32,6 +32,10 @@
       span {
         cursor: pointer;
         margin-left: 5px;
+
+        &:nth-child(1) {
+          margin-left: 0;
+        }
       }
     }
   }
