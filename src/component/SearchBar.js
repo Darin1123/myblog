@@ -48,7 +48,8 @@ export function SearchBar(props) {
             if (lowerCaseCategory.includes(keyword)) {
                 return true;
             }
-            return keyword.includes(lowerCaseCategory);
+            // return keyword.includes(lowerCaseCategory);
+            return false;
         });
 
         setFoundCategories(foundCategories);
@@ -68,9 +69,9 @@ export function SearchBar(props) {
                 if (lowerCaseCategory.includes(keyword)) {
                     return true;
                 }
-                if (keyword.includes(lowerCaseCategory)) {
-                    return true;
-                }
+                // if (keyword.includes(lowerCaseCategory)) {
+                //     return true;
+                // }
             }
 
             if (keyword.includes(lowerCaseTitle)) {
