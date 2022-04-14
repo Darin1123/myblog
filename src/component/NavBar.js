@@ -14,7 +14,6 @@ import variables from '../css/export.scss';
 import IconSun from "../resources/icons/sun";
 import IconMoon from "../resources/icons/moon";
 import Tilt from "react-tilt/dist/tilt";
-import IconAtom from "../resources/icons/atom";
 import {getTopPortals} from "../mockService/portalService";
 import IconAffiliate from "../resources/icons/affiliate";
 
@@ -220,7 +219,10 @@ function Portals(props) {
                 }}>{item.name}</div>
             ))}
 
-            <Link to={'/portals'}>传送门 →</Link>
+            <div className={'link'}  onClick={() => {
+                window.location.href = window.location.origin + '/#/portals';
+                props.closePortals();
+            }}>传送门 →</div>
         </div>
     );
 }
