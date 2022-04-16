@@ -1,7 +1,7 @@
 export const ANNOUNCEMENTS = [
     {
         type: 'default',
-        content: '更新: 阅读文章, 点击大纲变为滚动效果',
+        content: '[更新] 文章页面: 调整字体大小, 菜单',
         consistent: false,
         status: 'on'
     },

@@ -16,10 +16,9 @@ export function Archived() {
         items: []
     };
 
-    const PAGE = 10;
+    const PAGE = 12;
 
     for (let i in ARTICLES) {
-        // console.log(ARTICLES[i].date);
         if (compareDateObjects(date, ARTICLES[i].date) === 0) {
             console.log(ARTICLES[i].date);
             dayItems.items.push(

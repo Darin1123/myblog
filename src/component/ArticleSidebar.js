@@ -101,7 +101,7 @@ export function ArticleSidebar(props) {
             {(message !== null) && (
                 <div className={'action-message'}>
                     <div>
-                        {NAME_IN_ENGLISH}: {message}
+                        <b>{NAME_IN_ENGLISH}</b>: {message}
                     </div>
                     <IconX onClick={() => setMessage(null)}/>
                 </div>
