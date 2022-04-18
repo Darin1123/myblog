@@ -49,7 +49,7 @@ export function MomentItem(props) {
                     (showAll) ? (
                         item.content
                     ) : (
-                        firstNLines(item.content, 6)
+                        firstNLines(item.content, 4)
                     )
                 )}
                 {(longContent) && (
@@ -57,6 +57,7 @@ export function MomentItem(props) {
                         cursor: 'pointer',
                         width: 'fit-content',
                         textDecoration: 'underline',
+                        marginTop: "32px",
                         color: '#444'
                     }} onClick={() => setShowAll(!showAll)}>{showAll ? '收起' : '展开'}</div>
                 )}
