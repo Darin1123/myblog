@@ -1,5 +1,14 @@
 export const ARTICLES = [
     {
+        "id": "297c1284-8e87-4301-b8ee-4330e876425b",
+        "title": "Pandas DataFrame 常用属性和方法",
+        "category": "Python",
+        "date": { "year": 2022, "month": 4, "day": 19 },
+        "peek": "本文介绍了 pandas 库中 DataFrame 的一些常用属性及方法",
+        "content": "> 2022 年 4 月 19 日\n\n## 简介\n\n本文介绍了 `pandas` 库中 `DataFrame` 的一些常用属性及方法.\n\n## 常用属性\n\n### `iloc` \n\n`iloc` 用于选取部分数据. 查看完成文档请点击此 [链接](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc).\n\n**下面展示部分使用示例**\n\n```python\n# toy data\n>>> mydict = [{'a': 1, 'b': 2, 'c': 3, 'd': 4},\n          {'a': 100, 'b': 200, 'c': 300, 'd': 400},\n          {'a': 1000, 'b': 2000, 'c': 3000, 'd': 4000 }]\n>>> df = pd.DataFrame(mydict)\n>>> df\n      a     b     c     d\n0     1     2     3     4\n1   100   200   300   400\n2  1000  2000  3000  4000\n```\n\n#### 选取行\n\n```python\n>>> # 选取第一行, 返回`pandas.core.series.Series` 类型\n>>> df.iloc[0]\na    1\nb    2\nc    3\nd    4\nName: 0, dtype: int64\n\n>>> # 同样选取第一行, 但是返回类型为 `pandas.core.frame.DataFrame`\n>>> df.iloc[[0]]  \n   a  b  c  d\n0  1  2  3  4\n```\n\n#### 选取列\n\n> `df.iloc[: [column indices]]`\n\n```python\n>>> df.iloc[:, [0, 2]]\n      a     c\n0     1     3\n1   100   300\n2  1000  3000\n```\n\n\n\n## 常用方法\n\n| 方法名      | 描述             | 用途                    |\n| ----------- | ---------------- | ----------------------- |\n| `head([n])` | 返回前 n 行数据. | 用于简单地观测浏览数据. |\n|             |                  |                         |\n|             |                  |                         |\n\n## 参考方法\n\n1. [pandas.DataFrame 官方文档](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html)"
+    },
+
+    {
         "id": "6faf0d2b-4753-4bab-8a85-1e3a28945d92",
         "title": "Matched Pairs",
         "category": "机器学习",
@@ -41,7 +50,7 @@ export const ARTICLES = [
         "category": "R",
         "date": { "year": 2022, "month": 4, "day": 7 },
         "peek": "因子用于存储不同类别的数据类型.",
-        "content": "> 2022 年 4 月 6 日\n\n## 用途\n\n因子用于存储不同类别的数据类型. (人按性别分有男女, 按年龄分有成年人和未成年人)\n\n## 语法格式$^1$\n\n```r\nfactor(x = character(), levels, labels = levels, \n       exclude = NA, ordered = is.ordered(x), nmax = NA)\n```\n\n参数说明\n\n`x` : 向量\n\n`levels` : 指定各水平值, 不指定时由 `x` 的不同值来求得. \n\n`labels` : 水平的标签. 不指定时用各水平值对应的字符串.\n\n`exclude` : 排除的字符.\n\n`ordered` : 逻辑值, 用于指定水平是否有序.\n\n`nmax` : 水平的上限数量.\n\n## 使用示例$^1$\n\n简单使用\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm')\nsex <- factor(x)\nprint(sex)\n\n# output\n# [1] f m f f m\n# Levels: f m\n```\n\n添加因子水平\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm', levels=c('m', 'f'))\nsex <- factor(x)\nprint(sex)\n\n# output\n#                                         levels1 levels2\n#       f       m       f       f       m       m       f\n# Levels: f m\n```\n\n## 总结 \n\n当在处理类别数据的时候, 可以使用因子.\n\n##  参考资料\n\n1. [R 因子](https://www.runoob.com/r/r-factor.html)\n2. [如何理解R中因子的概念]("
+        "content": "> 2022 年 4 月 6 日\n\n## 用途\n\n因子用于存储不同类别的数据类型. (人按性别分有男女, 按年龄分有成年人和未成年人)\n\n## 语法格式$^1$\n\n```r\nfactor(x = character(), levels, labels = levels, \n       exclude = NA, ordered = is.ordered(x), nmax = NA)\n```\n\n参数说明\n\n`x` : 向量\n\n`levels` : 指定各水平值, 不指定时由 `x` 的不同值来求得. \n\n`labels` : 水平的标签. 不指定时用各水平值对应的字符串.\n\n`exclude` : 排除的字符.\n\n`ordered` : 逻辑值, 用于指定水平是否有序.\n\n`nmax` : 水平的上限数量.\n\n## 使用示例$^1$\n\n简单使用\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm')\nsex <- factor(x)\nprint(sex)\n\n# output\n# [1] f m f f m\n# Levels: f m\n```\n\n添加因子水平\n\n```r\nx <- c('f', 'm', 'f', 'f', 'm', levels=c('m', 'f'))\nsex <- factor(x)\nprint(sex)\n\n# output\n#                                         levels1 levels2\n#       f       m       f       f       m       m       f\n# Levels: f m\n```\n\n## 总结 \n\n当在处理类别数据的时候, 可以使用因子.\n\n##  参考资料\n\n1. [R 因子](https://www.runoob.com/r/r-factor.html)\n2. [如何理解R中因子的概念](https://www.zhihu.com/question/48472404)"
     },
 
     {
@@ -671,7 +680,7 @@ export const ARTICLES = [
         "category": "机器学习",
         "date": { "year": 2021, "month": 11, "day": 22 },
         "peek": "使用 Python 作为机器学习的语言时, 有很方便的包用于交叉验证. 在这里介绍用 sklearn 相关包的方法",
-        "content": "> 2021 年 11 月 22 日\n\n## 简介\n使用 Python 作为机器学习的语言时, 有很方便的包用于交叉验证. 在这里介绍用 `sklearn` 相关包的方法.\n\n## `cross_val_score` 方法\n\n若想要用 `cross_val_score` 进行交叉验证, 要求被检验的模型实现了 `sklearn` 机器学习模型的所有相关接口.\n\n### 第一步 - 导包\n```python\nfrom sklearn.model_selection import cross_val_score\n```\n\n### 第二步 - 使用\n对于模型和数据集, 根据不同的参数, 得出相应的分数. 其中 `cv` 为 fold 的数量, 每次 cross validation 都会得到 `cv` 个分数然后得到一个平均值便是这次 cross validation 的分数.\n```python\nX = ...  # predictors\ny = ...  # target\n\nscore_dict = {}  # 初始化分数字典\nparam_space = ...  # 参数空间\n\nfor param_value in param_space:\n    model = Model(param=param_value)\n    score_dict[cost] = np.mean(cross_val_score(model, X, y, cv=10))\n```\n\n### 例子\n以 `SVC` 为例,\n```python\nX = ...  # predictors\ny = ...  # target\n\nsvc_score_dict = {}\ncost_values = np.logspace(-2, 6, 10)\n\nfor cost in cost_values:\n    svc = SVC(kernel='linear', C=cost)\n    svc_score_dict[cost] = np.mean(cross_val_score(svc, X, y, cv=10))\n```\n\n## 使用 `KFold`\n\n`KFold` 的作用在于生成交叉验证的数据集索引. 当需要被验证的模型没有满足 `sklearn` 模型的接口时, 可以使用这个方法.\n\n### 第一步 - 导包\n~~~python\nfrom sklearn.model_selection import KFold\n~~~ \n\n### 第二步 - 使用\n~~~python\nscore_dict = {}\nN = ...  # number of folds\nparam_space = ...\n\nfor param in param_space:\n    model = model(param=param)\n    kf = KFold(n_splits=N)\n    scores = []\n    for train_index, test_index in kf.split(X_train):\n      X_train_kv, X_test_kv = X_train[train_index], X_train[test_index]\n      y_train_kv, y_test_kv = y_train[train_index], y_train[test_index]\n      model.fit(X_train_kv, y_train_kv)\n      scores.append(model.score(X_test_kv, y_test_kv))\n    score_dict[param] = sum(scores) / N\n~~~\n\n### 例子\n以 `KNN` 为例:\n\n~~~python\nN = 10\nscore_dict = {}\nparam_space = list(range(1, 11))\nfor param in param_space:\n    model = KNN(k=param)\n    kf = KFold(n_splits=N)\n    scores = []\n    for train_index, test_index in kf.split(X_train):\n        X_train_kv, X_test_kv = X_train[train_index], X_train[test_index]\n        y_train_kv, y_test_kv = y_train[train_index], y_train[test_index]\n        model.fit(X_train_kv, y_train_kv)\n        scores.append(model.score(X_test_kv, y_test_kv))\n    score_dict[param] = sum(scores) / N\n~~~\n\n## 更多 - 结果可视化\n在 cross validation 后, 通常会对分数进行可视化来选出最好的参数. 模板如下:\n```python\nplt.plot(list(score_dict.keys()), list(score_dict.values()), marker='o')\nplt.plot(\n    max(score_dict, key=score_dict.get),\n    max(list(score_dict.values())), marker='o', markersize=8, c='r', label='max_accuracy')\nplt.legend()\nplt.xlabel('')  # 写入参数的名称\nplt.ylabel('Score')\nplt.xscale('log')\nplt.show()\n```\n\n## 参考资料\n1. [sklearn - cross_val_score](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)\n2. [sklearn - KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)\n"
+        "content": "> 2021 年 11 月 22 日\n\n## 简介\n使用 Python 作为机器学习的语言时, 有很方便的包用于交叉验证. 在这里介绍用 `sklearn` 相关包的方法.\n\n## `cross_val_score` 方法\n\n若想要用 `cross_val_score` 进行交叉验证, 要求被检验的模型实现了 `sklearn` 机器学习模型的所有相关接口.\n\n### 第一步 - 导包\n```python\nfrom sklearn.model_selection import cross_val_score\n```\n\n### 第二步 - 使用\n对于模型和数据集, 根据不同的参数, 得出相应的分数. 其中 `cv` 为 fold 的数量, 每次 cross validation 都会得到 `cv` 个分数然后得到一个平均值便是这次 cross validation 的分数.\n```python\nX = ...  # predictors\ny = ...  # target\n\nscore_dict = {}  # 初始化分数字典\nparam_space = ...  # 参数空间\n\nfor param_value in param_space:\n    model = Model(param=param_value)\n    score_dict[cost] = np.mean(cross_val_score(model, X, y, cv=10))\n```\n\n### 例子\n以 `SVC` 为例,\n```python\nX = ...  # predictors\ny = ...  # target\n\nsvc_score_dict = {}\ncost_values = np.logspace(-2, 6, 10)\n\nfor cost in cost_values:\n    svc = SVC(kernel='linear', C=cost)\n    svc_score_dict[cost] = np.mean(cross_val_score(svc, X, y, cv=10))\n```\n\n## 使用 `KFold`\n\n`KFold` 的作用在于生成交叉验证的数据集索引. 当需要被验证的模型没有满足 `sklearn` 模型的接口时, 可以使用这个方法.\n\n### 第一步 - 导包\n~~~python\nfrom sklearn.model_selection import KFold\n~~~ \n\n### 第二步 - 使用\n~~~python\nscore_dict = {}\nN = ...  # number of folds\nparam_space = ...\n\nfor param in param_space:\n    model = model(param=param)\n    kf = KFold(n_splits=N)\n    scores = []\n    for train_index, test_index in kf.split(X_train):\n      X_train_kv, X_test_kv = X_train[train_index], X_train[test_index]\n      y_train_kv, y_test_kv = y_train[train_index], y_train[test_index]\n      model.fit(X_train_kv, y_train_kv)\n      scores.append(model.score(X_test_kv, y_test_kv))\n    score_dict[param] = sum(scores) / N\n~~~\n\n### 例子\n以 `KNN` 为例:\n\n~~~python\nN = 10\nscore_dict = {}\nparam_space = list(range(1, 11))\nfor param in param_space:\n    model = KNN(k=param)\n    kf = KFold(n_splits=N)\n    scores = []\n    for train_index, test_index in kf.split(X_train):\n        X_train_kv, X_test_kv = X_train[train_index], X_train[test_index]\n        y_train_kv, y_test_kv = y_train[train_index], y_train[test_index]\n        model.fit(X_train_kv, y_train_kv)\n        scores.append(model.score(X_test_kv, y_test_kv))\n    score_dict[param] = sum(scores) / N\n~~~\n\n## 结果可视化\n在 cross validation 后, 通常会对分数进行可视化来选出最好的参数. 模板如下:\n```python\nplt.plot(list(score_dict.keys()), list(score_dict.values()), marker='o')\nplt.plot(\n    max(score_dict, key=score_dict.get),\n    max(list(score_dict.values())), marker='o', markersize=8, c='r', label='max_accuracy')\nplt.legend()\nplt.xlabel('')  # 写入参数的名称\nplt.ylabel('Score')\nplt.show()\n```\n\n## 参考资料\n1. [sklearn - cross_val_score](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)\n2. [sklearn - KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)\n"
     },
 
     {
@@ -1216,7 +1225,7 @@ export const ARTICLES = [
 
     {
         "id": "4fbb3aa4-5fbc-4cc4-831f-ac8388359def",
-        "title": "Java 深拷贝 和 浅拷贝",
+        "title": "Java - 深拷贝 和 浅拷贝",
         "category": "Java",
         "date": { "year": 2021, "month": 1, "day": 2 },
         "peek": "在Java中, 类可以通过实现 `Cloneable` 接口来实现. 但是由此方法拷贝的对象是浅拷贝.",
@@ -1234,7 +1243,7 @@ export const ARTICLES = [
 
     {
         "id": "80463840-73b7-4346-99d1-6d81e0f826cd",
-        "title": "Java 序列化和反序列化",
+        "title": "Java - 序列化和反序列化",
         "category": "Java",
         "date": { "year": 2021, "month": 1, "day": 2 },
         "peek": "一直对 Java 中的序列化和反序列化有疑惑：序列化和反序列化有什么用？",
@@ -1315,7 +1324,7 @@ export const ARTICLES = [
 
     {
         "id": "25a68461-b89c-4186-aba6-318b8355f730",
-        "title": "Java 利用反射调用私有方法",
+        "title": "Java - 利用反射调用私有方法",
         "category": "Java",
         "date": { "year": 2020, "month": 10, "day": 14 },
         "peek": "今天需要测试一个服务类的私有方法, 所以需要在测试类中调用该私有方法.",
@@ -1332,8 +1341,35 @@ export const ARTICLES = [
     },
 
     {
+        "id": "f392030b-be93-4ee7-941f-3b99445aeefe",
+        "title": "设计模式 - 代理模式",
+        "category": "设计模式",
+        "date": { "year": 2020, "month": 8, "day": 2 },
+        "peek": "本文介绍了设计模式中的代理模式",
+        "content": "> 深圳 2020 年 8 月 2 日\n\n## UML图\n\n![代理模式](img/articles/proxy-pattern.png)\n\n\n\n> **代理模式** ( Proxy ), 为其他对象提供一种代理以控制对这个对象的访问.\n\n```java\npackage proxy.generic;\n\npublic interface Subject {\n    void request();\n}\n```\n\n```java\npackage proxy.generic;\n\npublic class RealSubject implements Subject {\n    @Override\n    public void request() {\n        System.out.println(\"真实的请求.\");\n    }\n}\n```\n\n```java\npackage proxy.generic;\n\npublic class Proxy implements Subject {\n\n    private RealSubject realSubject;\n\n    @Override\n    public void request() {\n        if (realSubject==null) {\n            realSubject = new RealSubject();\n        }\n        realSubject.request();\n    }\n}\n```\n\n```java\npackage proxy.generic;\n\npublic class ClientMain {\n    public static void main(String[] args) {\n        Proxy proxy = new Proxy();\n        proxy.request();\n    }\n}\n\n```\n\n打印输出\n\n```shell\n真实的请求\n```\n\n\n\n## 一些问题\n\n有哪些使用场景?\n   1. 远程代理, 也就是为一个对象在不同的的地址空间提供局部代表.这样可以隐藏一个对象存在于不同地址空间的事实.\n   2. 虚拟代理. 根据需要创建开销很大的对象. 通过它来存放实例化需要很长时间的真是对象.\n   3. 安全代理. 用来控制真实对象访问时的权限.\n   4. 智能指引. 当调用真实的对象时, 代理处理另外一些事.\n\n\n\n> 代理模式其实就是在访问对象时引入了一定程度的间接性, 因为这种间接性, 可以附加多种用途.\n>\n> 代理就是真实对象的代表."
+    },
+
+    {
+        "id": "0fdfa1c4-f1c8-48fe-bbea-0a37dc2d7c89",
+        "title": "设计模式 - 装饰模式",
+        "category": "设计模式",
+        "date": { "year": 2020, "month": 7, "day": 28 },
+        "peek": "本文介绍了设计模式中的装饰模式",
+        "content": "> 动态地给一个对象添加一些额外的职责. 就增加功能来说, 装饰模式比生成子类更加灵活.\n\n## UML 图\n\n![decorator](img/articles/decorator-1.png)\n\n### 巧变\n\n如果只有一个 ConcreteComponent 类(, 没有抽象类), 那 Decorator 类可以直接继承这个 ConcreteComponent 类.\n\n\n![decorator](img/articles/decorator-2.png)\n\n\n\n\n\n\n同理, 如果只有一个 ConcreteDecorator 类, 则可以省略抽象的 Decorator 类.\n\n\n![decorator](img/articles/decorator-3.png)\n\n\n\n\n## 代码示例\n\n### 抽象一点的\n\nComponent 类\n\n```java\npackage decorator.general;\n\npublic abstract class Component {\n    public abstract void operation();\n}\n```\n\nConcreteComponent 类\n\n```java\npackage decorator.general;\n\npublic class ConcreteComponent extends Component {\n    @Override\n    public void operation() {\n        System.out.println(\"Concrete component operates\");\n    }\n}\n```\n\nDecorator 类\n\n```java\npackage decorator.general;\n\npublic abstract class Decorator extends Component {\n    protected Component component;\n    public void setComponent(Component component) {\n        this.component = component;\n    }\n\n    @Override\n    public void operation() {\n        if (this.component!=null) {\n            component.operation();\n        }\n    }\n}\n```\n\nConcreteDecorator 类\n\n```java\npackage decorator.general;\n\npublic class ConcreteDecorator extends Decorator {\n    @Override\n    public void operation() {\n        System.out.println(\"Concrete decorator operates\");\n        super.component.operation();\n    }\n}\n```\n\n客户端类\n\n```java\npackage decorator.general;\n\npublic class ClientMain {\n    public static void main(String[] args) {\n        Component component = new ConcreteComponent();\n        Decorator decorator = new ConcreteDecorator();\n\n        decorator.setComponent(component);\n      \n        decorator.operation();\n    }\n}\n\n```\n\n打印输出\n\n```\nConcrete decorator operates\nConcrete component operates\n```\n\n\n\n\n\n### 穿衣服的例子\n\n这个例子中只有一个具体的 Component.\n\nPerson 类\n\n```java\npackage decorator.putOnClothes;\n\npublic class Person {\n\n    private String name;\n\n    public Person() {}\n    public Person(String name) { this.name = name; }\n\n    public void operate() {\n        System.out.println(\"i'm \"+name);\n    }\n}\n\n```\n\n抽象衣服类\n\n```java\npackage decorator.putOnClothes;\n\npublic abstract class Clothes extends Person {\n    protected Person person;\n\n    public void setPerson(Person person) {\n        this.person = person;\n    }\n\n    @Override\n    public void operate() {\n        if (person!=null) {\n            person.operate();\n        }\n    }\n}\n```\n\n裤子类\n\n```java\npackage decorator.putOnClothes;\n\npublic class Pants extends Clothes {\n    @Override\n    public void operate() {\n        System.out.println(\"Pants on\");\n        super.operate();\n    }\n}\n```\n\nT-shirt 类\n\n```java\npackage decorator.putOnClothes;\n\npublic class TShirt extends Clothes {\n    @Override\n    public void operate() {\n        System.out.println(\"T-Shirt on\");\n        super.operate();\n    }\n}\n```\n\n客户端代码\n\n```java\npackage decorator.putOnClothes;\n\npublic class ClientMain {\n    public static void main(String[] args) {\n        Person person = new Person(\"Cai\");\n        Pants pants = new Pants();\n        TShirt tShirt = new TShirt();\n\n        pants.setPerson(person);\n        tShirt.setPerson(pants);\n\n        tShirt.operate();\n    }\n}\n```\n\n打印输出\n\n```text\nT-Shirt on\nPants on\ni'm Cai\n```\n\n\n## 几个问题\n\n### 1. 什么时候应该使用装饰模式?\n\n装饰模式把每个要装饰的功能放在单独的类中, 并让这个类包装它所要装饰的对象. **因此, 当需要执行特殊行为时, 客户代码就可以在运行时根据需要有选择地, 按顺序地使用包装类封装对象了.**\n\n### 2. 有什么优点呢?\n\n把需要添加的新功能写在新的类里面, 保证了原有类的代码不发生变化(保持简单); 把核心职责和装饰功能区分开了."
+    },
+
+    {
+        "id": "9f99b511-530f-4fdc-bb0b-c1fd02d9917f",
+        "title": "设计模式 - 策略模式",
+        "category": "设计模式",
+        "date": { "year": 2020, "month": 7, "day": 24 },
+        "peek": "本文介绍了设计模式中的策略模式",
+        "content": "## 类图\n\n![类图](img/articles/strategy.png)\n\n\n\n## 解析\n\n1. 策略模式是一种定义一系列算法的方法, 从概念上看, 所有的这些算法完成的都是相同的工作, 只是实现不同. 他可以用同样的方式调用任意的一个算法, **减少了算法类与使用算法类之间的耦合**.\n2. 策略模式中的 `Strategy` 类层为 `Context` 定义了一系列可供重用的算法或行为. 继承有处于析取这些算法中的公共功能.\n\n3. 简化了单元测试, 因为每个算法都有自己的类, 可以通过自己的接口单独测试.\n\n4. **只要在分析的过程中听到需要在不同时间应用不同的业务规则, 就可以考虑使用策略模式处理这种变化的可能性.**\n\n## 例子\n\n场景: 超市收银机, 有不同的优惠策略.\n\n定义**打折类**\n\n```java\npublic abstract class Discount {\n    public abstract double algorithm(double money);\n}\n```\n\n定义三个具体的优惠策略: 1) 不打折, 2) 打X折, 3) 满XXX返XXX\n\n```java\npublic class DiscountNormal extends Discount {\n    @Override\n    public double algorithm(double money) {\n        return money;\n    }\n}\n```\n\n```java\npublic class DiscountRebate extends Discount {\n\n    private double debate = 1d;\n\n    public DiscountRebate(double debate) {\n        this.debate = debate;\n    }\n\n    @Override\n    public double algorithm(double money) {\n        return money*debate;\n    }\n}\n\n```\n\n```java\npublic class DiscountReturn extends Discount {\n\n    private double conditionMoney;\n    private double returnMoney;\n\n    public DiscountReturn(double conditionMoney, double returnMoney) {\n        this.conditionMoney = conditionMoney;\n        this.returnMoney = returnMoney;\n    }\n\n    @Override\n    public double algorithm(double money) {\n        return money - Math.floor(money/conditionMoney)*returnMoney;\n    }\n}\n```\n\n定义Context类\n\n```java\npublic class CashierContext {\n\n    private Discount discount;\n\n    public CashierContext(Discount discount) {\n        this.discount = discount;\n    }\n\n    public double getResult(double money) {\n        return this.discount.algorithm(money);\n    }\n}\n```\n\n客户端\n\n```java\nimport java.util.Scanner;\n\npublic class ClientMain {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int strategy = 1;\n        double input = 0.0d;\n        Discount algorithm = null; // 策略的具体实现要由客户端程序员完成\n\n        try {\n            System.out.print(\"选择打折方式:\\n1: 不打折\\n2: 打八折\\n3: 满200返20\\n> \");\n            strategy = scanner.nextInt();\n            System.out.print(\"输入金额: \");\n            input = scanner.nextDouble();\n        } catch (Exception e) {\n            System.out.println(\"您的输入有误.\");\n        }\n        switch (strategy) { //客户端程序员任然有选择的压力\n            case (1):\n                algorithm = new DiscountNormal();\n                break;\n            case (2):\n                algorithm = new DiscountRebate(0.8);\n                break;\n            case (3):\n                algorithm = new DiscountReturn(200, 20);\n                break;\n        }\n        System.out.println(\"最终金额: \" + (new CashierContext(algorithm).getResult(input))); // Context 类也要由客户端完成.\n    }\n}\n```\n\n在这个程序中, 客户端程序员编写分流的代码. 在现在的基础上使用简单工厂模式便可以消除分流的代码.\n\n定义工厂上下文类\n\n```java\npublic class CashierFactoryContext {\n\n    Discount algorithm = null;\n\n    public CashierFactoryContext(int strategy) {\n        switch (strategy) { //客户端程序员任然有选择的压力\n            case (1):\n                this.algorithm = new DiscountNormal();\n                break;\n            case (2):\n                this.algorithm = new DiscountRebate(0.8);\n                break;\n            case (3):\n                this.algorithm = new DiscountReturn(200, 20);\n                break;\n        }\n    }\n\n    public double getResult(double money) {\n        return this.algorithm.algorithm(money);\n    }\n}\n```\n\n客户端程序\n\n```java\nimport java.util.Scanner;\n\npublic class FactoryClientMain {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int strategy = 1;\n        double input = 0.0d;\n\n        try {\n            System.out.print(\"选择打折方式:\\n1: 不打折\\n2: 打八折\\n3: 满200返20\\n> \");\n            strategy = scanner.nextInt();\n            System.out.print(\"输入金额: \");\n            input = scanner.nextDouble();\n        } catch (Exception e) {\n            System.out.println(\"您的输入有误.\");\n        }\n        System.out.println(\"最终金额: \" + (new CashierFactoryContext(strategy).getResult(input)));\n    }\n}\n```\n\n"
+    },
+
+    {
         "id": "1e084713-e484-4629-b5f5-ef221647c5a1",
-        "title": "Java IO 流 - FileWriter",
+        "title": "Java - IO 流 - FileWriter",
         "category": "Java",
         "date": { "year": 2020, "month": 7, "day": 6 },
         "peek": "如题所示",
@@ -1342,7 +1378,7 @@ export const ARTICLES = [
 
     {
         "id": "0350eece-2422-4b68-8ee0-f53a5bf6cb3c",
-        "title": "Java IO 流 - FileReader",
+        "title": "Java - IO 流 - FileReader",
         "category": "Java",
         "date": { "year": 2020, "month": 7, "day": 6 },
         "peek": "如题所示",
@@ -1351,7 +1387,7 @@ export const ARTICLES = [
 
     {
         "id": "63457aec-3c1d-4c6e-ace8-8b2f27f326a7",
-        "title": "Java IO 流 - File 类",
+        "title": "Java - IO 流 - File 类",
         "category": "Java",
         "date": { "year": 2020, "month": 7, "day": 6 },
         "peek": "File 类的一个对象, 代表一个文件或者目录, 在 java.io 包中.",
@@ -1360,7 +1396,7 @@ export const ARTICLES = [
 
     {
         "id": "6c870eb9-e21c-4389-8dc0-b8fca9a538a0",
-        "title": "Java IO 流 - 总览",
+        "title": "Java - IO 流 - 总览",
         "category": "Java",
         "date": { "year": 2020, "month": 7, "day": 6 },
         "peek": "本文介绍了 Java IO 的总览, 使得在学习之前有一个全局的认识",

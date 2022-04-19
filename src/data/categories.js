@@ -23,7 +23,7 @@ export const CATEGORIES = [
 ];
 
 export const CATEGORY_NETWORK = {
-    "Java": ["Spring"],
+    "Java": ["Spring", "设计模式"],
     "Spring": ["Java", "Spring Cloud"],
     "Spring Cloud": ["Spring"],
     "机器学习": ["统计", "强化学习"],
@@ -31,5 +31,6 @@ export const CATEGORY_NETWORK = {
     "统计": ["机器学习", "数学", "R"],
     "R": ["统计"],
     "密码学": ["数学"],
-    "强化学习": ["机器学习", "算法"]
+    "强化学习": ["机器学习", "算法"],
+    "设计模式": ["Java"]
 }

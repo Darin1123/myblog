@@ -58,6 +58,11 @@ export function ArticleSidebar(props) {
             </div>
             <div className={`outline`}>
                 <div className={'outline-wrapper'}>
+                    {outline.length === 0 && (
+                        <div className={'gray-text'}>
+                            没有内容...
+                        </div>
+                    )}
                     {outline.map((item, key) => (
                         <div className={'outline-item ' + `level-${item.level}`}
                              onClick={() => {
