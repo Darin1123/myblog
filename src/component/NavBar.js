@@ -220,7 +220,7 @@ function Portals(props) {
             ))}
 
             <div className={'link'}  onClick={() => {
-                window.location.href = window.location.origin + '/#/portals';
+                window.location.href = window.location.origin + window.location.pathname + '#/portals';
                 props.closePortals();
             }}>传送门 →</div>
         </div>
